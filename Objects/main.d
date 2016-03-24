@@ -1,7 +1,7 @@
 .\objects\main.o: main.c
 .\objects\main.o: C:\Keil_v5\ARM\PACK\Keil\STM32F7xx_DFP\2.4.0\Drivers\STM32F7xx_HAL_Driver\Inc\stm32f7xx_hal.h
-.\objects\main.o: C:\Users\Stuart\Documents\uVision Projects\Tetris uGFX\RTE\Device\STM32F746NGHx\stm32f7xx_hal_conf.h
-.\objects\main.o: C:\Users\Stuart\Documents\uVision Projects\Tetris uGFX\RTE\RTE_Components.h
+.\objects\main.o: C:\Users\adam\Documents\Embedded Systems\tetris-ugfx\RTE\Device\STM32F746NGHx\stm32f7xx_hal_conf.h
+.\objects\main.o: C:\Users\adam\Documents\Embedded Systems\tetris-ugfx\RTE\RTE_Components.h
 .\objects\main.o: C:\Keil_v5\ARM\PACK\Keil\STM32F7xx_DFP\2.4.0\Drivers\STM32F7xx_HAL_Driver\Inc\stm32f7xx_hal_rcc.h
 .\objects\main.o: C:\Keil_v5\ARM\PACK\Keil\STM32F7xx_DFP\2.4.0\Drivers\STM32F7xx_HAL_Driver\Inc\stm32f7xx_hal_def.h
 .\objects\main.o: C:\Keil_v5\ARM\PACK\Keil\STM32F7xx_DFP\2.4.0\Drivers\CMSIS\Device\ST\STM32F7xx\Include\stm32f7xx.h
@@ -42,6 +42,11 @@
 .\objects\main.o: main.h
 .\objects\main.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\RTOS\RTX\INC\cmsis_os.h
 .\objects\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
+.\objects\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
+.\objects\main.o: globals.h
+.\objects\main.o: output.h
+.\objects\main.o: setup.h
+.\objects\main.o: block.h
 .\objects\main.o: ..\ugfx_2.5\gfx.h
 .\objects\main.o: .\gfxconf.h
 .\objects\main.o: ..\ugfx_2.5\src/gfx_compilers.h

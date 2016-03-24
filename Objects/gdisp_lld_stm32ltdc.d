@@ -54,8 +54,8 @@
 .\objects\gdisp_lld_stm32ltdc.o: ..\ugfx_2.5\drivers\gdisp\STM32LTDC\../../../src/gdisp/../gdriver/gdriver.h
 .\objects\gdisp_lld_stm32ltdc.o: ..\ugfx_2.5\drivers\gdisp\STM32LTDC\stm32_ltdc.h
 .\objects\gdisp_lld_stm32ltdc.o: ..\ugfx_2.5\drivers\gdisp\STM32LTDC\stm32_dma2d.h
-.\objects\gdisp_lld_stm32ltdc.o: ..\ugfx_2.5\drivers\gdisp\STM32LTDC\board_STM32LTDC.h
-.\objects\gdisp_lld_stm32ltdc.o: ..\ugfx_2.5\drivers\gdisp\STM32LTDC\stm32f746g_discovery_sdram.h
+.\objects\gdisp_lld_stm32ltdc.o: .\board_STM32LTDC.h
+.\objects\gdisp_lld_stm32ltdc.o: .\stm32f746g_discovery_sdram.h
 .\objects\gdisp_lld_stm32ltdc.o: C:\Keil_v5\ARM\PACK\Keil\STM32F7xx_DFP\2.4.0\Drivers\STM32F7xx_HAL_Driver\Inc\stm32f7xx_hal_rcc.h
 .\objects\gdisp_lld_stm32ltdc.o: C:\Keil_v5\ARM\PACK\Keil\STM32F7xx_DFP\2.4.0\Drivers\STM32F7xx_HAL_Driver\Inc\stm32f7xx_hal_def.h
 .\objects\gdisp_lld_stm32ltdc.o: C:\Keil_v5\ARM\PACK\Keil\STM32F7xx_DFP\2.4.0\Drivers\CMSIS\Device\ST\STM32F7xx\Include\stm32f7xx.h

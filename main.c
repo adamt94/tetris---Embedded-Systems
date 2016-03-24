@@ -1,20 +1,4 @@
-/**
-  ******************************************************************************
-  * @file    main.c 
-  * @author  mark.fisher@uea.ac.uk
-  * @version V1.0.1
-  * @date    05-02-2016
-  * @brief   Pong Game (using multiple threads)
-  ******************************************************************************
-  * @attention
-  *
-  * Note: The functions:
-  *   SystemClock_Config ( )
-  *   CPU_CACHE_Enable ( )
-  * are copied from the uVision5 examples provided with DFP supporting the board.
-  *
-  ******************************************************************************
-  */
+
 
 #include "stm32f7xx_hal.h"
 #include "stm32746g_discovery_sdram.h"
@@ -23,6 +7,11 @@
 #include "Board_GLCD.h"
 #include "Board_Touch.h"
 #include "main.h"
+#include "stdlib.h"
+#include "globals.h"
+#include "output.h"
+#include "setup.h"
+#include "block.h"
 
 #include "gfx.h" //uGFX library header
 
@@ -34,6 +23,16 @@ uint32_t HAL_GetTick(void) {
   return os_time; 
 }
 #endif
+
+//The game area
+Bucket bucket;
+
+//Tetris pieces
+Block *currentPiece;
+Block *nextPiece;
+
+//Size of the blocks used
+const int BLOCK_SIZE = 10;
 
 /**
   * System Clock Configuration

@@ -1,5 +1,9 @@
 --cpu Cortex-M7.fp.sp
 ".\objects\main.o"
+".\objects\block.o"
+".\objects\gameloop.o"
+".\objects\output.o"
+".\objects\setup.o"
 ".\objects\gfx_mk.o"
 ".\objects\gdisp_lld_stm32ltdc.o"
 ".\objects\ft5336.o"
