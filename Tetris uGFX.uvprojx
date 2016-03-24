@@ -390,6 +390,26 @@
               <FileType>5</FileType>
               <FilePath>.\gfxconf.h</FilePath>
             </File>
+            <File>
+              <FileName>block.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\block.c</FilePath>
+            </File>
+            <File>
+              <FileName>gameLoop.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\gameLoop.c</FilePath>
+            </File>
+            <File>
+              <FileName>output.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\output.c</FilePath>
+            </File>
+            <File>
+              <FileName>setup.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\setup.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
