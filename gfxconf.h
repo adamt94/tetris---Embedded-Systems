@@ -62,9 +62,9 @@
 ///////////////////////////////////////////////////////////////////////////
 #define GFX_USE_GDISP                                TRUE
 
-//#define GDISP_NEED_AUTOFLUSH                         FALSE
+#define GDISP_NEED_AUTOFLUSH                         TRUE
 //#define GDISP_NEED_TIMERFLUSH                        FALSE
-//#define GDISP_NEED_VALIDATION                        TRUE
+#define GDISP_NEED_VALIDATION                        TRUE
 //#define GDISP_NEED_CLIP                              TRUE
 //#define GDISP_NEED_CIRCLE                            FALSE
 //#define GDISP_NEED_ELLIPSE                           FALSE
@@ -79,7 +79,7 @@
 //#define GDISP_NEED_STREAMING                         FALSE
 ///#define GDISP_NEED_TEXT                              TRUE
 //    #define GDISP_NEED_TEXT_WORDWRAP                 FALSE
-//    #define GDISP_NEED_ANTIALIAS                     FALSE
+    #define GDISP_NEED_ANTIALIAS                     TRUE
 //    #define GDISP_NEED_UTF8                          FALSE
 //    #define GDISP_NEED_TEXT_KERNING                  FALSE
 //    #define GDISP_INCLUDE_FONT_UI1                   FALSE
@@ -173,9 +173,9 @@
 ///////////////////////////////////////////////////////////////////////////
 // GWIN                                                                  //
 ///////////////////////////////////////////////////////////////////////////
-//#define GFX_USE_GWIN                                 FALSE
+#define GFX_USE_GWIN                                 TRUE
 
-//#define GWIN_NEED_WINDOWMANAGER                      FALSE
+#define GWIN_NEED_WINDOWMANAGER                      TRUE
 //    #define GWIN_REDRAW_IMMEDIATE                    FALSE
 //    #define GWIN_REDRAW_SINGLEOP                     FALSE
 //    #define GWIN_NEED_FLASHING                       FALSE

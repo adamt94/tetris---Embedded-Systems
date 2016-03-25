@@ -105,6 +105,7 @@
 .\objects\gfx_mk.o: ..\ugfx_2.5\src\gtimer/gtimer.c
 .\objects\gfx_mk.o: ..\ugfx_2.5\src\gwin/gwin_mk.c
 .\objects\gfx_mk.o: ..\ugfx_2.5\src\gwin/gwin.c
+.\objects\gfx_mk.o: ..\ugfx_2.5\src\gwin/gwin_class.h
 .\objects\gfx_mk.o: ..\ugfx_2.5\src\gwin/gwin_widget.c
 .\objects\gfx_mk.o: ..\ugfx_2.5\src\gwin/gwin_wm.c
 .\objects\gfx_mk.o: ..\ugfx_2.5\src\gwin/gwin_console.c
