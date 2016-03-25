@@ -4,7 +4,7 @@
 #include "setup.h"
 
 void initialiseNewGame(int width, int height) {
-    srand(43);
+    srand(5);
     bucket = makeBucket(width, height);
     currentPiece = makeBlock();
 }

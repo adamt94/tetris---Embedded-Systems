@@ -8,8 +8,9 @@
 // Prints the static blocks and moving block to screen
 
 void printTetrisBucket() {
-	   color_t   tetrisShapeColors = Red;
-	   int i, j;
+	  //color for each Tetris shape
+	  const color_t   tetrisShapeColors[7] = {Green, Yellow, Red, Blue, Magenta, SkyBlue, Orange}; 
+	  int i, j;
     //Placement of bucket on screen
     bucket.x = 0;
     bucket.y = 0;
@@ -17,12 +18,13 @@ void printTetrisBucket() {
 		currentPiece->y = 0;
     
     //For every cell in the tetris bucket
- //    gdispFillArea(100,100, 50, 50, Red);
+    // gdispFillArea(100,100, 50, 50, Red);
     for (i = 0; i < bucket.height; i++) {
         for (j = 0; j < bucket.width; j++) {
           //  mvprintw(bucket.y + i, bucket.x + j, "%c", bucket.bucket[i][j].value);
 						if((bucket.bucket[i][j].value != ' ')){
-						    GLCD_DrawRectangle ((bucket.x + (j*BLOCK_SIZE)), (bucket.y + (i*BLOCK_SIZE)), BLOCK_SIZE, BLOCK_SIZE);
+						   // GLCD_DrawRectangle ((bucket.x + (j*BLOCK_SIZE)), (bucket.y + (i*BLOCK_SIZE)), BLOCK_SIZE, BLOCK_SIZE);
+							gdispFillArea((bucket.x + (j*BLOCK_SIZE)), (bucket.y + (i*BLOCK_SIZE)), BLOCK_SIZE, BLOCK_SIZE,Black);
 						}
 					
         }
@@ -34,7 +36,9 @@ void printTetrisBucket() {
             //If this isn't a blank char then print it
             if (currentPiece->graphic[i][j] != ' ') {
                // mvprintw(currentPiece->y + i, currentPiece->x + j, "%c", currentPiece->graphic[i][j]);
-								GLCD_DrawRectangle (((currentPiece->x)+(j*BLOCK_SIZE)),((currentPiece->y)+(i*BLOCK_SIZE)),BLOCK_SIZE, BLOCK_SIZE);
+								
+								gdispFillArea(((currentPiece->x)+(j*BLOCK_SIZE)+20),((currentPiece->y)+(i*BLOCK_SIZE)+20),BLOCK_SIZE, BLOCK_SIZE,tetrisShapeColors[currentPiece->blockID]);
+							
             }
 
         }

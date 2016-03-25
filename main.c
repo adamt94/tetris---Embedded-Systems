@@ -96,6 +96,8 @@ static void CPU_CACHE_Enable (void) {
 *       Main
 */
 int main (void) {
+	GameState state = GameInit;
+  int score;
   CPU_CACHE_Enable();                       /* Enable the CPU Cache           */
   HAL_Init();                               /* Initialize the HAL Library     */
   BSP_SDRAM_Init();                         /* Initialize BSP SDRAM           */
@@ -110,10 +112,42 @@ int main (void) {
 	//gfxInit must be called after setting up hardware above
 	gfxInit();																	/* Initialise uGFX library */
 	
-	gdispClear(Teal);											/* Use given colour to clear screen (set background) */
-	gdispFillArea(20, 20, 200, 200, Blue);		/* Draw a rectangle filled with specified colour */
+	 gdispClear(White);											/* Use given colour to clear screen (set background) */
+	//gdispFillArea(20, 20, 200, 200, Blue);		/* Draw a rectangle filled with specified colour */
+	 while (state == GameInit) {
+       // printf("Initialisation\n");
+        //Will show start menu here, allow user to select singleplayer or multiplayer
+        //Set up new game variables
+			
+        initialiseNewGame(10, 20);
 	
-	while(1){
-		gfxSleepMilliseconds(500);
-	}	
+        state = GameRunning;
+			  
+    }
+
+	 
+    //Main game loop
+    while (state == GameRunning) {
+      // wait_delay(); //Sleep for 10 milliseconds
+        //      Get user input  (possible target for threading)
+        //      Modify current moving block
+        //      Update game state
+        //      Display to screen (possible target for threading)
+      
+					
+        
+      //  clear(); // clear the screen
+        updateBlock();
+        checkForFullRows(); //checks for full rows
+         printTetrisBucket();
+       // refresh(); 
+      
+        
+				}
+//	while(1){
+//		
+//		//gfxSleepMilliseconds(500); //stops drawing to screen for some reason
+//		
+//		
+//	}	
 }
