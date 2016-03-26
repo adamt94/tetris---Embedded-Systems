@@ -121,6 +121,8 @@ void taskADC (void const *argument) {
 int main (void) {
 	GameState state = GameInit;
   int score;
+	int initXpos;																/* initial screen touch x pos*/
+	int initTime = 0;																/* initial time on touch */
   CPU_CACHE_Enable();                       /* Enable the CPU Cache          */
   HAL_Init();                               				 /* Initialize the HAL Library     		*/
   BSP_SDRAM_Init();                        	 /* Initialize BSP SDRAM           	*/
@@ -157,11 +159,37 @@ int main (void) {
 			Touch_GetState (&tsc_state); /* Get touch state */
 			if(tsc_state.pressed == true && stillPressed == false){
 				stillPressed = true;
-				attemptMove('R');
-				rotateBlock();
+				initXpos = tsc_state.x; // gets the  x pos when pressed
+				initTime = HAL_GetTick(); //gets the  time when pressed
 			}
 			
-			attemptMove('D');
+			//rotate if the press lasted for half sec
+			if(tsc_state.pressed ==false){
+				if((HAL_GetTick()-initTime)<5000&&initTime!=0){
+						//attemptMove('R');
+						attemptMove('D');
+			    	rotateBlock();
+					  initTime = 0;
+				}
+			}
+			
+			//move block right if swipped right
+			if(stillPressed == true){
+				if((tsc_state.x-initXpos)>50){
+					currentPiece->x +=1;
+					initXpos = tsc_state.x;
+				}
+				//move block left if swipped left
+				if((tsc_state.x-initXpos)<-50){
+					currentPiece->x -=1;
+					initXpos = tsc_state.x;
+				}
+				
+				
+				
+			}
+			//moves block down
+			//attemptMove('D');
 			
 			// Is the touch screen still being pressed from the previous loop? (prevent rotating multiple times from one touch)
 			if(tsc_state.pressed == false){
@@ -174,7 +202,7 @@ int main (void) {
 			printTetrisBucket();
 			
 			
-			wait_delay(5000); //Sleep for a short duration
+			wait_delay(1000); //Sleep for a short duration
 			
 			checkForFullRows(); //checks for full rows
 
