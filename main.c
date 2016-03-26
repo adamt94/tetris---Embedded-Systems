@@ -96,6 +96,24 @@ static void CPU_CACHE_Enable (void) {
   SCB_EnableDCache();
 }
 
+/*--------------------------------------------------
+ *      Thread 1 'taskGLCD':   
+ *--------------------------------------------------*/
+void taskGLCD (void const *argument) {
+}
+
+/*--------------------------------------------------
+ *      Thread 2 'taskGameLogic':   
+ *--------------------------------------------------*/
+void taskBall (void const *argument) {
+}
+
+/*--------------------------------------------------
+ *      Thread 3 'taskInput':   
+ *--------------------------------------------------*/
+void taskADC (void const *argument) {
+}
+
 /*********************************************************************
 *
 *       Main
@@ -103,10 +121,10 @@ static void CPU_CACHE_Enable (void) {
 int main (void) {
 	GameState state = GameInit;
   int score;
-  CPU_CACHE_Enable();                       /* Enable the CPU Cache           */
-  HAL_Init();                               /* Initialize the HAL Library     */
-  BSP_SDRAM_Init();                         /* Initialize BSP SDRAM           */
- SystemClock_Config();                     /* Configure the System Clock     */
+  CPU_CACHE_Enable();                       /* Enable the CPU Cache          */
+  HAL_Init();                               				 /* Initialize the HAL Library     		*/
+  BSP_SDRAM_Init();                        	 /* Initialize BSP SDRAM           	*/
+  SystemClock_Config();                      /* Configure the System Clock  */
 
 	//Set up touchscreen hardware
   Touch_Initialize();
@@ -123,7 +141,7 @@ int main (void) {
        // printf("Initialisation\n");
         //Will show start menu here, allow user to select singleplayer or multiplayer
         //Set up new game variables
-        initialiseNewGame(20, 14);
+        initialiseNewGame(11, 17);
 
         state = GameRunning;
 
@@ -139,9 +157,11 @@ int main (void) {
 			Touch_GetState (&tsc_state); /* Get touch state */
 			if(tsc_state.pressed == true && stillPressed == false){
 				stillPressed = true;
-				attemptMove('D');
+				attemptMove('R');
 				rotateBlock();
 			}
+			
+			attemptMove('D');
 			
 			// Is the touch screen still being pressed from the previous loop? (prevent rotating multiple times from one touch)
 			if(tsc_state.pressed == false){
@@ -154,14 +174,9 @@ int main (void) {
 			printTetrisBucket();
 			
 			
-			wait_delay(1000); //Sleep for a short duration
+			wait_delay(5000); //Sleep for a short duration
 			
 			checkForFullRows(); //checks for full rows
-
-			
-			
-			
-
 
 				}
 }

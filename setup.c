@@ -72,7 +72,7 @@ void setRandomBlockGraphic(Block *temp){
 		choice = rand() % 7;
 		
 		//Set blockID to the block type
-    temp->blockID = choice;
+    temp->blockID = choice + 1;
 		
     switch(choice){
         case 0:
