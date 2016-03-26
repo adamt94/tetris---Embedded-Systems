@@ -62,9 +62,9 @@
 ///////////////////////////////////////////////////////////////////////////
 #define GFX_USE_GDISP                                TRUE
 
-#define GDISP_NEED_AUTOFLUSH                         TRUE
+//#define GDISP_NEED_AUTOFLUSH                         TRUE
 //#define GDISP_NEED_TIMERFLUSH                        FALSE
-#define GDISP_NEED_VALIDATION                        TRUE
+//#define GDISP_NEED_VALIDATION                        TRUE
 //#define GDISP_NEED_CLIP                              TRUE
 //#define GDISP_NEED_CIRCLE                            FALSE
 //#define GDISP_NEED_ELLIPSE                           FALSE
@@ -79,7 +79,7 @@
 //#define GDISP_NEED_STREAMING                         FALSE
 ///#define GDISP_NEED_TEXT                              TRUE
 //    #define GDISP_NEED_TEXT_WORDWRAP                 FALSE
-    #define GDISP_NEED_ANTIALIAS                     TRUE
+//    #define GDISP_NEED_ANTIALIAS                     TRUE
 //    #define GDISP_NEED_UTF8                          FALSE
 //    #define GDISP_NEED_TEXT_KERNING                  FALSE
 //    #define GDISP_INCLUDE_FONT_UI1                   FALSE
@@ -138,11 +138,11 @@
 //    #define GDISP_NEED_PIXMAP_IMAGE                  FALSE
 
 //#define GDISP_DEFAULT_ORIENTATION                    GDISP_ROTATE_LANDSCAPE    // If not defined the native hardware orientation is used.
-//#define GDISP_LINEBUF_SIZE                           128
+#define GDISP_LINEBUF_SIZE                           128
 //#define GDISP_STARTUP_COLOR                          Black
 #define GDISP_NEED_STARTUP_LOGO                      FALSE
 
-//#define GDISP_TOTAL_DISPLAYS                         1
+#define GDISP_TOTAL_DISPLAYS                         1
 
 //#define GDISP_DRIVER_LIST                            GDISPVMT_Win32, GDISPVMT_Win32
 //    #ifdef GDISP_DRIVER_LIST
@@ -150,9 +150,9 @@
 //        #define GDISP_HARDWARE_STREAM_WRITE          FALSE
 //        #define GDISP_HARDWARE_STREAM_READ           FALSE
 //        #define GDISP_HARDWARE_STREAM_POS            FALSE
-//        #define GDISP_HARDWARE_DRAWPIXEL             FALSE
+        #define GDISP_HARDWARE_DRAWPIXEL             TRUE
 //        #define GDISP_HARDWARE_CLEARS                FALSE
-//        #define GDISP_HARDWARE_FILLS                 FALSE
+        #define GDISP_HARDWARE_FILLS                 TRUE
 //        #define GDISP_HARDWARE_BITFILLS              FALSE
 //        #define GDISP_HARDWARE_SCROLL                FALSE
 //        #define GDISP_HARDWARE_PIXELREAD             FALSE
@@ -160,7 +160,7 @@
 //        #define GDISP_HARDWARE_QUERY                 FALSE
 //        #define GDISP_HARDWARE_CLIP                  FALSE
 
-//        #define GDISP_PIXELFORMAT                    GDISP_PIXELFORMAT_RGB888
+        #define GDISP_PIXELFORMAT                    GDISP_PIXELFORMAT_RGB888
 //    #endif
 
 //#define GDISP_USE_GFXNET                             FALSE
@@ -176,10 +176,10 @@
 #define GFX_USE_GWIN                                 TRUE
 
 #define GWIN_NEED_WINDOWMANAGER                      TRUE
-//    #define GWIN_REDRAW_IMMEDIATE                    FALSE
-//    #define GWIN_REDRAW_SINGLEOP                     FALSE
-//    #define GWIN_NEED_FLASHING                       FALSE
-//        #define GWIN_FLASHING_PERIOD                 250
+    #define GWIN_REDRAW_IMMEDIATE                    TRUE
+    #define GWIN_REDRAW_SINGLEOP                     TRUE
+    #define GWIN_NEED_FLASHING                       TRUE
+        #define GWIN_FLASHING_PERIOD                 250
 
 //#define GWIN_NEED_CONSOLE                            FALSE
 //    #define GWIN_CONSOLE_USE_HISTORY                 FALSE
@@ -216,9 +216,9 @@
 //    #define GWIN_FLAT_STYLING                        FALSE
 //    #define GWIN_WIDGET_TAGS                         FALSE
 
-//#define GWIN_NEED_CONTAINERS                         FALSE
+//#define GWIN_NEED_CONTAINERS                         TRUE
 //    #define GWIN_NEED_CONTAINER                      FALSE
-//    #define GWIN_NEED_FRAME                          FALSE
+  //  #define GWIN_NEED_FRAME                          TRUE
 //    #define GWIN_NEED_TABSET                         FALSE
 //        #define GWIN_TABSET_TABHEIGHT                18
 

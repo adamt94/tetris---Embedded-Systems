@@ -97,8 +97,9 @@ int attemptMove(char move) {
                     bucket.bucket[i + currentPiece->y][j + currentPiece->x].value = currentPiece->graphic[i][j];
             }
         }
-
-        currentPiece = makeBlock();
+				currentPiece->x = 3;
+				currentPiece->y = 3;
+				setRandomBlockGraphic(currentPiece);
     }
     return 1;
 }

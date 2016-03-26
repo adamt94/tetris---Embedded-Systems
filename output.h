@@ -8,6 +8,8 @@
 
 // Prints the static blocks and moving block to screen
 void printTetrisBucket(void);
+//Erase the block from the screen
+void eraseBlock(void);
 // Displays the current score
 void printScoreWindow(void);
 // Displays the next incoming block

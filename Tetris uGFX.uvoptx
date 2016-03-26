@@ -302,11 +302,11 @@
       <GroupNumber>1</GroupNumber>
       <FileNumber>6</FileNumber>
       <FileType>1</FileType>
-      <tvExp>0</tvExp>
+      <tvExp>1</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>.\output.c</PathWithFileName>
-      <FilenameWithoutPath>output.c</FilenameWithoutPath>
+      <PathWithFileName>.\setup.c</PathWithFileName>
+      <FilenameWithoutPath>setup.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
     </File>
@@ -317,8 +317,8 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>.\setup.c</PathWithFileName>
-      <FilenameWithoutPath>setup.c</FilenameWithoutPath>
+      <PathWithFileName>.\output.c</PathWithFileName>
+      <FilenameWithoutPath>output.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
     </File>
@@ -374,7 +374,7 @@
 
   <Group>
     <GroupName>::Device</GroupName>
-    <tvExp>0</tvExp>
+    <tvExp>1</tvExp>
     <tvExpOptDlg>0</tvExpOptDlg>
     <cbSel>0</cbSel>
     <RteFlg>1</RteFlg>

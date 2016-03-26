@@ -1,5 +1,5 @@
 Dependencies for Project 'Tetris uGFX', Target 'Target 1': (DO NOT MODIFY !)
-F (.\main.c)(0x56F59FA2)(-c --cpu Cortex-M7.fp.sp -D__RTX -D__EVAL -g -O0 --apcs=interwork --split_sections -I . -I ..\ugfx_2.5 -I ..\ugfx_2.5\drivers\gdisp\STM32LTDC-I "C:\Users\Stuart\Documents\uVision Projects\Tetris uGFX\RTE"-I "C:\Users\Stuart\Documents\uVision Projects\Tetris uGFX\RTE\Device\STM32F746NGHx"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\RTOS\RTX\INC-I C:\Keil_v5\ARM\PACK\Keil\MDK-Middleware\7.0.0\Board-I C:\Keil_v5\ARM\PACK\Keil\STM32F7xx_DFP\2.4.0\Drivers\BSP\STM32746G-Discovery-I C:\Keil_v5\ARM\PACK\Keil\STM32F7xx_DFP\2.4.0\Drivers\CMSIS\Device\ST\STM32F7xx\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F7xx_DFP\2.4.0\Drivers\STM32F7xx_HAL_Driver\Inc-I C:\Keil_v5\ARM\PACK\Keil\STM32F7xx_DFP\2.4.0\MDK\Boards\ST\STM32F746G_Discovery\Common-D__UVISION_VERSION="518" -D_RTE_ -DSTM32F746xx-o .\objects\main.o --omf_browse .\objects\main.crf --depend .\objects\main.d)
+F (.\main.c)(0x56F6AF3E)(-c --cpu Cortex-M7.fp.sp -D__RTX -D__EVAL -g -O0 --apcs=interwork --split_sections -I . -I ..\ugfx_2.5 -I ..\ugfx_2.5\drivers\gdisp\STM32LTDC-I "C:\Users\Stuart\Documents\uVision Projects\Tetris uGFX\RTE"-I "C:\Users\Stuart\Documents\uVision Projects\Tetris uGFX\RTE\Device\STM32F746NGHx"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\RTOS\RTX\INC-I C:\Keil_v5\ARM\PACK\Keil\MDK-Middleware\7.0.0\Board-I C:\Keil_v5\ARM\PACK\Keil\STM32F7xx_DFP\2.4.0\Drivers\BSP\STM32746G-Discovery-I C:\Keil_v5\ARM\PACK\Keil\STM32F7xx_DFP\2.4.0\Drivers\CMSIS\Device\ST\STM32F7xx\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F7xx_DFP\2.4.0\Drivers\STM32F7xx_HAL_Driver\Inc-I C:\Keil_v5\ARM\PACK\Keil\STM32F7xx_DFP\2.4.0\MDK\Boards\ST\STM32F746G_Discovery\Common-D__UVISION_VERSION="518" -D_RTE_ -DSTM32F746xx-o .\objects\main.o --omf_browse .\objects\main.crf --depend .\objects\main.d)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F7xx_DFP\2.4.0\Drivers\STM32F7xx_HAL_Driver\Inc\stm32f7xx_hal.h)(0x56680A7A)
 I (C:\Users\Stuart\Documents\uVision Projects\Tetris uGFX\RTE\Device\STM32F746NGHx\stm32f7xx_hal_conf.h)(0x56A0B5D0)
 I (C:\Users\Stuart\Documents\uVision Projects\Tetris uGFX\RTE\RTE_Components.h)(0x56F445C2)
@@ -37,20 +37,20 @@ I (C:\Keil_v5\ARM\PACK\Keil\STM32F7xx_DFP\2.4.0\Drivers\STM32F7xx_HAL_Driver\Inc
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F7xx_DFP\2.4.0\Drivers\STM32F7xx_HAL_Driver\Inc\stm32f7xx_hal_uart_ex.h)(0x56680A7A)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F7xx_DFP\2.4.0\Drivers\BSP\STM32746G-Discovery\stm32746g_discovery_sdram.h)(0x564AF7D8)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F7xx_DFP\2.4.0\MDK\Boards\ST\STM32F746G_Discovery\Common\GLCD_Config.h)(0x5593D6E0)
-I (C:\Keil_v5\ARM\PACK\Keil\MDK-Middleware\7.0.0\Board\Board_GLCD.h)(0x53BB84C2)
+I (Board_GLCD.h)(0x56DF3918)
 I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x569E5ABA)
 I (C:\Keil_v5\ARM\PACK\Keil\MDK-Middleware\7.0.0\Board\Board_Touch.h)(0x53BB84C2)
 I (main.h)(0x56F594D4)
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\RTOS\RTX\INC\cmsis_os.h)(0x5627AA4E)
 I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x569E5ABA)
 I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x569E5ABA)
-I (globals.h)(0x56F452B5)
-I (output.h)(0x56F452B5)
-I (setup.h)(0x56F452B5)
+I (globals.h)(0x56F6B33F)
+I (output.h)(0x56F6A278)
+I (setup.h)(0x56F6B0B8)
 I (block.h)(0x56F452B5)
 I (C:\Keil_v5\ARM\ARMCC\include\time.h)(0x569E5ABA)
 I (..\ugfx_2.5\gfx.h)(0x56D2F7B0)
-I (.\gfxconf.h)(0x56F59F2B)
+I (.\gfxconf.h)(0x56F5E3C0)
 I (..\ugfx_2.5\src/gfx_compilers.h)(0x56D2F7B0)
 I (..\ugfx_2.5\src/gos/gos_options.h)(0x56D2F7B1)
 I (..\ugfx_2.5\src/gdriver/gdriver_options.h)(0x563E3A2C)
@@ -96,19 +96,25 @@ I (..\ugfx_2.5\src/gwin/gwin.h)(0x56D2F7B1)
 I (..\ugfx_2.5\src/ginput/ginput.h)(0x56D2F7B0)
 I (..\ugfx_2.5\src/gadc/gadc.h)(0x56D2F7B0)
 I (..\ugfx_2.5\src/gaudio/gaudio.h)(0x56D2F7B0)
-F (.\board_STM32LTDC.h)(0x563E3A2A)()
-F (.\gfxconf.h)(0x56F59F2B)()
-F (.\block.c)(0x56F452B5)(-c --cpu Cortex-M7.fp.sp -D__RTX -D__EVAL -g -O0 --apcs=interwork --split_sections -I . -I ..\ugfx_2.5 -I ..\ugfx_2.5\drivers\gdisp\STM32LTDC-I "C:\Users\Stuart\Documents\uVision Projects\Tetris uGFX\RTE"-I "C:\Users\Stuart\Documents\uVision Projects\Tetris uGFX\RTE\Device\STM32F746NGHx"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\RTOS\RTX\INC-I C:\Keil_v5\ARM\PACK\Keil\MDK-Middleware\7.0.0\Board-I C:\Keil_v5\ARM\PACK\Keil\STM32F7xx_DFP\2.4.0\Drivers\BSP\STM32746G-Discovery-I C:\Keil_v5\ARM\PACK\Keil\STM32F7xx_DFP\2.4.0\Drivers\CMSIS\Device\ST\STM32F7xx\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F7xx_DFP\2.4.0\Drivers\STM32F7xx_HAL_Driver\Inc-I C:\Keil_v5\ARM\PACK\Keil\STM32F7xx_DFP\2.4.0\MDK\Boards\ST\STM32F746G_Discovery\Common-D__UVISION_VERSION="518" -D_RTE_ -DSTM32F746xx-o .\objects\block.o --omf_browse .\objects\block.crf --depend .\objects\block.d)
+F (.\board_STM32LTDC.h)(0x56F5A67E)()
+F (.\gfxconf.h)(0x56F5E3C0)()
+F (.\block.c)(0x56F6B36C)(-c --cpu Cortex-M7.fp.sp -D__RTX -D__EVAL -g -O0 --apcs=interwork --split_sections -I . -I ..\ugfx_2.5 -I ..\ugfx_2.5\drivers\gdisp\STM32LTDC-I "C:\Users\Stuart\Documents\uVision Projects\Tetris uGFX\RTE"-I "C:\Users\Stuart\Documents\uVision Projects\Tetris uGFX\RTE\Device\STM32F746NGHx"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\RTOS\RTX\INC-I C:\Keil_v5\ARM\PACK\Keil\MDK-Middleware\7.0.0\Board-I C:\Keil_v5\ARM\PACK\Keil\STM32F7xx_DFP\2.4.0\Drivers\BSP\STM32746G-Discovery-I C:\Keil_v5\ARM\PACK\Keil\STM32F7xx_DFP\2.4.0\Drivers\CMSIS\Device\ST\STM32F7xx\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F7xx_DFP\2.4.0\Drivers\STM32F7xx_HAL_Driver\Inc-I C:\Keil_v5\ARM\PACK\Keil\STM32F7xx_DFP\2.4.0\MDK\Boards\ST\STM32F746G_Discovery\Common-D__UVISION_VERSION="518" -D_RTE_ -DSTM32F746xx-o .\objects\block.o --omf_browse .\objects\block.crf --depend .\objects\block.d)
 I (block.h)(0x56F452B5)
-I (globals.h)(0x56F452B5)
-I (setup.h)(0x56F452B5)
+I (globals.h)(0x56F6B33F)
+I (setup.h)(0x56F6B0B8)
 I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x569E5ABA)
 F (.\gameLoop.c)(0x56F452B5)(-c --cpu Cortex-M7.fp.sp -D__RTX -D__EVAL -g -O0 --apcs=interwork --split_sections -I . -I ..\ugfx_2.5 -I ..\ugfx_2.5\drivers\gdisp\STM32LTDC-I "C:\Users\Stuart\Documents\uVision Projects\Tetris uGFX\RTE"-I "C:\Users\Stuart\Documents\uVision Projects\Tetris uGFX\RTE\Device\STM32F746NGHx"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\RTOS\RTX\INC-I C:\Keil_v5\ARM\PACK\Keil\MDK-Middleware\7.0.0\Board-I C:\Keil_v5\ARM\PACK\Keil\STM32F7xx_DFP\2.4.0\Drivers\BSP\STM32746G-Discovery-I C:\Keil_v5\ARM\PACK\Keil\STM32F7xx_DFP\2.4.0\Drivers\CMSIS\Device\ST\STM32F7xx\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F7xx_DFP\2.4.0\Drivers\STM32F7xx_HAL_Driver\Inc-I C:\Keil_v5\ARM\PACK\Keil\STM32F7xx_DFP\2.4.0\MDK\Boards\ST\STM32F746G_Discovery\Common-D__UVISION_VERSION="518" -D_RTE_ -DSTM32F746xx-o .\objects\gameloop.o --omf_browse .\objects\gameloop.crf --depend .\objects\gameloop.d)
 I (gameLoop.h)(0x56F452B5)
-I (globals.h)(0x56F452B5)
-F (.\output.c)(0x56F59D06)(-c --cpu Cortex-M7.fp.sp -D__RTX -D__EVAL -g -O0 --apcs=interwork --split_sections -I . -I ..\ugfx_2.5 -I ..\ugfx_2.5\drivers\gdisp\STM32LTDC-I "C:\Users\Stuart\Documents\uVision Projects\Tetris uGFX\RTE"-I "C:\Users\Stuart\Documents\uVision Projects\Tetris uGFX\RTE\Device\STM32F746NGHx"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\RTOS\RTX\INC-I C:\Keil_v5\ARM\PACK\Keil\MDK-Middleware\7.0.0\Board-I C:\Keil_v5\ARM\PACK\Keil\STM32F7xx_DFP\2.4.0\Drivers\BSP\STM32746G-Discovery-I C:\Keil_v5\ARM\PACK\Keil\STM32F7xx_DFP\2.4.0\Drivers\CMSIS\Device\ST\STM32F7xx\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F7xx_DFP\2.4.0\Drivers\STM32F7xx_HAL_Driver\Inc-I C:\Keil_v5\ARM\PACK\Keil\STM32F7xx_DFP\2.4.0\MDK\Boards\ST\STM32F746G_Discovery\Common-D__UVISION_VERSION="518" -D_RTE_ -DSTM32F746xx-o .\objects\output.o --omf_browse .\objects\output.crf --depend .\objects\output.d)
+I (globals.h)(0x56F6B33F)
+F (.\setup.c)(0x56F6B349)(-c --cpu Cortex-M7.fp.sp -D__RTX -D__EVAL -g -O0 --apcs=interwork --split_sections -I . -I ..\ugfx_2.5 -I ..\ugfx_2.5\drivers\gdisp\STM32LTDC-I "C:\Users\Stuart\Documents\uVision Projects\Tetris uGFX\RTE"-I "C:\Users\Stuart\Documents\uVision Projects\Tetris uGFX\RTE\Device\STM32F746NGHx"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\RTOS\RTX\INC-I C:\Keil_v5\ARM\PACK\Keil\MDK-Middleware\7.0.0\Board-I C:\Keil_v5\ARM\PACK\Keil\STM32F7xx_DFP\2.4.0\Drivers\BSP\STM32746G-Discovery-I C:\Keil_v5\ARM\PACK\Keil\STM32F7xx_DFP\2.4.0\Drivers\CMSIS\Device\ST\STM32F7xx\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F7xx_DFP\2.4.0\Drivers\STM32F7xx_HAL_Driver\Inc-I C:\Keil_v5\ARM\PACK\Keil\STM32F7xx_DFP\2.4.0\MDK\Boards\ST\STM32F746G_Discovery\Common-D__UVISION_VERSION="518" -D_RTE_ -DSTM32F746xx-o .\objects\setup.o --omf_browse .\objects\setup.crf --depend .\objects\setup.d)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x569E5ABA)
+I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x569E5ABA)
+I (C:\Keil_v5\ARM\ARMCC\include\stdarg.h)(0x569E5ABA)
+I (setup.h)(0x56F6B0B8)
+I (globals.h)(0x56F6B33F)
+F (.\output.c)(0x56F6B354)(-c --cpu Cortex-M7.fp.sp -D__RTX -D__EVAL -g -O0 --apcs=interwork --split_sections -I . -I ..\ugfx_2.5 -I ..\ugfx_2.5\drivers\gdisp\STM32LTDC-I "C:\Users\Stuart\Documents\uVision Projects\Tetris uGFX\RTE"-I "C:\Users\Stuart\Documents\uVision Projects\Tetris uGFX\RTE\Device\STM32F746NGHx"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\RTOS\RTX\INC-I C:\Keil_v5\ARM\PACK\Keil\MDK-Middleware\7.0.0\Board-I C:\Keil_v5\ARM\PACK\Keil\STM32F7xx_DFP\2.4.0\Drivers\BSP\STM32746G-Discovery-I C:\Keil_v5\ARM\PACK\Keil\STM32F7xx_DFP\2.4.0\Drivers\CMSIS\Device\ST\STM32F7xx\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F7xx_DFP\2.4.0\Drivers\STM32F7xx_HAL_Driver\Inc-I C:\Keil_v5\ARM\PACK\Keil\STM32F7xx_DFP\2.4.0\MDK\Boards\ST\STM32F746G_Discovery\Common-D__UVISION_VERSION="518" -D_RTE_ -DSTM32F746xx-o .\objects\output.o --omf_browse .\objects\output.crf --depend .\objects\output.d)
 I (..\ugfx_2.5\gfx.h)(0x56D2F7B0)
-I (.\gfxconf.h)(0x56F59F2B)
+I (.\gfxconf.h)(0x56F5E3C0)
 I (..\ugfx_2.5\src/gfx_compilers.h)(0x56D2F7B0)
 I (..\ugfx_2.5\src/gos/gos_options.h)(0x56D2F7B1)
 I (..\ugfx_2.5\src/gdriver/gdriver_options.h)(0x563E3A2C)
@@ -158,18 +164,12 @@ I (..\ugfx_2.5\src/gwin/gwin.h)(0x56D2F7B1)
 I (..\ugfx_2.5\src/ginput/ginput.h)(0x56D2F7B0)
 I (..\ugfx_2.5\src/gadc/gadc.h)(0x56D2F7B0)
 I (..\ugfx_2.5\src/gaudio/gaudio.h)(0x56D2F7B0)
-I (output.h)(0x56F452B5)
-I (globals.h)(0x56F452B5)
-F (.\setup.c)(0x56F592F9)(-c --cpu Cortex-M7.fp.sp -D__RTX -D__EVAL -g -O0 --apcs=interwork --split_sections -I . -I ..\ugfx_2.5 -I ..\ugfx_2.5\drivers\gdisp\STM32LTDC-I "C:\Users\Stuart\Documents\uVision Projects\Tetris uGFX\RTE"-I "C:\Users\Stuart\Documents\uVision Projects\Tetris uGFX\RTE\Device\STM32F746NGHx"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\RTOS\RTX\INC-I C:\Keil_v5\ARM\PACK\Keil\MDK-Middleware\7.0.0\Board-I C:\Keil_v5\ARM\PACK\Keil\STM32F7xx_DFP\2.4.0\Drivers\BSP\STM32746G-Discovery-I C:\Keil_v5\ARM\PACK\Keil\STM32F7xx_DFP\2.4.0\Drivers\CMSIS\Device\ST\STM32F7xx\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F7xx_DFP\2.4.0\Drivers\STM32F7xx_HAL_Driver\Inc-I C:\Keil_v5\ARM\PACK\Keil\STM32F7xx_DFP\2.4.0\MDK\Boards\ST\STM32F746G_Discovery\Common-D__UVISION_VERSION="518" -D_RTE_ -DSTM32F746xx-o .\objects\setup.o --omf_browse .\objects\setup.crf --depend .\objects\setup.d)
-I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x569E5ABA)
-I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x569E5ABA)
-I (C:\Keil_v5\ARM\ARMCC\include\stdarg.h)(0x569E5ABA)
-I (setup.h)(0x56F452B5)
-I (globals.h)(0x56F452B5)
+I (output.h)(0x56F6A278)
+I (globals.h)(0x56F6B33F)
 F (..\ugfx_2.5\src\gfx_mk.c)(0x56D2F7B0)(-c --cpu Cortex-M7.fp.sp -D__RTX -D__EVAL -g -O0 --apcs=interwork --split_sections -I . -I ..\ugfx_2.5 -I ..\ugfx_2.5\drivers\gdisp\STM32LTDC-I "C:\Users\Stuart\Documents\uVision Projects\Tetris uGFX\RTE"-I "C:\Users\Stuart\Documents\uVision Projects\Tetris uGFX\RTE\Device\STM32F746NGHx"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\RTOS\RTX\INC-I C:\Keil_v5\ARM\PACK\Keil\MDK-Middleware\7.0.0\Board-I C:\Keil_v5\ARM\PACK\Keil\STM32F7xx_DFP\2.4.0\Drivers\BSP\STM32746G-Discovery-I C:\Keil_v5\ARM\PACK\Keil\STM32F7xx_DFP\2.4.0\Drivers\CMSIS\Device\ST\STM32F7xx\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F7xx_DFP\2.4.0\Drivers\STM32F7xx_HAL_Driver\Inc-I C:\Keil_v5\ARM\PACK\Keil\STM32F7xx_DFP\2.4.0\MDK\Boards\ST\STM32F746G_Discovery\Common-D__UVISION_VERSION="518" -D_RTE_ -DSTM32F746xx-o .\objects\gfx_mk.o --omf_browse .\objects\gfx_mk.crf --depend .\objects\gfx_mk.d)
 I (..\ugfx_2.5\src\gfx.c)(0x56D2F7B0)
 I (..\ugfx_2.5\src\../gfx.h)(0x56D2F7B0)
-I (.\gfxconf.h)(0x56F59F2B)
+I (.\gfxconf.h)(0x56F5E3C0)
 I (..\ugfx_2.5\src\../src/gfx_compilers.h)(0x56D2F7B0)
 I (..\ugfx_2.5\src\../src/gos/gos_options.h)(0x56D2F7B1)
 I (..\ugfx_2.5\src\../src/gdriver/gdriver_options.h)(0x563E3A2C)
@@ -330,7 +330,7 @@ I (..\ugfx_2.5\src\gtrans/gtrans_mk.c)(0x56D2F7B1)
 I (..\ugfx_2.5\src\gtrans/gtrans.c)(0x56D2F7B1)
 F (..\ugfx_2.5\drivers\gdisp\STM32LTDC\gdisp_lld_STM32LTDC.c)(0x56D2F7B0)(-c --cpu Cortex-M7.fp.sp -D__RTX -D__EVAL -g -O0 --apcs=interwork --split_sections -I . -I ..\ugfx_2.5 -I ..\ugfx_2.5\drivers\gdisp\STM32LTDC-I "C:\Users\Stuart\Documents\uVision Projects\Tetris uGFX\RTE"-I "C:\Users\Stuart\Documents\uVision Projects\Tetris uGFX\RTE\Device\STM32F746NGHx"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\RTOS\RTX\INC-I C:\Keil_v5\ARM\PACK\Keil\MDK-Middleware\7.0.0\Board-I C:\Keil_v5\ARM\PACK\Keil\STM32F7xx_DFP\2.4.0\Drivers\BSP\STM32746G-Discovery-I C:\Keil_v5\ARM\PACK\Keil\STM32F7xx_DFP\2.4.0\Drivers\CMSIS\Device\ST\STM32F7xx\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F7xx_DFP\2.4.0\Drivers\STM32F7xx_HAL_Driver\Inc-I C:\Keil_v5\ARM\PACK\Keil\STM32F7xx_DFP\2.4.0\MDK\Boards\ST\STM32F746G_Discovery\Common-D__UVISION_VERSION="518" -D_RTE_ -DSTM32F746xx-o .\objects\gdisp_lld_stm32ltdc.o --omf_browse .\objects\gdisp_lld_stm32ltdc.crf --depend .\objects\gdisp_lld_stm32ltdc.d)
 I (..\ugfx_2.5\gfx.h)(0x56D2F7B0)
-I (.\gfxconf.h)(0x56F59F2B)
+I (.\gfxconf.h)(0x56F5E3C0)
 I (..\ugfx_2.5\src/gfx_compilers.h)(0x56D2F7B0)
 I (..\ugfx_2.5\src/gos/gos_options.h)(0x56D2F7B1)
 I (..\ugfx_2.5\src/gdriver/gdriver_options.h)(0x563E3A2C)
@@ -558,10 +558,10 @@ I (C:\Keil_v5\ARM\PACK\Keil\STM32F7xx_DFP\2.4.0\Drivers\STM32F7xx_HAL_Driver\Inc
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F7xx_DFP\2.4.0\Drivers\STM32F7xx_HAL_Driver\Inc\stm32f7xx_hal_uart_ex.h)(0x56680A7A)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F7xx_DFP\2.4.0\Drivers\BSP\STM32746G-Discovery\stm32746g_discovery_sdram.h)(0x564AF7D8)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F7xx_DFP\2.4.0\MDK\Boards\ST\STM32F746G_Discovery\Common\GLCD_Config.h)(0x5593D6E0)
-I (C:\Keil_v5\ARM\PACK\Keil\MDK-Middleware\7.0.0\Board\Board_GLCD.h)(0x53BB84C2)
+I (.\Board_GLCD.h)(0x56DF3918)
 I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x569E5ABA)
 F (C:\Keil_v5\ARM\PACK\Keil\STM32F7xx_DFP\2.4.0\MDK\Boards\ST\STM32F746G_Discovery\Common\GLCD_Fonts.c)(0x55927624)(-c --cpu Cortex-M7.fp.sp -D__RTX -D__EVAL -g -O0 --apcs=interwork --split_sections -I . -I ..\ugfx_2.5 -I ..\ugfx_2.5\drivers\gdisp\STM32LTDC-I "C:\Users\Stuart\Documents\uVision Projects\Tetris uGFX\RTE"-I "C:\Users\Stuart\Documents\uVision Projects\Tetris uGFX\RTE\Device\STM32F746NGHx"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\RTOS\RTX\INC-I C:\Keil_v5\ARM\PACK\Keil\MDK-Middleware\7.0.0\Board-I C:\Keil_v5\ARM\PACK\Keil\STM32F7xx_DFP\2.4.0\Drivers\BSP\STM32746G-Discovery-I C:\Keil_v5\ARM\PACK\Keil\STM32F7xx_DFP\2.4.0\Drivers\CMSIS\Device\ST\STM32F7xx\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F7xx_DFP\2.4.0\Drivers\STM32F7xx_HAL_Driver\Inc-I C:\Keil_v5\ARM\PACK\Keil\STM32F7xx_DFP\2.4.0\MDK\Boards\ST\STM32F746G_Discovery\Common-D__UVISION_VERSION="518" -D_RTE_ -DSTM32F746xx-o .\objects\glcd_fonts.o --omf_browse .\objects\glcd_fonts.crf --depend .\objects\glcd_fonts.d)
-I (C:\Keil_v5\ARM\PACK\Keil\MDK-Middleware\7.0.0\Board\Board_GLCD.h)(0x53BB84C2)
+I (.\Board_GLCD.h)(0x56DF3918)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x569E5ABA)
 I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x569E5ABA)
 F (C:\Keil_v5\ARM\PACK\Keil\STM32F7xx_DFP\2.4.0\MDK\Boards\ST\STM32F746G_Discovery\Common\Touch_746G_Discovery.c)(0x55A35190)(-c --cpu Cortex-M7.fp.sp -D__RTX -D__EVAL -g -O0 --apcs=interwork --split_sections -I . -I ..\ugfx_2.5 -I ..\ugfx_2.5\drivers\gdisp\STM32LTDC-I "C:\Users\Stuart\Documents\uVision Projects\Tetris uGFX\RTE"-I "C:\Users\Stuart\Documents\uVision Projects\Tetris uGFX\RTE\Device\STM32F746NGHx"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\RTOS\RTX\INC-I C:\Keil_v5\ARM\PACK\Keil\MDK-Middleware\7.0.0\Board-I C:\Keil_v5\ARM\PACK\Keil\STM32F7xx_DFP\2.4.0\Drivers\BSP\STM32746G-Discovery-I C:\Keil_v5\ARM\PACK\Keil\STM32F7xx_DFP\2.4.0\Drivers\CMSIS\Device\ST\STM32F7xx\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F7xx_DFP\2.4.0\Drivers\STM32F7xx_HAL_Driver\Inc-I C:\Keil_v5\ARM\PACK\Keil\STM32F7xx_DFP\2.4.0\MDK\Boards\ST\STM32F746G_Discovery\Common-D__UVISION_VERSION="518" -D_RTE_ -DSTM32F746xx-o .\objects\touch_746g_discovery.o --omf_browse .\objects\touch_746g_discovery.crf --depend .\objects\touch_746g_discovery.d)

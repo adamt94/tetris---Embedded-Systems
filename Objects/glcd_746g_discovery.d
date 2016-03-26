@@ -36,5 +36,5 @@
 .\objects\glcd_746g_discovery.o: C:\Keil_v5\ARM\PACK\Keil\STM32F7xx_DFP\2.4.0\Drivers\STM32F7xx_HAL_Driver\Inc\stm32f7xx_hal_uart_ex.h
 .\objects\glcd_746g_discovery.o: C:\Keil_v5\ARM\PACK\Keil\STM32F7xx_DFP\2.4.0\Drivers\BSP\STM32746G-Discovery\stm32746g_discovery_sdram.h
 .\objects\glcd_746g_discovery.o: C:\Keil_v5\ARM\PACK\Keil\STM32F7xx_DFP\2.4.0\MDK\Boards\ST\STM32F746G_Discovery\Common\GLCD_Config.h
-.\objects\glcd_746g_discovery.o: C:\Keil_v5\ARM\PACK\Keil\MDK-Middleware\7.0.0\Board\Board_GLCD.h
+.\objects\glcd_746g_discovery.o: .\Board_GLCD.h
 .\objects\glcd_746g_discovery.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h

@@ -27,21 +27,27 @@ Project File Date:  03/25/2016
 <h2>Output:</h2>
 *** Using Compiler 'V5.06 update 1 (build 61)', folder: 'C:\Keil_v5\ARM\ARMCC\Bin'
 Build target 'Target 1'
-compiling main.c...
+compiling block.c...
 globals.h(55): warning:  #1-D: last line of file ends without a newline
   #endif	/* GLOBALS_H */
+block.h(12): warning:  #1295-D: Deprecated declaration rotateBlock - give arg types
+  void rotateBlock();
 setup.h(7): warning:  #1295-D: Deprecated declaration randomBlock - give arg types
   Block* randomBlock();
 setup.h(8): warning:  #1295-D: Deprecated declaration makeBlock - give arg types
   Block* makeBlock();
-block.h(12): warning:  #1295-D: Deprecated declaration rotateBlock - give arg types
-  void rotateBlock();
-main.c(101): warning:  #177-D: variable "score" was declared but never referenced
-    int score;
-main.c: 5 warnings, 0 errors
+block.c(29): warning:  #177-D: variable "i" was declared but never referenced
+      int i, j;
+block.c(29): warning:  #177-D: variable "j" was declared but never referenced
+      int i, j;
+block.c(41): warning:  #940-D: missing return statement at end of non-void function "validMove"
+  }
+block.c(105): warning:  #1-D: last line of file ends without a newline
+  }
+block.c: 8 warnings, 0 errors
 linking...
-Program Size: Code=27760 RO-data=896 RW-data=216 ZI-data=307720  
-".\Objects\Tetris uGFX.axf" - 0 Error(s), 5 Warning(s).
+Program Size: Code=28336 RO-data=908 RW-data=228 ZI-data=307756  
+".\Objects\Tetris uGFX.axf" - 0 Error(s), 8 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -200,7 +206,7 @@ Package Vendor: Keil
       Include file:  MDK\Boards\ST\STM32F746G_Discovery\Common\GLCD_Config.h
       Source file:   MDK\Boards\ST\STM32F746G_Discovery\Common\GLCD_Fonts.c
       Source file:   MDK\Boards\ST\STM32F746G_Discovery\Common\GLCD_746G_Discovery.c
-Build Time Elapsed:  00:00:01
+Build Time Elapsed:  00:00:00
 </pre>
 </body>
 </html>

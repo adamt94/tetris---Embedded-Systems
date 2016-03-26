@@ -35,6 +35,10 @@ Block *nextPiece;
 //Size of the blocks used
 const int BLOCK_SIZE = 10;
 
+//Touch screen status
+TOUCH_STATE  tsc_state;
+bool stillPressed = false;
+
 /**
   * System Clock Configuration
   *   System Clock source            = PLL (HSE)
@@ -102,13 +106,14 @@ int main (void) {
   CPU_CACHE_Enable();                       /* Enable the CPU Cache           */
   HAL_Init();                               /* Initialize the HAL Library     */
   BSP_SDRAM_Init();                         /* Initialize BSP SDRAM           */
-  SystemClock_Config();                     /* Configure the System Clock     */
+ SystemClock_Config();                     /* Configure the System Clock     */
 
 	//Set up touchscreen hardware
   Touch_Initialize();
 	//Set up GLCD hardware
 	GLCD_Initialize ();
-  //GLCD_ClearScreen ();
+	GLCD_FrameBufferAccess(true);
+ // GLCD_ClearScreen ();
 
 	//gfxInit must be called after setting up hardware above
 	gfxInit();																	/* Initialise uGFX library */
@@ -129,21 +134,32 @@ int main (void) {
 
     //Main game loop
     while (state == GameRunning) {
-      
-        //      Get user input  (possible target for threading)
-        //      Modify current moving block
-        //      Update game state
-        //      Display to screen (possible target for threading)
-
-			// Clear the old position
-    	gdispClear(White);
+			
+			// Clear the previous display
+			eraseBlock();
+			
+			//Apply changes to the block
+			Touch_GetState (&tsc_state); /* Get touch state */
+			if(tsc_state.pressed == true && stillPressed == false){
+				stillPressed = true;
+				attemptMove('D');
+				rotateBlock();
+			}
+			
+			// Is the touch screen still being pressed from the previous loop? (prevent rotating multiple times from one touch)
+			if(tsc_state.pressed == false){
+				stillPressed = false;
+			}
+			
+			updateBlock();
+			
+			// Print the game screen
 			printTetrisBucket();
-			rotateBlock();
 			
-			wait_delay(1000); //Sleep for 10 milliseconds
 			
-			updateBlock();				//
-     // checkForFullRows(); //checks for full rows
+			wait_delay(1000); //Sleep for a short duration
+			
+			checkForFullRows(); //checks for full rows
 
 			
 			

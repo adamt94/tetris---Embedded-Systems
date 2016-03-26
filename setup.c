@@ -60,8 +60,16 @@ Block* makeBlock() {
 
     //Size of the block's visual representation
     temp->size = 3;
+		
+    //Set up the char array for the shape of the block
+    setRandomBlockGraphic(temp);
     
-    choice = rand() % 7;
+    return temp;
+}
+
+void setRandomBlockGraphic(Block *temp){
+	int choice;
+		choice = rand() % 7;
 		
 		//Set blockID to the block type
     temp->blockID = choice;
@@ -117,11 +125,6 @@ Block* makeBlock() {
             );
             break;
     }
-
-    //Set up the char array for the shape of the block
-    
-    
-    return temp;
 }
 
 void setBlockGraphic(Block *temp, int argc, ...) {

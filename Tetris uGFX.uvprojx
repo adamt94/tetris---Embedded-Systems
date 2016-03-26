@@ -401,14 +401,14 @@
               <FilePath>.\gameLoop.c</FilePath>
             </File>
             <File>
-              <FileName>output.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\output.c</FilePath>
-            </File>
-            <File>
               <FileName>setup.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\setup.c</FilePath>
+            </File>
+            <File>
+              <FileName>output.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\output.c</FilePath>
             </File>
           </Files>
         </Group>
