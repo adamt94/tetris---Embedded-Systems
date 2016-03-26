@@ -9,6 +9,7 @@
 #include "main.h"
 #include "stdlib.h"
 #include "globals.h"
+#include "gameLoop.h"
 #include "output.h"
 #include "setup.h"
 #include "block.h"
@@ -168,7 +169,7 @@ int main (void) {
 				if((HAL_GetTick()-initTime)<5000&&initTime!=0){
 						//attemptMove('R');
 						attemptMove('D');
-			    	rotateBlock();
+			    	//rotateBlock();
 					  initTime = 0;
 				}
 			}
@@ -204,7 +205,9 @@ int main (void) {
 			
 			wait_delay(1000); //Sleep for a short duration
 			
-			checkForFullRows(); //checks for full rows
+			if(checkForFullRows() == 1){
+					gdispClear(White);
+			} //checks for full rows
 
 				}
 }

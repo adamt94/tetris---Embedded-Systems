@@ -16,6 +16,7 @@ int checkUserInput(){
 // Checks each row to see if any are full and need clearing, will add points and rebuild screen (move blocks down) if any are
 int checkForFullRows(){
     int fullRow = 1;
+	int anyCleared = 0;
     int i, j, a, b;
     //For bucket height
     for(i = 0; i < bucket.height - 1; i++){
@@ -28,6 +29,7 @@ int checkForFullRows(){
         }
         //If all cells in line have been considered and line is full
         if(fullRow == 1){
+					anyCleared = 1;
             //Update score
             //For every line above this
             for(a = i; a > 0; a--){
@@ -41,4 +43,6 @@ int checkForFullRows(){
         //Reset check to 1 in preparation for checking next line
         fullRow = 1;
     }
+		
+		return anyCleared;
 }
