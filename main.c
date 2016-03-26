@@ -33,7 +33,7 @@ Block *currentPiece;
 Block *nextPiece;
 
 //Size of the blocks used
-const int BLOCK_SIZE = 10;
+const int BLOCK_SIZE = 15;
 
 //Touch screen status
 TOUCH_STATE  tsc_state;
@@ -112,7 +112,6 @@ int main (void) {
   Touch_Initialize();
 	//Set up GLCD hardware
 	GLCD_Initialize ();
-	GLCD_FrameBufferAccess(true);
  // GLCD_ClearScreen ();
 
 	//gfxInit must be called after setting up hardware above
@@ -124,13 +123,11 @@ int main (void) {
        // printf("Initialisation\n");
         //Will show start menu here, allow user to select singleplayer or multiplayer
         //Set up new game variables
-
-        initialiseNewGame(10, 20);
+        initialiseNewGame(20, 14);
 
         state = GameRunning;
 
     }
-
 
     //Main game loop
     while (state == GameRunning) {

@@ -48,16 +48,16 @@ int checkForCollision(Block *block) {
             //If currently considered cell in graphic isn't blank
             if (block->graphic[i][j] != ' ') {
                 //If cell within bucket boundaries
-                if ((block->x + j) > bucket.x - 1 &&
-                        (block->x + j) < (bucket.x + bucket.width) &&
-                        (block->y + i) > bucket.y - 1 &&
-                        (block->y + i) < (bucket.y + bucket.height)) {
+                if ((j) > 0 - 1 &&
+                        (j) < (bucket.width) &&
+                        (i) > 0 - 1 &&
+                        (i) < (bucket.height)) {
 
                     //Check for collision with block in bucket
-                    int test = block->y + i - bucket.y;
-                    int test2 = block->x + j - bucket.x;
+                    int test = block->y + i;
+                    int test2 = block->x + j;
             //        mvprintw(10, 10, "test %d %d", test, test2);
-                    if (bucket.bucket[test][test2].value != ' ') {
+                    if (bucket.bucket[test][test2] != ' ') {
                         return 1;
                     }
                 }
@@ -94,11 +94,12 @@ int attemptMove(char move) {
         for (i = 0; i < currentPiece->size; i++) {
             for (j = 0; j < currentPiece->size; j++) {
                 if (currentPiece->graphic[i][j] != ' ')
-                    bucket.bucket[i + currentPiece->y][j + currentPiece->x].value = currentPiece->graphic[i][j];
+                    bucket.bucket[i + currentPiece->y][j + currentPiece->x] = currentPiece->blockID;
+										//bucket.bucket[i + currentPiece->y][j + currentPiece->x].color = currentPiece->blockID;
             }
         }
 				currentPiece->x = 3;
-				currentPiece->y = 3;
+				currentPiece->y = 0;
 				setRandomBlockGraphic(currentPiece);
     }
     return 1;

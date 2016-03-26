@@ -22,7 +22,7 @@ int checkForFullRows(){
         //For bucket width
         for(j = 0; j < bucket.width; j++){
             //If any character in this row is empty, the line can't be full
-            if(bucket.bucket[i][j].value == ' '){
+            if(bucket.bucket[i][j] == ' '){
                 fullRow = 0;
             }
         }
@@ -33,7 +33,7 @@ int checkForFullRows(){
             for(a = i; a > 0; a--){
                 for(b = 0; b < bucket.width; b++){
                     //Move the blocks down by one
-                    bucket.bucket[a][b].value = bucket.bucket[a - 1][b].value;
+                    bucket.bucket[a][b] = bucket.bucket[a - 1][b];
                 }
             }
         }

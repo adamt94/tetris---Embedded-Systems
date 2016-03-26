@@ -2,8 +2,8 @@
 ".\objects\main.o"
 ".\objects\block.o"
 ".\objects\gameloop.o"
-".\objects\output.o"
 ".\objects\setup.o"
+".\objects\output.o"
 ".\objects\gfx_mk.o"
 ".\objects\gdisp_lld_stm32ltdc.o"
 ".\objects\ft5336.o"
@@ -34,6 +34,7 @@
 ".\objects\stm32f7xx_ll_fmc.o"
 ".\objects\startup_stm32f746xx.o"
 ".\objects\system_stm32f7xx.o"
---ro-base 0x08000000 --entry 0x08000000 --rw-base 0x20010000 --entry Reset_Handler --first __Vectors --strict --summary_stderr --info summarysizes --map --xref --callgraph --symbols
+--strict --scatter ".\Objects\Tetris uGFX.sct"
+--summary_stderr --info summarysizes --map --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers
 --list ".\Listings\Tetris uGFX.map" -o ".\Objects\Tetris uGFX.axf"

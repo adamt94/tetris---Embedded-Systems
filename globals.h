@@ -17,19 +17,11 @@ typedef enum Move {
     DOWN
 } Move;
 
-//A container for a piece in the Tetris game space
-//  ie. "X" = a Block, " " = an empty space in board
-//  Using a struct in case there's the opportunity to add colour later
-
-typedef struct Cell {
-    char value;
-} Cell;
-
 //The "Bucket" where pieces are placed
 //  A bucket contains a bunch of containers, which hold information about piece locations
 
 typedef struct Bucket {
-    Cell **bucket;
+    char **bucket;
     int height;
     int width;
     int x, y; //Position of bucket on screen

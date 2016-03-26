@@ -4,7 +4,7 @@
 #include "setup.h"
 
 void initialiseNewGame(int width, int height) {
-    srand(5);
+    srand(25);
     bucket = makeBucket(width, height);
     currentPiece = makeBlock();
 }
@@ -17,13 +17,13 @@ Bucket makeBucket(int width, int height) {
     newBucket.width = width;
 
     //Attempt to allocate space for array of containers to bucket
-    if ((newBucket.bucket = calloc(height, sizeof (struct Cell*))) ==
+    if ((newBucket.bucket = calloc(height, sizeof (char*))) ==
             NULL) {
       //  printf("\nFailed to allocate memory for bucket...\n");
         exit(1);
     }
     for (i = 0; i < height; i++) {
-        if ((newBucket.bucket[i] = calloc(width, sizeof (struct Cell)))
+        if ((newBucket.bucket[i] = calloc(width, sizeof (char)))
                 == NULL) {
          //  printf("\nFailed to allocate memory for bucket[]...\n");
             exit(1);
@@ -31,9 +31,9 @@ Bucket makeBucket(int width, int height) {
 
         for (j = 0; j < width; j++) {
             if (i == height - 1 || j == 0 || j == width - 1) {
-                newBucket.bucket[i][j].value = '#';
+                newBucket.bucket[i][j] = '#';
             } else {
-                newBucket.bucket[i][j].value = ' ';
+                newBucket.bucket[i][j] = ' ';
             }
 
         }
@@ -56,7 +56,7 @@ Block* makeBlock() {
         
     //Placement of block at spawn
     temp->x = 3;
-    temp->y = 3;
+    temp->y = 0;
 
     //Size of the block's visual representation
     temp->size = 3;
