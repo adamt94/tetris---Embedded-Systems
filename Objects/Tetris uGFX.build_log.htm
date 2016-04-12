@@ -27,20 +27,20 @@ Project File Date:  03/26/2016
 <h2>Output:</h2>
 *** Using Compiler 'V5.06 update 1 (build 61)', folder: 'C:\Keil_v5\ARM\ARMCC\Bin'
 Build target 'Target 1'
-compiling main.c...
+compiling setup.c...
 globals.h(47): warning:  #1-D: last line of file ends without a newline
   #endif	/* GLOBALS_H */
 setup.h(7): warning:  #1295-D: Deprecated declaration randomBlock - give arg types
   Block* randomBlock();
 setup.h(8): warning:  #1295-D: Deprecated declaration makeBlock - give arg types
   Block* makeBlock();
-block.h(12): warning:  #1295-D: Deprecated declaration rotateBlock - give arg types
-  void rotateBlock();
-main.c(124): warning:  #177-D: variable "score" was declared but never referenced
-    int score;
-main.c: 5 warnings, 0 errors
+setup.c(48): warning:  #177-D: variable "choice" was declared but never referenced
+  	  int choice;
+setup.c(149): warning:  #1-D: last line of file ends without a newline
+  }
+setup.c: 5 warnings, 0 errors
 linking...
-Program Size: Code=28344 RO-data=908 RW-data=228 ZI-data=307756  
+Program Size: Code=28836 RO-data=960 RW-data=252 ZI-data=313540  
 ".\Objects\Tetris uGFX.axf" - 0 Error(s), 5 Warning(s).
 
 <h2>Software Packages used:</h2>
@@ -200,7 +200,7 @@ Package Vendor: Keil
       Include file:  MDK\Boards\ST\STM32F746G_Discovery\Common\GLCD_Config.h
       Source file:   MDK\Boards\ST\STM32F746G_Discovery\Common\GLCD_Fonts.c
       Source file:   MDK\Boards\ST\STM32F746G_Discovery\Common\GLCD_746G_Discovery.c
-Build Time Elapsed:  00:00:02
+Build Time Elapsed:  00:00:01
 </pre>
 </body>
 </html>

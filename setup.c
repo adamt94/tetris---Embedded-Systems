@@ -70,7 +70,6 @@ Block* makeBlock() {
 void setRandomBlockGraphic(Block *temp){
 	int choice;
 		choice = rand() % 7;
-	choice = 6;
 		
 		//Set blockID to the block type
     temp->blockID = choice + 1;

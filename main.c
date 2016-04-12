@@ -101,76 +101,56 @@ static void CPU_CACHE_Enable (void) {
  *      Thread 1 'taskGLCD':   
  *--------------------------------------------------*/
 void taskGLCD (void const *argument) {
+	for(;;){
+		osMutexWait(mut_GLCD, osWaitForever);		//Attempt to acquire GLCD mutex
+		//Erase the block's last position
+		eraseBlock();
+		//Print the tetris bucket
+		printTetrisBucket();
+		//Clear bucket if there is a full row
+		if(checkForFullRows() == 1){
+					gdispClear(White);
+			}
+		osMutexRelease(mut_GLCD);	//Release control of GLCD
+		//Wait
+		osDelay(1000);
+	}
+	
 }
 
 /*--------------------------------------------------
  *      Thread 2 'taskGameLogic':   
  *--------------------------------------------------*/
-void taskBall (void const *argument) {
+void taskGameLogic (void const *argument) {
+	
+	for(;;){
+		//Make the block fall one position
+		attemptMove('D');
+		//Wait for one second
+		osDelay(10000);
+	}
 }
 
 /*--------------------------------------------------
  *      Thread 3 'taskInput':   
  *--------------------------------------------------*/
-void taskADC (void const *argument) {
-}
-
-/*********************************************************************
-*
-*       Main
-*/
-int main (void) {
-	GameState state = GameInit;
-  int score;
+void taskInput (void const *argument) {
 	int initXpos;																/* initial screen touch x pos*/
 	int initTime = 0;																/* initial time on touch */
-  CPU_CACHE_Enable();                       /* Enable the CPU Cache          */
-  HAL_Init();                               				 /* Initialize the HAL Library     		*/
-  BSP_SDRAM_Init();                        	 /* Initialize BSP SDRAM           	*/
-  SystemClock_Config();                      /* Configure the System Clock  */
-
-	//Set up touchscreen hardware
-  Touch_Initialize();
-	//Set up GLCD hardware
-	GLCD_Initialize ();
- // GLCD_ClearScreen ();
-
-	//gfxInit must be called after setting up hardware above
-	gfxInit();																	/* Initialise uGFX library */
-
-	 gdispClear(White);											/* Use given colour to clear screen (set background) */
-	//gdispFillArea(20, 20, 200, 200, Blue);		/* Draw a rectangle filled with specified colour */
-	 while (state == GameInit) {
-       // printf("Initialisation\n");
-        //Will show start menu here, allow user to select singleplayer or multiplayer
-        //Set up new game variables
-        initialiseNewGame(11, 17);
-
-        state = GameRunning;
-
-    }
-
-    //Main game loop
-    while (state == GameRunning) {
-			
-			// Clear the previous display
-			eraseBlock();
-			
-			//Apply changes to the block
-			Touch_GetState (&tsc_state); /* Get touch state */
-			if(tsc_state.pressed == true && stillPressed == false){
+	for(;;){
+		//Apply changes to the block
+		Touch_GetState (&tsc_state); /* Get touch state */
+		if(tsc_state.pressed == true && stillPressed == false){
 				stillPressed = true;
 				initXpos = tsc_state.x; // gets the  x pos when pressed
 				initTime = HAL_GetTick(); //gets the  time when pressed
 			}
-			
+				
 			//rotate if the press lasted for half sec
 			if(tsc_state.pressed ==false){
 				if((HAL_GetTick()-initTime)<5000&&initTime!=0){
-						//attemptMove('R');
-						attemptMove('D');
-			    	//rotateBlock();
-					  initTime = 0;
+						rotateBlock();
+						initTime = 0;
 				}
 			}
 			
@@ -197,17 +177,48 @@ int main (void) {
 				stillPressed = false;
 			}
 			
-			updateBlock();
-			
-			// Print the game screen
-			printTetrisBucket();
-			
-			
-			wait_delay(1000); //Sleep for a short duration
-			
-			if(checkForFullRows() == 1){
-					gdispClear(White);
-			} //checks for full rows
+			osDelay(100);
+		}
+}
 
-				}
+/*********************************************************************
+*
+*       Main
+*/
+int main (void) {
+	GameState state = GameInit;
+  int score;
+  CPU_CACHE_Enable();                       /* Enable the CPU Cache          */
+  HAL_Init();                               				 /* Initialize the HAL Library     		*/
+  BSP_SDRAM_Init();                        	 /* Initialize BSP SDRAM           	*/
+  SystemClock_Config();                      /* Configure the System Clock  */
+
+	//Set up touchscreen hardware
+  Touch_Initialize();
+	//Set up GLCD hardware
+	GLCD_Initialize ();
+ // GLCD_ClearScreen ();
+
+	//gfxInit must be called after setting up hardware above
+	gfxInit();																	/* Initialise uGFX library */
+
+	 gdispClear(White);											/* Use given colour to clear screen (set background) */
+	//gdispFillArea(20, 20, 200, 200, Blue);		/* Draw a rectangle filled with specified colour */
+	 while (state == GameInit) {
+       // printf("Initialisation\n");
+        //Will show start menu here, allow user to select singleplayer or multiplayer
+        //Set up new game variables
+        initialiseNewGame(11, 17);
+
+        state = GameRunning;
+
+    }
+	 //Create thread instances
+		tid_taskGLCD = osThreadCreate(osThread(taskGLCD), NULL);
+		tid_taskInput = osThreadCreate(osThread(taskInput), NULL);
+		tid_taskGameLogic = osThreadCreate(osThread(taskGameLogic), NULL);
+    
+		osDelay(osWaitForever);
+		while(1)
+			;
 }

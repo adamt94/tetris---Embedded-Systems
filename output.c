@@ -6,6 +6,8 @@
 #include "output.h"
 //color for each Tetris shape
 const color_t   tetrisShapeColors[7] = {Green, Yellow, Red, Blue, Magenta, SkyBlue, Orange}; 
+int lastDrawnX = 0;
+int lastDrawnY = 0;
 // Prints the static blocks and moving block to screen
 
 void printTetrisBucket() {
@@ -46,6 +48,10 @@ void printTetrisBucket() {
 
         }
     }
+		
+		//Set last drawn block coordinates (for purposes of erasing display)
+		lastDrawnX = currentPiece->x;
+		lastDrawnY = currentPiece->y;
 
 
 }
@@ -57,7 +63,7 @@ void eraseBlock(){
     for (i = 0; i < currentPiece->size; i++) {
         for (j = 0; j < currentPiece->size; j++) {
             //If this isn't a blank char then print it
-								gdispFillArea(((bucket.x + (currentPiece->x * BLOCK_SIZE))+(j*BLOCK_SIZE)),(((bucket.y) + (currentPiece->y* BLOCK_SIZE))+(i*BLOCK_SIZE)),BLOCK_SIZE, BLOCK_SIZE, White);
+								gdispFillArea(((bucket.x + (lastDrawnX * BLOCK_SIZE))+(j*BLOCK_SIZE)),(((bucket.y) + (lastDrawnY* BLOCK_SIZE))+(i*BLOCK_SIZE)),BLOCK_SIZE, BLOCK_SIZE, White);
 
         }
     }
