@@ -1,10 +1,12 @@
 ===============adam==================
+
 - leaderboard, previous block, score, main menu
 - touch controls (delay times), button buttons, drop block
 
 
 
-===========stuart
+===========stuart===========
+
 - collision agaisnt walls
 - rotation
 - score
