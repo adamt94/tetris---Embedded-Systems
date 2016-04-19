@@ -102,8 +102,19 @@
 //    #define GDISP_INCLUDE_FONT_DEJAVUSANS32_AA       FALSE
 //    #define GDISP_INCLUDE_FONT_DEJAVUSANSBOLD12_AA   FALSE
 //    #define GDISP_INCLUDE_USER_FONTS                 FALSE
+/********************************************************/
+/* Font stuff                                           */
+/********************************************************/
+//#define GDISP_NEED_TEXT TRUE
+//#define GDISP_NEED_ANTIALIAS FALSE
+//#define GDISP_NEED_TEXT_KERNING FALSE
+//#define GDISP_NEED_UTF8 FALSE
+//#define GDISP_INCLUDE_USER_FONTS FALSE
+//#define GDISP_NEED_IMAGE   FALSE
+/********************************************************/
+/* GFILE stuff                                          */
+/********************************************************/
 
-//#define GDISP_NEED_IMAGE                             FALSE
 //    #define GDISP_NEED_IMAGE_NATIVE                  FALSE
 //    #define GDISP_NEED_IMAGE_GIF                     FALSE
 //    #define GDISP_NEED_IMAGE_BMP                     FALSE
@@ -169,7 +180,13 @@
 //    #define GDISP_DONT_WAIT_FOR_NET_DISPLAY          FALSE
 //    #define GDISP_GFXNET_UNSAFE_SOCKETS              FALSE
 
+/********************************************************/
+/* GFILE stuff                                          */
+/********************************************************/
+#define GFX_USE_GFILE FALSE
 
+#define GFILE_NEED_NATIVEFS TRUE
+#define GFILE_NEED_ROMFS FALSE
 ///////////////////////////////////////////////////////////////////////////
 // GWIN                                                                  //
 ///////////////////////////////////////////////////////////////////////////
@@ -221,6 +238,12 @@
   //  #define GWIN_NEED_FRAME                          TRUE
 //    #define GWIN_NEED_TABSET                         FALSE
 //        #define GWIN_TABSET_TABHEIGHT                18
+
+/* Builtin Fonts */
+//#define GDISP_NEED_TEXT			TRUE
+//#define GDISP_INCLUDE_FONT_DEJAVUSANS12		TRUE
+//#define GDISP_INCLUDE_FONT_DEJAVUSANS16		TRUE
+//#define GDISP_NEED_ANTIALIAS				FALSE
 
 
 ///////////////////////////////////////////////////////////////////////////

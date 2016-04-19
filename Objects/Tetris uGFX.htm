@@ -3,7 +3,7 @@
 <title>Static Call Graph - [.\Objects\Tetris uGFX.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\Objects\Tetris uGFX.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060061: Last Updated: Tue Apr 12 12:16:33 2016
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060061: Last Updated: Tue Apr 19 10:43:38 2016
 <BR><P>
 <H3>Maximum Stack Usage =        360 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -2095,8 +2095,8 @@ Global Symbols
 <BR><BR>[Called By]<UL><LI><a href="#[ca]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OS_Tick_Handler
 </UL>
 
-<P><STRONG><a name="[173]"></a>printTetrisBucket</STRONG> (Thumb, 356 bytes, Stack size 24 bytes, output.o(i.printTetrisBucket))
-<BR><BR>[Stack]<UL><LI>Max Depth = 68<LI>Call Chain = printTetrisBucket &rArr; gdispGFillArea &rArr; gdisp_lld_fill_area
+<P><STRONG><a name="[173]"></a>printTetrisBucket</STRONG> (Thumb, 516 bytes, Stack size 32 bytes, output.o(i.printTetrisBucket))
+<BR><BR>[Stack]<UL><LI>Max Depth = 76<LI>Call Chain = printTetrisBucket &rArr; gdispGFillArea &rArr; gdisp_lld_fill_area
 </UL>
 <BR>[Calls]<UL><LI><a href="#[133]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gdispGFillArea
 </UL>
@@ -2715,7 +2715,7 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[8b]"></a>taskGLCD</STRONG> (Thumb, 60 bytes, Stack size 0 bytes, main.o(i.taskGLCD))
-<BR><BR>[Stack]<UL><LI>Max Depth = 68<LI>Call Chain = taskGLCD &rArr; printTetrisBucket &rArr; gdispGFillArea &rArr; gdisp_lld_fill_area
+<BR><BR>[Stack]<UL><LI>Max Depth = 76<LI>Call Chain = taskGLCD &rArr; printTetrisBucket &rArr; gdispGFillArea &rArr; gdisp_lld_fill_area
 </UL>
 <BR>[Calls]<UL><LI><a href="#[173]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;printTetrisBucket
 <LI><a href="#[1a9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osMutexWait

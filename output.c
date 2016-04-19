@@ -26,7 +26,10 @@ void printTetrisBucket() {
 							if(bucket.bucket[i][j] == '#'){
 								gdispFillArea((bucket.x + (j*BLOCK_SIZE)), (bucket.y + (i*BLOCK_SIZE)), BLOCK_SIZE, BLOCK_SIZE, Black);
 							} else {
-								gdispFillArea((bucket.x + (j*BLOCK_SIZE)), (bucket.y + (i*BLOCK_SIZE)), BLOCK_SIZE, BLOCK_SIZE, tetrisShapeColors[bucket.bucket[i][j]]);
+								//padding
+								gdispFillArea((bucket.x + (j*BLOCK_SIZE)), (bucket.y + (i*BLOCK_SIZE)), BLOCK_SIZE, BLOCK_SIZE, White);
+								//shape
+								gdispFillArea((bucket.x + (j*BLOCK_SIZE)+1), (bucket.y + (i*BLOCK_SIZE)+1), BLOCK_SIZE-2, BLOCK_SIZE-2, tetrisShapeColors[bucket.bucket[i][j]]);
 							}
 							
 						}
@@ -41,8 +44,10 @@ void printTetrisBucket() {
             //If this isn't a blank char then print it
             if (currentPiece->graphic[i][j] != ' ') {
                // mvprintw(currentPiece->y + i, currentPiece->x + j, "%c", currentPiece->graphic[i][j]);
-					
-								gdispFillArea(((bucket.x + (currentPiece->x * BLOCK_SIZE))+(j*BLOCK_SIZE)),(((bucket.y) + (currentPiece->y* BLOCK_SIZE))+(i*BLOCK_SIZE)),BLOCK_SIZE, BLOCK_SIZE, tetrisShapeColors[currentPiece->blockID]);
+							//padding
+								gdispFillArea(((bucket.x + (currentPiece->x * BLOCK_SIZE))+(j*BLOCK_SIZE)),(((bucket.y) + (currentPiece->y* BLOCK_SIZE))+(i*BLOCK_SIZE)),BLOCK_SIZE, BLOCK_SIZE, White);
+							//shape
+								gdispFillArea(((bucket.x + (currentPiece->x * BLOCK_SIZE))+(j*BLOCK_SIZE)+1),(((bucket.y) + (currentPiece->y* BLOCK_SIZE))+(i*BLOCK_SIZE)+1),BLOCK_SIZE-2, BLOCK_SIZE-2, tetrisShapeColors[currentPiece->blockID]);
 							
             }
 
