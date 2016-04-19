@@ -31,10 +31,10 @@
 .\objects\output.o: ..\ugfx_2.5\src/gos/gos.h
 .\objects\output.o: ..\ugfx_2.5\src/gos/gos_keil.h
 .\objects\output.o: ..\ugfx_2.5\src/gos/gos_cmsis.h
-.\objects\output.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h
-.\objects\output.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\RTOS\RTX\INC\cmsis_os.h
-.\objects\output.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
-.\objects\output.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
+.\objects\output.o: C:\Keil_v5-18\ARM\ARMCC\Bin\..\include\stdbool.h
+.\objects\output.o: C:\Keil_v5-18\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\RTOS\RTX\INC\cmsis_os.h
+.\objects\output.o: C:\Keil_v5-18\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\output.o: C:\Keil_v5-18\ARM\ARMCC\Bin\..\include\stddef.h
 .\objects\output.o: ..\ugfx_2.5\src/gos/gos_x_heap.h
 .\objects\output.o: ..\ugfx_2.5\src/gfile/gfile.h
 .\objects\output.o: ..\ugfx_2.5\src/gfile/../../gfx.h

@@ -157,12 +157,12 @@ void taskInput (void const *argument) {
 			//move block right if swipped right
 			if(stillPressed == true){
 				if((tsc_state.x-initXpos)>50){
-					currentPiece->x +=1;
+					attemptMove('R');
 					initXpos = tsc_state.x;
 				}
 				//move block left if swipped left
 				if((tsc_state.x-initXpos)<-50){
-					currentPiece->x -=1;
+					attemptMove('L');
 					initXpos = tsc_state.x;
 				}
 				

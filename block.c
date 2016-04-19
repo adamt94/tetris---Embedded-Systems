@@ -56,7 +56,7 @@ int checkForCollision(Block *block) {
                     //Check for collision with block in bucket
                     int test = block->y + i;
                     int test2 = block->x + j;
-            //        mvprintw(10, 10, "test %d %d", test, test2);
+													
                     if (bucket.bucket[test][test2] != ' ') {
                         return 1;
                     }
@@ -84,13 +84,11 @@ int attemptMove(char move) {
         default:
             break;
     }
-
-    
     //If there isn't a collision make the move
     if (checkForCollision(&attempt) == 0) {
         currentPiece->x = attempt.x;
         currentPiece->y = attempt.y;
-    } else {
+    } else if (move == 'D'){
         for (i = 0; i < currentPiece->size; i++) {
             for (j = 0; j < currentPiece->size; j++) {
                 if (currentPiece->graphic[i][j] != ' ')

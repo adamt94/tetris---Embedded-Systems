@@ -32,10 +32,10 @@
 .\objects\gfx_mk.o: ..\ugfx_2.5\src\../src/gos/gos.h
 .\objects\gfx_mk.o: ..\ugfx_2.5\src\../src/gos/gos_keil.h
 .\objects\gfx_mk.o: ..\ugfx_2.5\src\../src/gos/gos_cmsis.h
-.\objects\gfx_mk.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h
-.\objects\gfx_mk.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\RTOS\RTX\INC\cmsis_os.h
-.\objects\gfx_mk.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
-.\objects\gfx_mk.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
+.\objects\gfx_mk.o: C:\Keil_v5-18\ARM\ARMCC\Bin\..\include\stdbool.h
+.\objects\gfx_mk.o: C:\Keil_v5-18\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\RTOS\RTX\INC\cmsis_os.h
+.\objects\gfx_mk.o: C:\Keil_v5-18\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\gfx_mk.o: C:\Keil_v5-18\ARM\ARMCC\Bin\..\include\stddef.h
 .\objects\gfx_mk.o: ..\ugfx_2.5\src\../src/gos/gos_x_heap.h
 .\objects\gfx_mk.o: ..\ugfx_2.5\src\../src/gfile/gfile.h
 .\objects\gfx_mk.o: ..\ugfx_2.5\src\../src/gfile/../../gfx.h
@@ -56,7 +56,7 @@
 .\objects\gfx_mk.o: ..\ugfx_2.5\src\gos/gos_chibios.c
 .\objects\gfx_mk.o: ..\ugfx_2.5\src\gos/gos_ecos.c
 .\objects\gfx_mk.o: ..\ugfx_2.5\src\gos/gos_freertos.c
-.\objects\gfx_mk.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+.\objects\gfx_mk.o: C:\Keil_v5-18\ARM\ARMCC\Bin\..\include\string.h
 .\objects\gfx_mk.o: ..\ugfx_2.5\src\gos/gos_linux.c
 .\objects\gfx_mk.o: ..\ugfx_2.5\src\gos/gos_osx.c
 .\objects\gfx_mk.o: ..\ugfx_2.5\src\gos/gos_raw32.c
