@@ -5,7 +5,7 @@
 #include "gfx.h"
 #include "output.h"
 //color for each Tetris shape
-const color_t   tetrisShapeColors[7] = {Green, Yellow, Red, Blue, Magenta, SkyBlue, Orange}; 
+const color_t   tetrisShapeColors[8] = {Lime, Yellow, Red, Blue, Magenta, SkyBlue, Orange,Lime}; 
 font_t          font16;
 int lastDrawnX = 0;
 int lastDrawnY = 0;

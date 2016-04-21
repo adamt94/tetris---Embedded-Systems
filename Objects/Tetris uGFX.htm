@@ -3,7 +3,7 @@
 <title>Static Call Graph - [.\Objects\Tetris uGFX.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\Objects\Tetris uGFX.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060061: Last Updated: Thu Apr 21 20:54:58 2016
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060061: Last Updated: Thu Apr 21 22:47:02 2016
 <BR><P>
 <H3>Maximum Stack Usage =        360 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -2929,7 +2929,7 @@ Global Symbols
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> main.o(.constdata)
 </UL>
-<P><STRONG><a name="[91]"></a>taskInput</STRONG> (Thumb, 148 bytes, Stack size 0 bytes, main.o(i.taskInput))
+<P><STRONG><a name="[91]"></a>taskInput</STRONG> (Thumb, 190 bytes, Stack size 0 bytes, main.o(i.taskInput))
 <BR><BR>[Stack]<UL><LI>Max Depth = 360<LI>Call Chain = taskInput &rArr; Touch_GetState &rArr; BSP_TS_GetState &rArr; ft5336_TS_GetTouchInfo &rArr; TS_IO_Read &rArr; I2Cx_ReadMultiple &rArr; HAL_I2C_Mem_Read &rArr; I2C_RequestMemoryRead &rArr; I2C_WaitOnTXISFlagUntilTimeout &rArr; I2C_IsAcknowledgeFailed
 </UL>
 <BR>[Calls]<UL><LI><a href="#[19d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rotateBlock

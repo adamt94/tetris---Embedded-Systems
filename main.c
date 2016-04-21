@@ -127,6 +127,7 @@ void taskGameLogic (void const *argument) {
 	for(;;){
 		//Make the block fall one position
 		attemptMove('D');
+		
 		//Wait for one second
 		osDelay(10000);
 	}
@@ -136,8 +137,10 @@ void taskGameLogic (void const *argument) {
  *      Thread 3 'taskInput':   
  *--------------------------------------------------*/
 void taskInput (void const *argument) {
-	int initXpos;																/* initial screen touch x pos*/
+	int initXpos;			/* initial screen touch x pos*/
 	int initTime = 0;																/* initial time on touch */
+	int delaymove = 0;
+	bool canmove = true;
 	for(;;){
 		//Apply changes to the block
 		Touch_GetState (&tsc_state); /* Get touch state */
@@ -149,27 +152,44 @@ void taskInput (void const *argument) {
 				
 			//rotate if the press lasted for half sec
 			if(tsc_state.pressed ==false){
-				if((HAL_GetTick()-initTime)<5000&&initTime!=0){
+				if((HAL_GetTick()-initTime)<8000&&initTime!=0){
 						rotateBlock();
 						initTime = 0;
 				}
 			}
 			
-			//move block right if swipped right
-			if(stillPressed == true){
-				if((tsc_state.x-initXpos)>50){
+//			//move block right if swipped right
+//			if(stillPressed == true){
+//				if((tsc_state.x-initXpos)>50){
+//					attemptMove('R');
+//					initXpos = tsc_state.x;
+//				}
+//				//move block left if swipped left
+//				if((tsc_state.x-initXpos)<-50){
+//					attemptMove('L');
+//					initXpos = tsc_state.x;
+//				}
+			
+				
+				
+				
+			//}
+			//counts to 20 to create delay when moving
+			delaymove +=1;
+			//check if not a touch and hold
+			if((HAL_GetTick()-initTime)>8000&&initTime!=0 && delaymove > 20){
+				delaymove = 0;
+				//check where on screen it was pressed and move block
+			if(((bucket.x + (currentPiece->x * BLOCK_SIZE)) > tsc_state.x) && tsc_state.pressed == true){
+				attemptMove('L');
+				}
+		  if(((bucket.x + (currentPiece->x * BLOCK_SIZE)) <tsc_state.x) &&tsc_state.pressed == true){
 					attemptMove('R');
-					initXpos = tsc_state.x;
+				
 				}
-				//move block left if swipped left
-				if((tsc_state.x-initXpos)<-50){
-					attemptMove('L');
-					initXpos = tsc_state.x;
-				}
-				
-				
-				
 			}
+			
+		
 			//moves block down
 			//attemptMove('D');
 			

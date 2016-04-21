@@ -41,6 +41,7 @@ Section Cross References
     main.o(i.taskInput) refers to block.o(i.attemptMove) for attemptMove
     main.o(i.taskInput) refers to rt_cmsis.o(i.osDelay) for osDelay
     main.o(i.taskInput) refers to main.o(.data) for tsc_state
+    main.o(i.taskInput) refers to main.o(.bss) for bucket
     main.o(.constdata) refers to main.o(.bss) for os_mutex_cb_mut_GLCD
     main.o(.constdata) refers to main.o(i.taskGLCD) for taskGLCD
     main.o(.constdata) refers to main.o(i.taskGameLogic) for taskGameLogic
@@ -2800,48 +2801,48 @@ Image Symbol Table
     i.taskGLCD                               0x08007d30   Section        0  main.o(i.taskGLCD)
     i.taskGameLogic                          0x08007d78   Section        0  main.o(i.taskGameLogic)
     i.taskInput                              0x08007d8c   Section        0  main.o(i.taskInput)
-    i.write_bin_codeword                     0x08007e28   Section        0  gfx_mk.o(i.write_bin_codeword)
-    write_bin_codeword                       0x08007e29   Thumb Code    92  gfx_mk.o(i.write_bin_codeword)
-    i.write_glyph_codeword                   0x08007e84   Section        0  gfx_mk.o(i.write_glyph_codeword)
-    write_glyph_codeword                     0x08007e85   Thumb Code    56  gfx_mk.o(i.write_glyph_codeword)
-    i.write_pixels                           0x08007ebc   Section        0  gfx_mk.o(i.write_pixels)
-    write_pixels                             0x08007ebd   Thumb Code   104  gfx_mk.o(i.write_pixels)
-    i.write_ref_codeword                     0x08007f24   Section        0  gfx_mk.o(i.write_ref_codeword)
-    write_ref_codeword                       0x08007f25   Thumb Code    80  gfx_mk.o(i.write_ref_codeword)
-    i.write_ref_dictentry                    0x08007f74   Section        0  gfx_mk.o(i.write_ref_dictentry)
-    write_ref_dictentry                      0x08007f75   Thumb Code    64  gfx_mk.o(i.write_ref_dictentry)
-    i.write_rle_dictentry                    0x08007fb4   Section        0  gfx_mk.o(i.write_rle_dictentry)
-    write_rle_dictentry                      0x08007fb5   Thumb Code   164  gfx_mk.o(i.write_rle_dictentry)
-    x$fpl$fpinit                             0x08008058   Section       10  fpinit.o(x$fpl$fpinit)
-    $v0                                      0x08008058   Number         0  fpinit.o(x$fpl$fpinit)
-    .constdata                               0x08008064   Section       56  main.o(.constdata)
-    .constdata                               0x0800809c   Section       28  output.o(.constdata)
-    .constdata                               0x080080b8   Section     3636  gfx_mk.o(.constdata)
-    mf_bwfont_DejaVuSans12_glyph_data_0      0x080080b8   Data        1372  gfx_mk.o(.constdata)
-    mf_bwfont_DejaVuSans12_glyph_offsets_0   0x08008614   Data         192  gfx_mk.o(.constdata)
-    mf_bwfont_DejaVuSans12_glyph_widths_0    0x080086d4   Data          95  gfx_mk.o(.constdata)
-    mf_bwfont_DejaVuSans12_char_ranges       0x08008734   Data          24  gfx_mk.o(.constdata)
-    mf_bwfont_DejaVuSans12_listentry         0x08008770   Data           8  gfx_mk.o(.constdata)
-    mf_rlefont_DejaVuSans16_dictionary_data  0x08008778   Data         247  gfx_mk.o(.constdata)
-    mf_rlefont_DejaVuSans16_dictionary_offsets 0x08008870   Data         176  gfx_mk.o(.constdata)
-    mf_rlefont_DejaVuSans16_glyph_data_0     0x08008920   Data        1166  gfx_mk.o(.constdata)
-    mf_rlefont_DejaVuSans16_glyph_offsets_0  0x08008dae   Data         190  gfx_mk.o(.constdata)
-    mf_rlefont_DejaVuSans16_char_ranges      0x08008e6c   Data          12  gfx_mk.o(.constdata)
-    mf_rlefont_DejaVuSans16_listentry        0x08008ea8   Data           8  gfx_mk.o(.constdata)
-    basegwinVMT                              0x08008eb0   Data          20  gfx_mk.o(.constdata)
-    GNullWindowManagerVMT                    0x08008ec4   Data          36  gfx_mk.o(.constdata)
-    .constdata                               0x08008eec   Section      208  gdisp_lld_stm32ltdc.o(.constdata)
-    driverCfg                                0x08008f4c   Data         104  gdisp_lld_stm32ltdc.o(.constdata)
-    fmt2Bpp                                  0x08008fb4   Data           8  gdisp_lld_stm32ltdc.o(.constdata)
-    .constdata                               0x08008fbc   Section       86  rtx_conf_cm.o(.constdata)
-    __tagsym$$used                           0x08008fd8   Number         0  rtx_conf_cm.o(.constdata)
-    __tagsym$$used                           0x08008fdc   Number         0  rtx_conf_cm.o(.constdata)
-    __tagsym$$used                           0x08008fe0   Number         0  rtx_conf_cm.o(.constdata)
-    __tagsym$$used                           0x08008fe4   Number         0  rtx_conf_cm.o(.constdata)
-    .constdata                               0x08009012   Section        8  stm32f7xx_hal_dma.o(.constdata)
-    flagBitshiftOffset                       0x08009012   Data           8  stm32f7xx_hal_dma.o(.constdata)
-    .constdata                               0x0800901a   Section       16  stm32f7xx_hal_rcc.o(.constdata)
-    .conststring                             0x0800902c   Section       77  gfx_mk.o(.conststring)
+    i.write_bin_codeword                     0x08007e5c   Section        0  gfx_mk.o(i.write_bin_codeword)
+    write_bin_codeword                       0x08007e5d   Thumb Code    92  gfx_mk.o(i.write_bin_codeword)
+    i.write_glyph_codeword                   0x08007eb8   Section        0  gfx_mk.o(i.write_glyph_codeword)
+    write_glyph_codeword                     0x08007eb9   Thumb Code    56  gfx_mk.o(i.write_glyph_codeword)
+    i.write_pixels                           0x08007ef0   Section        0  gfx_mk.o(i.write_pixels)
+    write_pixels                             0x08007ef1   Thumb Code   104  gfx_mk.o(i.write_pixels)
+    i.write_ref_codeword                     0x08007f58   Section        0  gfx_mk.o(i.write_ref_codeword)
+    write_ref_codeword                       0x08007f59   Thumb Code    80  gfx_mk.o(i.write_ref_codeword)
+    i.write_ref_dictentry                    0x08007fa8   Section        0  gfx_mk.o(i.write_ref_dictentry)
+    write_ref_dictentry                      0x08007fa9   Thumb Code    64  gfx_mk.o(i.write_ref_dictentry)
+    i.write_rle_dictentry                    0x08007fe8   Section        0  gfx_mk.o(i.write_rle_dictentry)
+    write_rle_dictentry                      0x08007fe9   Thumb Code   164  gfx_mk.o(i.write_rle_dictentry)
+    x$fpl$fpinit                             0x0800808c   Section       10  fpinit.o(x$fpl$fpinit)
+    $v0                                      0x0800808c   Number         0  fpinit.o(x$fpl$fpinit)
+    .constdata                               0x08008098   Section       56  main.o(.constdata)
+    .constdata                               0x080080d0   Section       32  output.o(.constdata)
+    .constdata                               0x080080f0   Section     3636  gfx_mk.o(.constdata)
+    mf_bwfont_DejaVuSans12_glyph_data_0      0x080080f0   Data        1372  gfx_mk.o(.constdata)
+    mf_bwfont_DejaVuSans12_glyph_offsets_0   0x0800864c   Data         192  gfx_mk.o(.constdata)
+    mf_bwfont_DejaVuSans12_glyph_widths_0    0x0800870c   Data          95  gfx_mk.o(.constdata)
+    mf_bwfont_DejaVuSans12_char_ranges       0x0800876c   Data          24  gfx_mk.o(.constdata)
+    mf_bwfont_DejaVuSans12_listentry         0x080087a8   Data           8  gfx_mk.o(.constdata)
+    mf_rlefont_DejaVuSans16_dictionary_data  0x080087b0   Data         247  gfx_mk.o(.constdata)
+    mf_rlefont_DejaVuSans16_dictionary_offsets 0x080088a8   Data         176  gfx_mk.o(.constdata)
+    mf_rlefont_DejaVuSans16_glyph_data_0     0x08008958   Data        1166  gfx_mk.o(.constdata)
+    mf_rlefont_DejaVuSans16_glyph_offsets_0  0x08008de6   Data         190  gfx_mk.o(.constdata)
+    mf_rlefont_DejaVuSans16_char_ranges      0x08008ea4   Data          12  gfx_mk.o(.constdata)
+    mf_rlefont_DejaVuSans16_listentry        0x08008ee0   Data           8  gfx_mk.o(.constdata)
+    basegwinVMT                              0x08008ee8   Data          20  gfx_mk.o(.constdata)
+    GNullWindowManagerVMT                    0x08008efc   Data          36  gfx_mk.o(.constdata)
+    .constdata                               0x08008f24   Section      208  gdisp_lld_stm32ltdc.o(.constdata)
+    driverCfg                                0x08008f84   Data         104  gdisp_lld_stm32ltdc.o(.constdata)
+    fmt2Bpp                                  0x08008fec   Data           8  gdisp_lld_stm32ltdc.o(.constdata)
+    .constdata                               0x08008ff4   Section       86  rtx_conf_cm.o(.constdata)
+    __tagsym$$used                           0x08009010   Number         0  rtx_conf_cm.o(.constdata)
+    __tagsym$$used                           0x08009014   Number         0  rtx_conf_cm.o(.constdata)
+    __tagsym$$used                           0x08009018   Number         0  rtx_conf_cm.o(.constdata)
+    __tagsym$$used                           0x0800901c   Number         0  rtx_conf_cm.o(.constdata)
+    .constdata                               0x0800904a   Section        8  stm32f7xx_hal_dma.o(.constdata)
+    flagBitshiftOffset                       0x0800904a   Data           8  stm32f7xx_hal_dma.o(.constdata)
+    .constdata                               0x08009052   Section       16  stm32f7xx_hal_rcc.o(.constdata)
+    .conststring                             0x08009064   Section       77  gfx_mk.o(.conststring)
     .data                                    0x20010000   Section       35  main.o(.data)
     .data                                    0x20010024   Section       12  output.o(.data)
     .data                                    0x20010030   Section       73  gfx_mk.o(.data)
@@ -3415,42 +3416,42 @@ Image Symbol Table
     sysTimerTick                             0x08007cd5   Thumb Code    84  rt_cmsis.o(i.sysTimerTick)
     taskGLCD                                 0x08007d31   Thumb Code    64  main.o(i.taskGLCD)
     taskGameLogic                            0x08007d79   Thumb Code    18  main.o(i.taskGameLogic)
-    taskInput                                0x08007d8d   Thumb Code   148  main.o(i.taskInput)
-    _fp_init                                 0x08008059   Thumb Code    10  fpinit.o(x$fpl$fpinit)
-    __fplib_config_fpu_vfp                   0x08008061   Thumb Code     0  fpinit.o(x$fpl$fpinit)
-    __fplib_config_pureend_doubles           0x08008061   Thumb Code     0  fpinit.o(x$fpl$fpinit)
-    os_mutex_def_mut_GLCD                    0x08008064   Data           4  main.o(.constdata)
-    os_thread_def_taskGLCD                   0x08008068   Data          16  main.o(.constdata)
-    os_thread_def_taskGameLogic              0x08008078   Data          16  main.o(.constdata)
-    os_thread_def_taskInput                  0x08008088   Data          16  main.o(.constdata)
-    BLOCK_SIZE                               0x08008098   Data           4  main.o(.constdata)
-    tetrisShapeColors                        0x0800809c   Data          28  output.o(.constdata)
-    mf_bwfont_DejaVuSans12                   0x0800874c   Data          36  gfx_mk.o(.constdata)
-    mf_rlefont_DejaVuSans16                  0x08008e78   Data          48  gfx_mk.o(.constdata)
-    GNullWindowManager                       0x08008ee8   Data           4  gfx_mk.o(.constdata)
-    GDISPVMT_OnlyOne                         0x08008eec   Data          96  gdisp_lld_stm32ltdc.o(.constdata)
-    os_maxtaskrun                            0x08008fbc   Data           2  rtx_conf_cm.o(.constdata)
-    os_stackinfo                             0x08008fc0   Data           4  rtx_conf_cm.o(.constdata)
-    os_rrobin                                0x08008fc4   Data           4  rtx_conf_cm.o(.constdata)
-    os_tickfreq                              0x08008fc8   Data           4  rtx_conf_cm.o(.constdata)
-    os_tickus_i                              0x08008fcc   Data           2  rtx_conf_cm.o(.constdata)
-    os_tickus_f                              0x08008fce   Data           2  rtx_conf_cm.o(.constdata)
-    os_trv                                   0x08008fd0   Data           4  rtx_conf_cm.o(.constdata)
-    os_flags                                 0x08008fd4   Data           1  rtx_conf_cm.o(.constdata)
-    CMSIS_RTOS_API_Version                   0x08008fd8   Data           4  rtx_conf_cm.o(.constdata)
-    CMSIS_RTOS_RTX_Version                   0x08008fdc   Data           4  rtx_conf_cm.o(.constdata)
-    os_clockrate                             0x08008fe0   Data           4  rtx_conf_cm.o(.constdata)
-    os_timernum                              0x08008fe4   Data           4  rtx_conf_cm.o(.constdata)
-    mp_tcb_size                              0x08008fe8   Data           2  rtx_conf_cm.o(.constdata)
-    mp_stk_size                              0x08008fec   Data           4  rtx_conf_cm.o(.constdata)
-    os_stack_sz                              0x08008ff0   Data           4  rtx_conf_cm.o(.constdata)
-    os_fifo_size                             0x08008ff4   Data           1  rtx_conf_cm.o(.constdata)
-    os_thread_def_osTimerThread              0x08008ff8   Data          16  rtx_conf_cm.o(.constdata)
-    os_messageQ_def_osTimerMessageQ          0x08009008   Data           8  rtx_conf_cm.o(.constdata)
-    mp_tmr_size                              0x08009010   Data           2  rtx_conf_cm.o(.constdata)
-    APBAHBPrescTable                         0x0800901a   Data          16  stm32f7xx_hal_rcc.o(.constdata)
-    Region$$Table$$Base                      0x0800907c   Number         0  anon$$obj.o(Region$$Table)
-    Region$$Table$$Limit                     0x0800909c   Number         0  anon$$obj.o(Region$$Table)
+    taskInput                                0x08007d8d   Thumb Code   190  main.o(i.taskInput)
+    _fp_init                                 0x0800808d   Thumb Code    10  fpinit.o(x$fpl$fpinit)
+    __fplib_config_fpu_vfp                   0x08008095   Thumb Code     0  fpinit.o(x$fpl$fpinit)
+    __fplib_config_pureend_doubles           0x08008095   Thumb Code     0  fpinit.o(x$fpl$fpinit)
+    os_mutex_def_mut_GLCD                    0x08008098   Data           4  main.o(.constdata)
+    os_thread_def_taskGLCD                   0x0800809c   Data          16  main.o(.constdata)
+    os_thread_def_taskGameLogic              0x080080ac   Data          16  main.o(.constdata)
+    os_thread_def_taskInput                  0x080080bc   Data          16  main.o(.constdata)
+    BLOCK_SIZE                               0x080080cc   Data           4  main.o(.constdata)
+    tetrisShapeColors                        0x080080d0   Data          32  output.o(.constdata)
+    mf_bwfont_DejaVuSans12                   0x08008784   Data          36  gfx_mk.o(.constdata)
+    mf_rlefont_DejaVuSans16                  0x08008eb0   Data          48  gfx_mk.o(.constdata)
+    GNullWindowManager                       0x08008f20   Data           4  gfx_mk.o(.constdata)
+    GDISPVMT_OnlyOne                         0x08008f24   Data          96  gdisp_lld_stm32ltdc.o(.constdata)
+    os_maxtaskrun                            0x08008ff4   Data           2  rtx_conf_cm.o(.constdata)
+    os_stackinfo                             0x08008ff8   Data           4  rtx_conf_cm.o(.constdata)
+    os_rrobin                                0x08008ffc   Data           4  rtx_conf_cm.o(.constdata)
+    os_tickfreq                              0x08009000   Data           4  rtx_conf_cm.o(.constdata)
+    os_tickus_i                              0x08009004   Data           2  rtx_conf_cm.o(.constdata)
+    os_tickus_f                              0x08009006   Data           2  rtx_conf_cm.o(.constdata)
+    os_trv                                   0x08009008   Data           4  rtx_conf_cm.o(.constdata)
+    os_flags                                 0x0800900c   Data           1  rtx_conf_cm.o(.constdata)
+    CMSIS_RTOS_API_Version                   0x08009010   Data           4  rtx_conf_cm.o(.constdata)
+    CMSIS_RTOS_RTX_Version                   0x08009014   Data           4  rtx_conf_cm.o(.constdata)
+    os_clockrate                             0x08009018   Data           4  rtx_conf_cm.o(.constdata)
+    os_timernum                              0x0800901c   Data           4  rtx_conf_cm.o(.constdata)
+    mp_tcb_size                              0x08009020   Data           2  rtx_conf_cm.o(.constdata)
+    mp_stk_size                              0x08009024   Data           4  rtx_conf_cm.o(.constdata)
+    os_stack_sz                              0x08009028   Data           4  rtx_conf_cm.o(.constdata)
+    os_fifo_size                             0x0800902c   Data           1  rtx_conf_cm.o(.constdata)
+    os_thread_def_osTimerThread              0x08009030   Data          16  rtx_conf_cm.o(.constdata)
+    os_messageQ_def_osTimerMessageQ          0x08009040   Data           8  rtx_conf_cm.o(.constdata)
+    mp_tmr_size                              0x08009048   Data           2  rtx_conf_cm.o(.constdata)
+    APBAHBPrescTable                         0x08009052   Data          16  stm32f7xx_hal_rcc.o(.constdata)
+    Region$$Table$$Base                      0x080090b4   Number         0  anon$$obj.o(Region$$Table)
+    Region$$Table$$Limit                     0x080090d4   Number         0  anon$$obj.o(Region$$Table)
     mut_GLCD                                 0x20010000   Data           4  main.o(.data)
     tid_taskGLCD                             0x20010004   Data           4  main.o(.data)
     tid_taskGameLogic                        0x20010008   Data           4  main.o(.data)
@@ -3504,9 +3505,9 @@ Memory Map of the image
 
   Image Entry point : 0x080001c9
 
-  Load Region LR_IROM1 (Base: 0x08000000, Size: 0x000091a4, Max: 0x00100000, ABSOLUTE)
+  Load Region LR_IROM1 (Base: 0x08000000, Size: 0x000091dc, Max: 0x00100000, ABSOLUTE)
 
-    Execution Region ER_IROM1 (Base: 0x08000000, Size: 0x0000909c, Max: 0x00100000, ABSOLUTE)
+    Execution Region ER_IROM1 (Base: 0x08000000, Size: 0x000090d4, Max: 0x00100000, ABSOLUTE)
 
     Base Addr    Size         Type   Attr      Idx    E Section Name        Object
 
@@ -3923,26 +3924,26 @@ Memory Map of the image
     0x08007d30   0x00000048   Code   RO            9    i.taskGLCD          main.o
     0x08007d78   0x00000012   Code   RO           10    i.taskGameLogic     main.o
     0x08007d8a   0x00000002   PAD
-    0x08007d8c   0x0000009c   Code   RO           11    i.taskInput         main.o
-    0x08007e28   0x0000005c   Code   RO          716    i.write_bin_codeword  gfx_mk.o
-    0x08007e84   0x00000038   Code   RO          717    i.write_glyph_codeword  gfx_mk.o
-    0x08007ebc   0x00000068   Code   RO          718    i.write_pixels      gfx_mk.o
-    0x08007f24   0x00000050   Code   RO          719    i.write_ref_codeword  gfx_mk.o
-    0x08007f74   0x00000040   Code   RO          720    i.write_ref_dictentry  gfx_mk.o
-    0x08007fb4   0x000000a4   Code   RO          721    i.write_rle_dictentry  gfx_mk.o
-    0x08008058   0x0000000a   Code   RO         6404    x$fpl$fpinit        fz_wm.l(fpinit.o)
-    0x08008062   0x00000002   PAD
-    0x08008064   0x00000038   Data   RO           13    .constdata          main.o
-    0x0800809c   0x0000001c   Data   RO          479    .constdata          output.o
-    0x080080b8   0x00000e34   Data   RO          723    .constdata          gfx_mk.o
-    0x08008eec   0x000000d0   Data   RO         2151    .constdata          gdisp_lld_stm32ltdc.o
-    0x08008fbc   0x00000056   Data   RO         2923    .constdata          rtx_conf_cm.o
-    0x08009012   0x00000008   Data   RO         3273    .constdata          stm32f7xx_hal_dma.o
-    0x0800901a   0x00000010   Data   RO         4196    .constdata          stm32f7xx_hal_rcc.o
-    0x0800902a   0x00000002   PAD
-    0x0800902c   0x0000004d   Data   RO          724    .conststring        gfx_mk.o
-    0x08009079   0x00000003   PAD
-    0x0800907c   0x00000020   Data   RO         6481    Region$$Table       anon$$obj.o
+    0x08007d8c   0x000000d0   Code   RO           11    i.taskInput         main.o
+    0x08007e5c   0x0000005c   Code   RO          716    i.write_bin_codeword  gfx_mk.o
+    0x08007eb8   0x00000038   Code   RO          717    i.write_glyph_codeword  gfx_mk.o
+    0x08007ef0   0x00000068   Code   RO          718    i.write_pixels      gfx_mk.o
+    0x08007f58   0x00000050   Code   RO          719    i.write_ref_codeword  gfx_mk.o
+    0x08007fa8   0x00000040   Code   RO          720    i.write_ref_dictentry  gfx_mk.o
+    0x08007fe8   0x000000a4   Code   RO          721    i.write_rle_dictentry  gfx_mk.o
+    0x0800808c   0x0000000a   Code   RO         6404    x$fpl$fpinit        fz_wm.l(fpinit.o)
+    0x08008096   0x00000002   PAD
+    0x08008098   0x00000038   Data   RO           13    .constdata          main.o
+    0x080080d0   0x00000020   Data   RO          479    .constdata          output.o
+    0x080080f0   0x00000e34   Data   RO          723    .constdata          gfx_mk.o
+    0x08008f24   0x000000d0   Data   RO         2151    .constdata          gdisp_lld_stm32ltdc.o
+    0x08008ff4   0x00000056   Data   RO         2923    .constdata          rtx_conf_cm.o
+    0x0800904a   0x00000008   Data   RO         3273    .constdata          stm32f7xx_hal_dma.o
+    0x08009052   0x00000010   Data   RO         4196    .constdata          stm32f7xx_hal_rcc.o
+    0x08009062   0x00000002   PAD
+    0x08009064   0x0000004d   Data   RO          724    .conststring        gfx_mk.o
+    0x080090b1   0x00000003   PAD
+    0x080090b4   0x00000020   Data   RO         6481    Region$$Table       anon$$obj.o
 
 
     Execution Region RW_IRAM1 (Base: 0x20010000, Size: 0x0000cdd0, Max: 0x00040000, ABSOLUTE)
@@ -4006,8 +4007,8 @@ Image component sizes
       2836        146        208          0          0      19539   gdisp_lld_stm32ltdc.o
       5528        184       3713         73      41040      85879   gfx_mk.o
        560         34          0          0     261288       2818   glcd_746g_discovery.o
-       740         68         56         35         36     509955   main.o
-       828         92         28         12          0       2793   output.o
+       792         78         56         35         36     510011   main.o
+       828         92         32         12          0       2793   output.o
        170         36         86         36       8784       9935   rtx_conf_cm.o
        556         20          0          0          0       4091   setup.o
         64         26        456          0       1536        872   startup_stm32f746xx.o
@@ -4029,7 +4030,7 @@ Image component sizes
         88          0          0          0          0       2096   touch_746g_discovery.o
 
     ----------------------------------------------------------------------
-     24446       1084       4608        224     313120     757327   Object Totals
+     24498       1094       4612        224     313120     757383   Object Totals
          0          0         32          0          0          0   (incl. Generated)
         40          0          5          6          4          0   (incl. Padding)
 
@@ -4123,15 +4124,15 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-     32412       1812       4608        264     313544     824059   Grand Totals
-     32412       1812       4608        264     313544     824059   ELF Image Totals
-     32412       1812       4608        264          0          0   ROM Totals
+     32464       1822       4612        264     313544     824115   Grand Totals
+     32464       1822       4612        264     313544     824115   ELF Image Totals
+     32464       1822       4612        264          0          0   ROM Totals
 
 ==============================================================================
 
-    Total RO  Size (Code + RO Data)                37020 (  36.15kB)
+    Total RO  Size (Code + RO Data)                37076 (  36.21kB)
     Total RW  Size (RW Data + ZI Data)            313808 ( 306.45kB)
-    Total ROM Size (Code + RO Data + RW Data)      37284 (  36.41kB)
+    Total ROM Size (Code + RO Data + RW Data)      37340 (  36.46kB)
 
 ==============================================================================
 
