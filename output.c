@@ -6,6 +6,7 @@
 #include "output.h"
 //color for each Tetris shape
 const color_t   tetrisShapeColors[7] = {Green, Yellow, Red, Blue, Magenta, SkyBlue, Orange}; 
+font_t          font16;
 int lastDrawnX = 0;
 int lastDrawnY = 0;
 // Prints the static blocks and moving block to screen
@@ -76,6 +77,19 @@ void eraseBlock(){
 // Displays the current score
 
 void printScoreWindow() {
+	char* str;
+	font16 =  gdispOpenFont("DejaVuSans16");
+	gdispDrawString(360, 20, "Score", font16, Black);
+ // gdispDrawLine(365, 40, 380, 20, Purple);
+	gdispFillArea(365, 35, 35, 1, Purple);
+	
+	
+ 
+  sprintf(str,"%d",Score);
+
+ 
+  
+	gdispDrawString(378, 42, str, font16, Purple);
 }
 // Displays the next incoming block
 

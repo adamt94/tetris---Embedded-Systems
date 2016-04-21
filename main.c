@@ -35,7 +35,7 @@ Block *nextPiece;
 
 //Size of the blocks used
 const int BLOCK_SIZE = 15;
-
+int Score = 0;
 //Touch screen status
 TOUCH_STATE  tsc_state;
 bool stillPressed = false;
@@ -107,6 +107,7 @@ void taskGLCD (void const *argument) {
 		eraseBlock();
 		//Print the tetris bucket
 		printTetrisBucket();
+		printScoreWindow();
 		//Clear bucket if there is a full row
 		if(checkForFullRows() == 1){
 					gdispClear(White);
@@ -187,8 +188,8 @@ void taskInput (void const *argument) {
 */
 int main (void) {
 	GameState state = GameInit;
-  int score;
-	//font_t          font16;
+  
+	
   CPU_CACHE_Enable();                       /* Enable the CPU Cache          */
   HAL_Init();                               				 /* Initialize the HAL Library     		*/
   BSP_SDRAM_Init();                        	 /* Initialize BSP SDRAM           	*/
@@ -202,9 +203,9 @@ int main (void) {
 
 	//gfxInit must be called after setting up hardware above
 	gfxInit();																	/* Initialise uGFX library */
-  //font16 =  gdispOpenFont("DejaVuSans16");
+ 
 	 gdispClear(White);											/* Use given colour to clear screen (set background) */
-	//gdispDrawString(200, 200, "Score", font16, Black);
+	
 	//gdispFillArea(20, 20, 200, 200, Blue);		/* Draw a rectangle filled with specified colour */
 	 while (state == GameInit) {
        // printf("Initialisation\n");
@@ -221,6 +222,5 @@ int main (void) {
 		tid_taskGameLogic = osThreadCreate(osThread(taskGameLogic), NULL);
     
 		osDelay(osWaitForever);
-		while(1)
-			;
+		while(1);
 }

@@ -5,6 +5,7 @@
 
 void initialiseNewGame(int width, int height) {
     srand(25);
+		Score = 0;
     bucket = makeBucket(width, height);
     currentPiece = makeBlock();
 }

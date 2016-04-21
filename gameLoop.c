@@ -38,6 +38,7 @@ int checkForFullRows(){
                     bucket.bucket[a][b] = bucket.bucket[a - 1][b];
                 }
             }
+						addscore();
         }
         
         //Reset check to 1 in preparation for checking next line
@@ -46,3 +47,9 @@ int checkForFullRows(){
 		
 		return anyCleared;
 }
+
+void addscore(){
+	Score = Score +10;
+}
+
+

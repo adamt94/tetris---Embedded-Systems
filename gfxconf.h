@@ -240,10 +240,10 @@
 //        #define GWIN_TABSET_TABHEIGHT                18
 
 /* Builtin Fonts */
-//#define GDISP_NEED_TEXT			TRUE
-//#define GDISP_INCLUDE_FONT_DEJAVUSANS12		TRUE
-//#define GDISP_INCLUDE_FONT_DEJAVUSANS16		TRUE
-//#define GDISP_NEED_ANTIALIAS				FALSE
+#define GDISP_NEED_TEXT			TRUE
+#define GDISP_INCLUDE_FONT_DEJAVUSANS12		TRUE
+#define GDISP_INCLUDE_FONT_DEJAVUSANS16		TRUE
+#define GDISP_NEED_ANTIALIAS				FALSE
 
 
 ///////////////////////////////////////////////////////////////////////////

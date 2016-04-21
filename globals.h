@@ -42,6 +42,7 @@ extern Block *currentPiece;
 extern Block *nextPiece;
 
 extern const int BLOCK_SIZE;
-
+//score
+extern int Score;
 
 #endif	/* GLOBALS_H */
