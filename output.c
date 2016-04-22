@@ -83,17 +83,38 @@ void printScoreWindow() {
  // gdispDrawLine(365, 40, 380, 20, Purple);
 	gdispFillArea(365, 35, 35, 1, Purple);
 	
-	
- 
+	//draw current score
   sprintf(str,"%d",Score);
-
- 
-  
 	gdispDrawString(378, 42, str, font16, Purple);
+	gdispCloseFont(font16);
 }
 // Displays the next incoming block
 
 void printNextBrickWindow() {
+	char* str;
+	int i,j;
+	font16 =  gdispOpenFont("DejaVuSans16");
+	gdispDrawString(360, 100, "Next", font16, Black);
+	gdispCloseFont(font16);
+	
+	//draw block
+
+    //For every piece in the next block needs to be changed to nextPiece
+    for (i = 0; i < currentPiece->size; i++) {
+        for (j = 0; j < currentPiece->size; j++) {
+            //If this isn't a blank char then print it
+            if (currentPiece->graphic[i][j] != ' ') {
+               // mvprintw(currentPiece->y + i, currentPiece->x + j, "%c", currentPiece->graphic[i][j]);
+							//padding
+								gdispFillArea(360+(j*BLOCK_SIZE),130+(i*(BLOCK_SIZE)),BLOCK_SIZE-2, BLOCK_SIZE-2, White);
+							//shape
+								gdispFillArea(361+(j*BLOCK_SIZE),131+(i*(BLOCK_SIZE)),BLOCK_SIZE-2, BLOCK_SIZE-2, tetrisShapeColors[currentPiece->blockID]);
+							
+            }
+
+        }
+    }
+							
 }
 // Displays a game over screen
 
