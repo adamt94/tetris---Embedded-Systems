@@ -2,12 +2,14 @@
 #include <stdlib.h>
 #include <stdarg.h> /* Contains the functions (ie. va_start) for variable arguments */
 #include "setup.h"
+#include "gfx.h"
 
 void initialiseNewGame(int width, int height) {
     srand(25);
 		Score = 0;
     bucket = makeBucket(width, height);
     currentPiece = makeBlock();
+		nextPiece = makeBlock();
 }
 
 Bucket makeBucket(int width, int height) {
@@ -52,6 +54,7 @@ Block* makeBlock() {
     if ((temp = malloc(sizeof (Block))) == NULL) {
       //  endwin(); //End ncurses
       //  printf("Unable to allocate memory for Block...");
+				gdispClear(Red);
         exit(1);
     }
         

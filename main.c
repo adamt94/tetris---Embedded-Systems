@@ -105,6 +105,8 @@ void taskGLCD (void const *argument) {
 		osMutexWait(mut_GLCD, osWaitForever);		//Attempt to acquire GLCD mutex
 		//Erase the block's last position
 		eraseBlock();
+		//Erase the next piece's position
+		clearNextPieceArea();
 		//Print the tetris bucket
 		printTetrisBucket();
 		//print score
@@ -188,7 +190,6 @@ void taskInput (void const *argument) {
 				}
 		  if(((bucket.x + (currentPiece->x * BLOCK_SIZE)) <tsc_state.x) &&tsc_state.pressed == true){
 					attemptMove('R');
-				
 				}
 			}
 			

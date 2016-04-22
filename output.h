@@ -10,6 +10,8 @@
 void printTetrisBucket(void);
 //Erase the block from the screen
 void eraseBlock(void);
+//Clear the next piece block
+void clearNextPieceArea(void);
 // Displays the current score
 void printScoreWindow(void);
 // Displays the next incoming block

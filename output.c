@@ -59,7 +59,6 @@ void printTetrisBucket() {
 		lastDrawnX = currentPiece->x;
 		lastDrawnY = currentPiece->y;
 
-
 }
 
 //Erase the block
@@ -70,6 +69,17 @@ void eraseBlock(){
         for (j = 0; j < currentPiece->size; j++) {
             //If this isn't a blank char then print it
 								gdispFillArea(((bucket.x + (lastDrawnX * BLOCK_SIZE))+(j*BLOCK_SIZE)),(((bucket.y) + (lastDrawnY* BLOCK_SIZE))+(i*BLOCK_SIZE)),BLOCK_SIZE, BLOCK_SIZE, White);
+
+        }
+    }
+}
+
+//Clear the next piece area
+void clearNextPieceArea(){
+	int i, j;
+    for (i = 0; i < nextPiece->size; i++) {
+        for (j = 0; j < nextPiece->size; j++) {
+								gdispFillArea(((360)+(j*BLOCK_SIZE)),(((130) )+(i*BLOCK_SIZE)),BLOCK_SIZE, BLOCK_SIZE, White);
 
         }
     }
@@ -100,15 +110,15 @@ void printNextBrickWindow() {
 	//draw block
 
     //For every piece in the next block needs to be changed to nextPiece
-    for (i = 0; i < currentPiece->size; i++) {
-        for (j = 0; j < currentPiece->size; j++) {
+    for (i = 0; i < nextPiece->size; i++) {
+        for (j = 0; j < nextPiece->size; j++) {
             //If this isn't a blank char then print it
-            if (currentPiece->graphic[i][j] != ' ') {
+            if (nextPiece->graphic[i][j] != ' ') {
                // mvprintw(currentPiece->y + i, currentPiece->x + j, "%c", currentPiece->graphic[i][j]);
 							//padding
 								gdispFillArea(360+(j*BLOCK_SIZE),130+(i*(BLOCK_SIZE)),BLOCK_SIZE-2, BLOCK_SIZE-2, White);
 							//shape
-								gdispFillArea(361+(j*BLOCK_SIZE),131+(i*(BLOCK_SIZE)),BLOCK_SIZE-2, BLOCK_SIZE-2, tetrisShapeColors[currentPiece->blockID]);
+								gdispFillArea(361+(j*BLOCK_SIZE),131+(i*(BLOCK_SIZE)),BLOCK_SIZE-2, BLOCK_SIZE-2, tetrisShapeColors[nextPiece->blockID]);
 							
             }
 

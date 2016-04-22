@@ -96,9 +96,12 @@ int attemptMove(char move) {
 										//bucket.bucket[i + currentPiece->y][j + currentPiece->x].color = currentPiece->blockID;
             }
         }
+				free(currentPiece);
+				currentPiece = nextPiece;
 				currentPiece->x = 3;
 				currentPiece->y = 0;
-				setRandomBlockGraphic(currentPiece);
+				
+				nextPiece = makeBlock();
     }
     return 1;
 }
