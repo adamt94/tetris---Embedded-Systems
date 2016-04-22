@@ -29,7 +29,6 @@ Section Cross References
     main.o(i.main) refers to main.o(.constdata) for os_thread_def_taskGLCD
     main.o(i.taskGLCD) refers to rt_cmsis.o(i.osMutexWait) for osMutexWait
     main.o(i.taskGLCD) refers to output.o(i.eraseBlock) for eraseBlock
-    main.o(i.taskGLCD) refers to output.o(i.clearNextPieceArea) for clearNextPieceArea
     main.o(i.taskGLCD) refers to output.o(i.printTetrisBucket) for printTetrisBucket
     main.o(i.taskGLCD) refers to output.o(i.printScoreWindow) for printScoreWindow
     main.o(i.taskGLCD) refers to output.o(i.printNextBrickWindow) for printNextBrickWindow
@@ -55,6 +54,7 @@ Section Cross References
     block.o(i.attemptMove) refers to rt_memcpy_w.o(.text) for __aeabi_memcpy4
     block.o(i.attemptMove) refers to block.o(i.checkForCollision) for checkForCollision
     block.o(i.attemptMove) refers to h1_free_mt.o(.text) for free
+    block.o(i.attemptMove) refers to output.o(i.clearNextPieceArea) for clearNextPieceArea
     block.o(i.attemptMove) refers to setup.o(i.makeBlock) for makeBlock
     block.o(i.attemptMove) refers to main.o(.data) for currentPiece
     block.o(i.attemptMove) refers to main.o(.bss) for bucket
@@ -2602,227 +2602,227 @@ Image Symbol Table
     __tagsym$$used                           0x080044f5   Number         0  rtx_conf_cm.o(i._mutex_release)
     i.addscore                               0x08004510   Section        0  gameloop.o(i.addscore)
     i.attemptMove                            0x08004520   Section        0  block.o(i.attemptMove)
-    i.checkForCollision                      0x08004604   Section        0  block.o(i.checkForCollision)
-    i.checkForFullRows                       0x0800466c   Section        0  gameloop.o(i.checkForFullRows)
-    i.clearNextPieceArea                     0x080046e4   Section        0  output.o(i.clearNextPieceArea)
-    i.configureLcdPins                       0x0800474c   Section        0  gdisp_lld_stm32ltdc.o(i.configureLcdPins)
-    configureLcdPins                         0x0800474d   Thumb Code  1596  gdisp_lld_stm32ltdc.o(i.configureLcdPins)
-    i.dbg_init                               0x08004d98   Section        0  hal_cm.o(i.dbg_init)
-    i.dbg_task_notify                        0x08004dc8   Section        0  hal_cm.o(i.dbg_task_notify)
-    i.dbg_task_switch                        0x08004de8   Section        0  hal_cm.o(i.dbg_task_switch)
-    i.dma2d_init                             0x08004df8   Section        0  gdisp_lld_stm32ltdc.o(i.dma2d_init)
-    dma2d_init                               0x08004df9   Thumb Code    22  gdisp_lld_stm32ltdc.o(i.dma2d_init)
-    i.drawcharglyph                          0x08004e18   Section        0  gfx_mk.o(i.drawcharglyph)
-    drawcharglyph                            0x08004e19   Thumb Code    34  gfx_mk.o(i.drawcharglyph)
-    i.drawcharline                           0x08004e40   Section        0  gfx_mk.o(i.drawcharline)
-    drawcharline                             0x08004e41   Thumb Code   124  gfx_mk.o(i.drawcharline)
-    i.drawpixel                              0x08004ebc   Section        0  gfx_mk.o(i.drawpixel)
-    drawpixel                                0x08004ebd   Thumb Code    12  gfx_mk.o(i.drawpixel)
-    i.eraseBlock                             0x08004ec8   Section        0  output.o(i.eraseBlock)
-    i.fillarea                               0x08004f54   Section        0  gfx_mk.o(i.fillarea)
-    fillarea                                 0x08004f55   Thumb Code    12  gfx_mk.o(i.fillarea)
-    i.fillentry_bitcount                     0x08004f60   Section        0  gfx_mk.o(i.fillentry_bitcount)
-    fillentry_bitcount                       0x08004f61   Thumb Code    46  gfx_mk.o(i.fillentry_bitcount)
-    i.find_char_range                        0x08004f8e   Section        0  gfx_mk.o(i.find_char_range)
-    find_char_range                          0x08004f8f   Thumb Code    56  gfx_mk.o(i.find_char_range)
-    i.find_glyph                             0x08004fc6   Section        0  gfx_mk.o(i.find_glyph)
-    find_glyph                               0x08004fc7   Thumb Code    62  gfx_mk.o(i.find_glyph)
-    i.ft5336_Get_I2C_InitializedStatus       0x08005004   Section        0  ft5336.o(i.ft5336_Get_I2C_InitializedStatus)
-    ft5336_Get_I2C_InitializedStatus         0x08005005   Thumb Code     6  ft5336.o(i.ft5336_Get_I2C_InitializedStatus)
-    i.ft5336_I2C_InitializeIfRequired        0x08005010   Section        0  ft5336.o(i.ft5336_I2C_InitializeIfRequired)
-    ft5336_I2C_InitializeIfRequired          0x08005011   Thumb Code    20  ft5336.o(i.ft5336_I2C_InitializeIfRequired)
-    i.ft5336_Init                            0x08005028   Section        0  ft5336.o(i.ft5336_Init)
-    i.ft5336_ReadID                          0x08005038   Section        0  ft5336.o(i.ft5336_ReadID)
-    i.ft5336_Reset                           0x08005072   Section        0  ft5336.o(i.ft5336_Reset)
-    i.ft5336_TS_ClearIT                      0x08005074   Section        0  ft5336.o(i.ft5336_TS_ClearIT)
-    i.ft5336_TS_Configure                    0x08005076   Section        0  ft5336.o(i.ft5336_TS_Configure)
-    ft5336_TS_Configure                      0x08005077   Thumb Code     6  ft5336.o(i.ft5336_TS_Configure)
-    i.ft5336_TS_DetectTouch                  0x0800507c   Section        0  ft5336.o(i.ft5336_TS_DetectTouch)
-    i.ft5336_TS_DisableIT                    0x080050bc   Section        0  ft5336.o(i.ft5336_TS_DisableIT)
-    i.ft5336_TS_EnableIT                     0x080050d0   Section        0  ft5336.o(i.ft5336_TS_EnableIT)
-    i.ft5336_TS_GetGestureID                 0x080050e4   Section        0  ft5336.o(i.ft5336_TS_GetGestureID)
-    i.ft5336_TS_GetTouchInfo                 0x08005100   Section        0  ft5336.o(i.ft5336_TS_GetTouchInfo)
-    i.ft5336_TS_GetXY                        0x08005208   Section        0  ft5336.o(i.ft5336_TS_GetXY)
-    i.ft5336_TS_ITStatus                     0x0800536c   Section        0  ft5336.o(i.ft5336_TS_ITStatus)
-    i.ft5336_TS_Start                        0x08005372   Section        0  ft5336.o(i.ft5336_TS_Start)
-    i.gdispCloseFont                         0x08005388   Section        0  gfx_mk.o(i.gdispCloseFont)
-    i.gdispGClear                            0x080053a4   Section        0  gfx_mk.o(i.gdispGClear)
-    i.gdispGDrawString                       0x080053c4   Section        0  gfx_mk.o(i.gdispGDrawString)
-    i.gdispGFillArea                         0x08005424   Section        0  gfx_mk.o(i.gdispGFillArea)
-    i.gdispGGetHeight                        0x080054d0   Section        0  gfx_mk.o(i.gdispGGetHeight)
-    i.gdispGGetWidth                         0x080054d8   Section        0  gfx_mk.o(i.gdispGGetWidth)
-    i.gdispGSetClip                          0x080054e0   Section        0  gfx_mk.o(i.gdispGSetClip)
-    i.gdispOpenFont                          0x0800554c   Section        0  gfx_mk.o(i.gdispOpenFont)
-    i.gdisp_lld_blit_area                    0x08005594   Section        0  gdisp_lld_stm32ltdc.o(i.gdisp_lld_blit_area)
-    i.gdisp_lld_draw_pixel                   0x08005610   Section        0  gdisp_lld_stm32ltdc.o(i.gdisp_lld_draw_pixel)
-    i.gdisp_lld_fill_area                    0x08005660   Section        0  gdisp_lld_stm32ltdc.o(i.gdisp_lld_fill_area)
-    i.gdisp_lld_get_pixel_color              0x080056dc   Section        0  gdisp_lld_stm32ltdc.o(i.gdisp_lld_get_pixel_color)
-    i.gdisp_lld_init                         0x08005728   Section        0  gdisp_lld_stm32ltdc.o(i.gdisp_lld_init)
-    i.gdriverGetInstance                     0x080057e8   Section        0  gfx_mk.o(i.gdriverGetInstance)
-    i.gdriverRegister                        0x08005818   Section        0  gfx_mk.o(i.gdriverRegister)
-    i.get_width                              0x080058ac   Section        0  gfx_mk.o(i.get_width)
-    get_width                                0x080058ad   Thumb Code    22  gfx_mk.o(i.get_width)
-    i.gfxAddHeapBlock                        0x080058c4   Section        0  gfx_mk.o(i.gfxAddHeapBlock)
-    i.gfxAlloc                               0x0800590c   Section        0  gfx_mk.o(i.gfxAlloc)
-    i.gfxFree                                0x08005984   Section        0  gfx_mk.o(i.gfxFree)
-    i.gfxInit                                0x080059f0   Section        0  gfx_mk.o(i.gfxInit)
-    i.gfxMutexInit                           0x08005a20   Section        0  gfx_mk.o(i.gfxMutexInit)
-    i.gfxQueueASyncInit                      0x08005a30   Section        0  gfx_mk.o(i.gfxQueueASyncInit)
-    i.gfxQueueASyncPut                       0x08005a38   Section        0  gfx_mk.o(i.gfxQueueASyncPut)
-    i.gfxQueueASyncPutI                      0x08005a50   Section        0  gfx_mk.o(i.gfxQueueASyncPutI)
-    i.gfxQueueASyncRemove                    0x08005a6c   Section        0  gfx_mk.o(i.gfxQueueASyncRemove)
-    i.gfxQueueASyncRemoveI                   0x08005a84   Section        0  gfx_mk.o(i.gfxQueueASyncRemoveI)
-    i.gfxSemInit                             0x08005ac6   Section        0  gfx_mk.o(i.gfxSemInit)
-    i.gfxSemSignal                           0x08005ae6   Section        0  gfx_mk.o(i.gfxSemSignal)
-    i.gfxSemSignalI                          0x08005af2   Section        0  gfx_mk.o(i.gfxSemSignalI)
-    i.gfxSemWait                             0x08005b08   Section        0  gfx_mk.o(i.gfxSemWait)
-    i.gtimerInit                             0x08005b28   Section        0  gfx_mk.o(i.gtimerInit)
-    i.gwinGetDefaultBgColor                  0x08005b30   Section        0  gfx_mk.o(i.gwinGetDefaultBgColor)
-    i.gwinGetNextWindow                      0x08005b3c   Section        0  gfx_mk.o(i.gwinGetNextWindow)
-    i.gwinSetVisible                         0x08005b50   Section        0  gfx_mk.o(i.gwinSetVisible)
-    i.hline_clip                             0x08005bac   Section        0  gfx_mk.o(i.hline_clip)
-    hline_clip                               0x08005bad   Thumb Code   150  gfx_mk.o(i.hline_clip)
-    i.initialiseNewGame                      0x08005c44   Section        0  setup.o(i.initialiseNewGame)
-    i.isrMessageGet                          0x08005c90   Section        0  rt_cmsis.o(i.isrMessageGet)
-    i.isrMessagePut                          0x08005cba   Section        0  rt_cmsis.o(i.isrMessagePut)
-    i.isrSemaphoreRelease                    0x08005ce6   Section        0  rt_cmsis.o(i.isrSemaphoreRelease)
-    i.isr_mbx_receive                        0x08005d10   Section        0  rt_mailbox.o(i.isr_mbx_receive)
-    i.isr_mbx_send                           0x08005d62   Section        0  rt_mailbox.o(i.isr_mbx_send)
-    i.isr_sem_send                           0x08005d70   Section        0  rt_semaphore.o(i.isr_sem_send)
-    i.main                                   0x08005d80   Section        0  main.o(i.main)
-    i.makeBlock                              0x0800614c   Section        0  setup.o(i.makeBlock)
-    i.makeBucket                             0x08006184   Section        0  setup.o(i.makeBucket)
-    i.matchfont                              0x08006204   Section        0  gfx_mk.o(i.matchfont)
-    matchfont                                0x08006205   Thumb Code    78  gfx_mk.o(i.matchfont)
-    i.mf_bwfont_character_width              0x08006252   Section        0  gfx_mk.o(i.mf_bwfont_character_width)
-    i.mf_bwfont_render_character             0x08006278   Section        0  gfx_mk.o(i.mf_bwfont_render_character)
-    i.mf_character_width                     0x080062b2   Section        0  gfx_mk.o(i.mf_character_width)
-    i.mf_get_font_list                       0x080062d4   Section        0  gfx_mk.o(i.mf_get_font_list)
-    i.mf_get_string_width                    0x080062dc   Section        0  gfx_mk.o(i.mf_get_string_width)
-    i.mf_getchar                             0x08006344   Section        0  gfx_mk.o(i.mf_getchar)
-    i.mf_render_aligned                      0x0800635a   Section        0  gfx_mk.o(i.mf_render_aligned)
-    i.mf_render_character                    0x080063d8   Section        0  gfx_mk.o(i.mf_render_character)
-    i.mf_rewind                              0x08006418   Section        0  gfx_mk.o(i.mf_rewind)
-    i.mf_rlefont_character_width             0x08006420   Section        0  gfx_mk.o(i.mf_rlefont_character_width)
-    i.mf_rlefont_render_character            0x0800643a   Section        0  gfx_mk.o(i.mf_rlefont_render_character)
-    i.mf_round_to_prev_tab                   0x080064aa   Section        0  gfx_mk.o(i.mf_round_to_prev_tab)
-    mf_round_to_prev_tab                     0x080064ab   Thumb Code    62  gfx_mk.o(i.mf_round_to_prev_tab)
-    i.mf_round_to_tab                        0x080064e8   Section        0  gfx_mk.o(i.mf_round_to_tab)
-    mf_round_to_tab                          0x080064e9   Thumb Code    62  gfx_mk.o(i.mf_round_to_tab)
-    i.osDelay                                0x08006528   Section        0  rt_cmsis.o(i.osDelay)
-    i.osKernelInitialize                     0x08006540   Section        0  rt_cmsis.o(i.osKernelInitialize)
-    i.osKernelRunning                        0x08006564   Section        0  rt_cmsis.o(i.osKernelRunning)
-    i.osKernelStart                          0x08006588   Section        0  rt_cmsis.o(i.osKernelStart)
-    i.osMessageGet                           0x080065f4   Section        0  rt_cmsis.o(i.osMessageGet)
-    i.osMutexCreate                          0x0800660c   Section        0  rt_cmsis.o(i.osMutexCreate)
-    i.osMutexRelease                         0x0800663c   Section        0  rt_cmsis.o(i.osMutexRelease)
-    i.osMutexWait                            0x08006654   Section        0  rt_cmsis.o(i.osMutexWait)
-    i.osSemaphoreCreate                      0x0800666c   Section        0  rt_cmsis.o(i.osSemaphoreCreate)
-    i.osSemaphoreRelease                     0x0800669c   Section        0  rt_cmsis.o(i.osSemaphoreRelease)
-    i.osSemaphoreWait                        0x080066b4   Section        0  rt_cmsis.o(i.osSemaphoreWait)
-    i.osThreadCreate                         0x080066cc   Section        0  rt_cmsis.o(i.osThreadCreate)
-    i.osThreadExit                           0x080066fc   Section        0  rt_cmsis.o(i.osThreadExit)
-    i.osThreadYield                          0x08006714   Section        0  rt_cmsis.o(i.osThreadYield)
-    i.osTimerCall                            0x0800672c   Section        0  rt_cmsis.o(i.osTimerCall)
-    i.osTimerThread                          0x08006738   Section        0  rt_cmsis.o(i.osTimerThread)
-    i.os_error                               0x08006764   Section        0  rtx_conf_cm.o(i.os_error)
-    i.os_idle_demon                          0x08006786   Section        0  rtx_conf_cm.o(i.os_idle_demon)
-    i.os_tick_init                           0x0800678c   Section        0  rt_system.o(i.os_tick_init)
-    i.os_tick_irqack                         0x080067b4   Section        0  rt_system.o(i.os_tick_irqack)
-    i.printNextBrickWindow                   0x080067b8   Section        0  output.o(i.printNextBrickWindow)
-    i.printScoreWindow                       0x080068c0   Section        0  output.o(i.printScoreWindow)
-    i.printTetrisBucket                      0x08006958   Section        0  output.o(i.printTetrisBucket)
-    i.render_char                            0x08006b78   Section        0  gfx_mk.o(i.render_char)
-    render_char                              0x08006b79   Thumb Code   312  gfx_mk.o(i.render_char)
-    i.render_left                            0x08006cb0   Section        0  gfx_mk.o(i.render_left)
-    render_left                              0x08006cb1   Thumb Code   100  gfx_mk.o(i.render_left)
-    i.render_right                           0x08006d14   Section        0  gfx_mk.o(i.render_right)
-    render_right                             0x08006d15   Thumb Code   138  gfx_mk.o(i.render_right)
-    i.rotateBlock                            0x08006da0   Section        0  block.o(i.rotateBlock)
-    i.rt_alloc_box                           0x08006e50   Section        0  rt_membox.o(i.rt_alloc_box)
-    i.rt_alloc_mem                           0x08006e6a   Section        0  rt_memory.o(i.rt_alloc_mem)
-    i.rt_block                               0x08006ea8   Section        0  rt_task.o(i.rt_block)
-    i.rt_chk_robin                           0x08006ee0   Section        0  rt_robin.o(i.rt_chk_robin)
-    i.rt_dec_dly                             0x08006f28   Section        0  rt_list.o(i.rt_dec_dly)
-    i.rt_dispatch                            0x08006f98   Section        0  rt_task.o(i.rt_dispatch)
-    i.rt_dly_wait                            0x08006fdc   Section        0  rt_time.o(i.rt_dly_wait)
-    i.rt_evt_psh                             0x08006fe4   Section        0  rt_event.o(i.rt_evt_psh)
-    i.rt_free_box                            0x08007034   Section        0  rt_membox.o(i.rt_free_box)
-    i.rt_free_mem                            0x08007060   Section        0  rt_memory.o(i.rt_free_mem)
-    i.rt_get_first                           0x08007088   Section        0  rt_list.o(i.rt_get_first)
-    i.rt_get_same_rdy_prio                   0x080070b0   Section        0  rt_list.o(i.rt_get_same_rdy_prio)
-    i.rt_id2obj                              0x080070d4   Section        0  rt_cmsis.o(i.rt_id2obj)
-    rt_id2obj                                0x080070d5   Thumb Code     8  rt_cmsis.o(i.rt_id2obj)
-    i.rt_init_context                        0x080070dc   Section        0  rt_task.o(i.rt_init_context)
-    rt_init_context                          0x080070dd   Thumb Code    66  rt_task.o(i.rt_init_context)
-    i.rt_init_mem                            0x08007124   Section        0  rt_memory.o(i.rt_init_mem)
-    i.rt_init_robin                          0x08007140   Section        0  rt_robin.o(i.rt_init_robin)
-    i.rt_init_stack                          0x08007158   Section        0  hal_cm.o(i.rt_init_stack)
-    i.rt_mbx_check                           0x080071d8   Section        0  rt_mailbox.o(i.rt_mbx_check)
-    i.rt_mbx_init                            0x080071e0   Section        0  rt_mailbox.o(i.rt_mbx_init)
-    i.rt_mbx_psh                             0x080071fc   Section        0  rt_mailbox.o(i.rt_mbx_psh)
-    i.rt_mbx_wait                            0x080072ec   Section        0  rt_mailbox.o(i.rt_mbx_wait)
-    i.rt_ms2tick                             0x080073a0   Section        0  rt_cmsis.o(i.rt_ms2tick)
-    rt_ms2tick                               0x080073a1   Thumb Code    58  rt_cmsis.o(i.rt_ms2tick)
-    i.rt_mut_init                            0x080073e4   Section        0  rt_mutex.o(i.rt_mut_init)
-    i.rt_mut_release                         0x080073f4   Section        0  rt_mutex.o(i.rt_mut_release)
-    i.rt_mut_wait                            0x080074cc   Section        0  rt_mutex.o(i.rt_mut_wait)
-    i.rt_pop_req                             0x08007534   Section        0  rt_system.o(i.rt_pop_req)
-    i.rt_psh_req                             0x080075b0   Section        0  rt_system.o(i.rt_psh_req)
-    i.rt_psq_enq                             0x080075d0   Section        0  rt_list.o(i.rt_psq_enq)
-    i.rt_put_dly                             0x0800762c   Section        0  rt_list.o(i.rt_put_dly)
-    i.rt_put_prio                            0x08007674   Section        0  rt_list.o(i.rt_put_prio)
-    i.rt_put_rdy_first                       0x080076ac   Section        0  rt_list.o(i.rt_put_rdy_first)
-    i.rt_resort_prio                         0x080076c0   Section        0  rt_list.o(i.rt_resort_prio)
-    i.rt_ret_regs                            0x080076f4   Section        0  hal_cm.o(i.rt_ret_regs)
-    rt_ret_regs                              0x080076f5   Thumb Code    16  hal_cm.o(i.rt_ret_regs)
-    i.rt_ret_val                             0x08007704   Section        0  hal_cm.o(i.rt_ret_val)
-    i.rt_ret_val2                            0x08007710   Section        0  hal_cm.o(i.rt_ret_val2)
-    i.rt_rmv_dly                             0x08007720   Section        0  rt_list.o(i.rt_rmv_dly)
-    i.rt_rmv_list                            0x08007748   Section        0  rt_list.o(i.rt_rmv_list)
-    i.rt_sem_init                            0x08007778   Section        0  rt_semaphore.o(i.rt_sem_init)
-    i.rt_sem_psh                             0x08007784   Section        0  rt_semaphore.o(i.rt_sem_psh)
-    i.rt_sem_send                            0x080077b8   Section        0  rt_semaphore.o(i.rt_sem_send)
-    i.rt_sem_wait                            0x080077e4   Section        0  rt_semaphore.o(i.rt_sem_wait)
-    i.rt_stk_check                           0x08007824   Section        0  rt_system.o(i.rt_stk_check)
-    i.rt_switch_req                          0x08007848   Section        0  rt_task.o(i.rt_switch_req)
-    i.rt_sys_init                            0x08007870   Section        0  rt_task.o(i.rt_sys_init)
-    i.rt_sys_start                           0x0800793c   Section        0  rt_task.o(i.rt_sys_start)
-    i.rt_systick                             0x080079b4   Section        0  rt_system.o(i.rt_systick)
-    i.rt_tid2ptcb                            0x080079f4   Section        0  rt_cmsis.o(i.rt_tid2ptcb)
-    rt_tid2ptcb                              0x080079f5   Thumb Code    18  rt_cmsis.o(i.rt_tid2ptcb)
-    i.rt_timer_insert                        0x08007a08   Section        0  rt_cmsis.o(i.rt_timer_insert)
-    rt_timer_insert                          0x08007a09   Thumb Code    48  rt_cmsis.o(i.rt_timer_insert)
-    i.rt_tsk_create                          0x08007a3c   Section        0  rt_task.o(i.rt_tsk_create)
-    i.rt_tsk_delete                          0x08007ac4   Section        0  rt_task.o(i.rt_tsk_delete)
-    i.rt_tsk_pass                            0x08007c40   Section        0  rt_task.o(i.rt_tsk_pass)
-    i.rt_tsk_prio                            0x08007c70   Section        0  rt_task.o(i.rt_tsk_prio)
-    i.rt_tsk_self                            0x08007cec   Section        0  rt_task.o(i.rt_tsk_self)
-    i.setBlockGraphic                        0x08007cfc   Section        0  setup.o(i.setBlockGraphic)
-    i.setRandomBlockGraphic                  0x08007d38   Section        0  setup.o(i.setRandomBlockGraphic)
-    i.skip_pixels                            0x08007e40   Section        0  gfx_mk.o(i.skip_pixels)
-    skip_pixels                              0x08007e41   Thumb Code    46  gfx_mk.o(i.skip_pixels)
-    i.strip_spaces                           0x08007e6e   Section        0  gfx_mk.o(i.strip_spaces)
-    strip_spaces                             0x08007e6f   Thumb Code    92  gfx_mk.o(i.strip_spaces)
-    i.svcDelay                               0x08007eca   Section        0  rt_cmsis.o(i.svcDelay)
-    i.svcKernelInitialize                    0x08007edc   Section        0  rt_cmsis.o(i.svcKernelInitialize)
-    i.svcKernelRunning                       0x08007f4c   Section        0  rt_cmsis.o(i.svcKernelRunning)
-    i.svcKernelStart                         0x08007f58   Section        0  rt_cmsis.o(i.svcKernelStart)
-    i.svcMessageCreate                       0x08007fa0   Section        0  rt_cmsis.o(i.svcMessageCreate)
-    i.svcMessageGet                          0x08007fc4   Section        0  rt_cmsis.o(i.svcMessageGet)
-    i.svcMutexCreate                         0x08007ffe   Section        0  rt_cmsis.o(i.svcMutexCreate)
-    i.svcMutexRelease                        0x0800801a   Section        0  rt_cmsis.o(i.svcMutexRelease)
-    i.svcMutexWait                           0x0800803c   Section        0  rt_cmsis.o(i.svcMutexWait)
-    i.svcSemaphoreCreate                     0x08008072   Section        0  rt_cmsis.o(i.svcSemaphoreCreate)
-    i.svcSemaphoreRelease                    0x08008096   Section        0  rt_cmsis.o(i.svcSemaphoreRelease)
-    i.svcSemaphoreWait                       0x080080be   Section        0  rt_cmsis.o(i.svcSemaphoreWait)
-    i.svcThreadCreate                        0x080080f0   Section        0  rt_cmsis.o(i.svcThreadCreate)
-    i.svcThreadGetId                         0x08008160   Section        0  rt_cmsis.o(i.svcThreadGetId)
-    i.svcThreadTerminate                     0x0800817c   Section        0  rt_cmsis.o(i.svcThreadTerminate)
-    i.svcThreadYield                         0x080081b4   Section        0  rt_cmsis.o(i.svcThreadYield)
-    i.svcTimerCall                           0x080081be   Section        0  rt_cmsis.o(i.svcTimerCall)
-    i.sysTimerTick                           0x080081d8   Section        0  rt_cmsis.o(i.sysTimerTick)
-    i.taskGLCD                               0x08008234   Section        0  main.o(i.taskGLCD)
+    i.checkForCollision                      0x08004608   Section        0  block.o(i.checkForCollision)
+    i.checkForFullRows                       0x08004670   Section        0  gameloop.o(i.checkForFullRows)
+    i.clearNextPieceArea                     0x080046e8   Section        0  output.o(i.clearNextPieceArea)
+    i.configureLcdPins                       0x08004750   Section        0  gdisp_lld_stm32ltdc.o(i.configureLcdPins)
+    configureLcdPins                         0x08004751   Thumb Code  1596  gdisp_lld_stm32ltdc.o(i.configureLcdPins)
+    i.dbg_init                               0x08004d9c   Section        0  hal_cm.o(i.dbg_init)
+    i.dbg_task_notify                        0x08004dcc   Section        0  hal_cm.o(i.dbg_task_notify)
+    i.dbg_task_switch                        0x08004dec   Section        0  hal_cm.o(i.dbg_task_switch)
+    i.dma2d_init                             0x08004dfc   Section        0  gdisp_lld_stm32ltdc.o(i.dma2d_init)
+    dma2d_init                               0x08004dfd   Thumb Code    22  gdisp_lld_stm32ltdc.o(i.dma2d_init)
+    i.drawcharglyph                          0x08004e1c   Section        0  gfx_mk.o(i.drawcharglyph)
+    drawcharglyph                            0x08004e1d   Thumb Code    34  gfx_mk.o(i.drawcharglyph)
+    i.drawcharline                           0x08004e44   Section        0  gfx_mk.o(i.drawcharline)
+    drawcharline                             0x08004e45   Thumb Code   124  gfx_mk.o(i.drawcharline)
+    i.drawpixel                              0x08004ec0   Section        0  gfx_mk.o(i.drawpixel)
+    drawpixel                                0x08004ec1   Thumb Code    12  gfx_mk.o(i.drawpixel)
+    i.eraseBlock                             0x08004ecc   Section        0  output.o(i.eraseBlock)
+    i.fillarea                               0x08004f58   Section        0  gfx_mk.o(i.fillarea)
+    fillarea                                 0x08004f59   Thumb Code    12  gfx_mk.o(i.fillarea)
+    i.fillentry_bitcount                     0x08004f64   Section        0  gfx_mk.o(i.fillentry_bitcount)
+    fillentry_bitcount                       0x08004f65   Thumb Code    46  gfx_mk.o(i.fillentry_bitcount)
+    i.find_char_range                        0x08004f92   Section        0  gfx_mk.o(i.find_char_range)
+    find_char_range                          0x08004f93   Thumb Code    56  gfx_mk.o(i.find_char_range)
+    i.find_glyph                             0x08004fca   Section        0  gfx_mk.o(i.find_glyph)
+    find_glyph                               0x08004fcb   Thumb Code    62  gfx_mk.o(i.find_glyph)
+    i.ft5336_Get_I2C_InitializedStatus       0x08005008   Section        0  ft5336.o(i.ft5336_Get_I2C_InitializedStatus)
+    ft5336_Get_I2C_InitializedStatus         0x08005009   Thumb Code     6  ft5336.o(i.ft5336_Get_I2C_InitializedStatus)
+    i.ft5336_I2C_InitializeIfRequired        0x08005014   Section        0  ft5336.o(i.ft5336_I2C_InitializeIfRequired)
+    ft5336_I2C_InitializeIfRequired          0x08005015   Thumb Code    20  ft5336.o(i.ft5336_I2C_InitializeIfRequired)
+    i.ft5336_Init                            0x0800502c   Section        0  ft5336.o(i.ft5336_Init)
+    i.ft5336_ReadID                          0x0800503c   Section        0  ft5336.o(i.ft5336_ReadID)
+    i.ft5336_Reset                           0x08005076   Section        0  ft5336.o(i.ft5336_Reset)
+    i.ft5336_TS_ClearIT                      0x08005078   Section        0  ft5336.o(i.ft5336_TS_ClearIT)
+    i.ft5336_TS_Configure                    0x0800507a   Section        0  ft5336.o(i.ft5336_TS_Configure)
+    ft5336_TS_Configure                      0x0800507b   Thumb Code     6  ft5336.o(i.ft5336_TS_Configure)
+    i.ft5336_TS_DetectTouch                  0x08005080   Section        0  ft5336.o(i.ft5336_TS_DetectTouch)
+    i.ft5336_TS_DisableIT                    0x080050c0   Section        0  ft5336.o(i.ft5336_TS_DisableIT)
+    i.ft5336_TS_EnableIT                     0x080050d4   Section        0  ft5336.o(i.ft5336_TS_EnableIT)
+    i.ft5336_TS_GetGestureID                 0x080050e8   Section        0  ft5336.o(i.ft5336_TS_GetGestureID)
+    i.ft5336_TS_GetTouchInfo                 0x08005104   Section        0  ft5336.o(i.ft5336_TS_GetTouchInfo)
+    i.ft5336_TS_GetXY                        0x0800520c   Section        0  ft5336.o(i.ft5336_TS_GetXY)
+    i.ft5336_TS_ITStatus                     0x08005370   Section        0  ft5336.o(i.ft5336_TS_ITStatus)
+    i.ft5336_TS_Start                        0x08005376   Section        0  ft5336.o(i.ft5336_TS_Start)
+    i.gdispCloseFont                         0x0800538c   Section        0  gfx_mk.o(i.gdispCloseFont)
+    i.gdispGClear                            0x080053a8   Section        0  gfx_mk.o(i.gdispGClear)
+    i.gdispGDrawString                       0x080053c8   Section        0  gfx_mk.o(i.gdispGDrawString)
+    i.gdispGFillArea                         0x08005428   Section        0  gfx_mk.o(i.gdispGFillArea)
+    i.gdispGGetHeight                        0x080054d4   Section        0  gfx_mk.o(i.gdispGGetHeight)
+    i.gdispGGetWidth                         0x080054dc   Section        0  gfx_mk.o(i.gdispGGetWidth)
+    i.gdispGSetClip                          0x080054e4   Section        0  gfx_mk.o(i.gdispGSetClip)
+    i.gdispOpenFont                          0x08005550   Section        0  gfx_mk.o(i.gdispOpenFont)
+    i.gdisp_lld_blit_area                    0x08005598   Section        0  gdisp_lld_stm32ltdc.o(i.gdisp_lld_blit_area)
+    i.gdisp_lld_draw_pixel                   0x08005614   Section        0  gdisp_lld_stm32ltdc.o(i.gdisp_lld_draw_pixel)
+    i.gdisp_lld_fill_area                    0x08005664   Section        0  gdisp_lld_stm32ltdc.o(i.gdisp_lld_fill_area)
+    i.gdisp_lld_get_pixel_color              0x080056e0   Section        0  gdisp_lld_stm32ltdc.o(i.gdisp_lld_get_pixel_color)
+    i.gdisp_lld_init                         0x0800572c   Section        0  gdisp_lld_stm32ltdc.o(i.gdisp_lld_init)
+    i.gdriverGetInstance                     0x080057ec   Section        0  gfx_mk.o(i.gdriverGetInstance)
+    i.gdriverRegister                        0x0800581c   Section        0  gfx_mk.o(i.gdriverRegister)
+    i.get_width                              0x080058b0   Section        0  gfx_mk.o(i.get_width)
+    get_width                                0x080058b1   Thumb Code    22  gfx_mk.o(i.get_width)
+    i.gfxAddHeapBlock                        0x080058c8   Section        0  gfx_mk.o(i.gfxAddHeapBlock)
+    i.gfxAlloc                               0x08005910   Section        0  gfx_mk.o(i.gfxAlloc)
+    i.gfxFree                                0x08005988   Section        0  gfx_mk.o(i.gfxFree)
+    i.gfxInit                                0x080059f4   Section        0  gfx_mk.o(i.gfxInit)
+    i.gfxMutexInit                           0x08005a24   Section        0  gfx_mk.o(i.gfxMutexInit)
+    i.gfxQueueASyncInit                      0x08005a34   Section        0  gfx_mk.o(i.gfxQueueASyncInit)
+    i.gfxQueueASyncPut                       0x08005a3c   Section        0  gfx_mk.o(i.gfxQueueASyncPut)
+    i.gfxQueueASyncPutI                      0x08005a54   Section        0  gfx_mk.o(i.gfxQueueASyncPutI)
+    i.gfxQueueASyncRemove                    0x08005a70   Section        0  gfx_mk.o(i.gfxQueueASyncRemove)
+    i.gfxQueueASyncRemoveI                   0x08005a88   Section        0  gfx_mk.o(i.gfxQueueASyncRemoveI)
+    i.gfxSemInit                             0x08005aca   Section        0  gfx_mk.o(i.gfxSemInit)
+    i.gfxSemSignal                           0x08005aea   Section        0  gfx_mk.o(i.gfxSemSignal)
+    i.gfxSemSignalI                          0x08005af6   Section        0  gfx_mk.o(i.gfxSemSignalI)
+    i.gfxSemWait                             0x08005b0c   Section        0  gfx_mk.o(i.gfxSemWait)
+    i.gtimerInit                             0x08005b2c   Section        0  gfx_mk.o(i.gtimerInit)
+    i.gwinGetDefaultBgColor                  0x08005b34   Section        0  gfx_mk.o(i.gwinGetDefaultBgColor)
+    i.gwinGetNextWindow                      0x08005b40   Section        0  gfx_mk.o(i.gwinGetNextWindow)
+    i.gwinSetVisible                         0x08005b54   Section        0  gfx_mk.o(i.gwinSetVisible)
+    i.hline_clip                             0x08005bb0   Section        0  gfx_mk.o(i.hline_clip)
+    hline_clip                               0x08005bb1   Thumb Code   150  gfx_mk.o(i.hline_clip)
+    i.initialiseNewGame                      0x08005c48   Section        0  setup.o(i.initialiseNewGame)
+    i.isrMessageGet                          0x08005c94   Section        0  rt_cmsis.o(i.isrMessageGet)
+    i.isrMessagePut                          0x08005cbe   Section        0  rt_cmsis.o(i.isrMessagePut)
+    i.isrSemaphoreRelease                    0x08005cea   Section        0  rt_cmsis.o(i.isrSemaphoreRelease)
+    i.isr_mbx_receive                        0x08005d14   Section        0  rt_mailbox.o(i.isr_mbx_receive)
+    i.isr_mbx_send                           0x08005d66   Section        0  rt_mailbox.o(i.isr_mbx_send)
+    i.isr_sem_send                           0x08005d74   Section        0  rt_semaphore.o(i.isr_sem_send)
+    i.main                                   0x08005d84   Section        0  main.o(i.main)
+    i.makeBlock                              0x08006150   Section        0  setup.o(i.makeBlock)
+    i.makeBucket                             0x08006188   Section        0  setup.o(i.makeBucket)
+    i.matchfont                              0x08006208   Section        0  gfx_mk.o(i.matchfont)
+    matchfont                                0x08006209   Thumb Code    78  gfx_mk.o(i.matchfont)
+    i.mf_bwfont_character_width              0x08006256   Section        0  gfx_mk.o(i.mf_bwfont_character_width)
+    i.mf_bwfont_render_character             0x0800627c   Section        0  gfx_mk.o(i.mf_bwfont_render_character)
+    i.mf_character_width                     0x080062b6   Section        0  gfx_mk.o(i.mf_character_width)
+    i.mf_get_font_list                       0x080062d8   Section        0  gfx_mk.o(i.mf_get_font_list)
+    i.mf_get_string_width                    0x080062e0   Section        0  gfx_mk.o(i.mf_get_string_width)
+    i.mf_getchar                             0x08006348   Section        0  gfx_mk.o(i.mf_getchar)
+    i.mf_render_aligned                      0x0800635e   Section        0  gfx_mk.o(i.mf_render_aligned)
+    i.mf_render_character                    0x080063dc   Section        0  gfx_mk.o(i.mf_render_character)
+    i.mf_rewind                              0x0800641c   Section        0  gfx_mk.o(i.mf_rewind)
+    i.mf_rlefont_character_width             0x08006424   Section        0  gfx_mk.o(i.mf_rlefont_character_width)
+    i.mf_rlefont_render_character            0x0800643e   Section        0  gfx_mk.o(i.mf_rlefont_render_character)
+    i.mf_round_to_prev_tab                   0x080064ae   Section        0  gfx_mk.o(i.mf_round_to_prev_tab)
+    mf_round_to_prev_tab                     0x080064af   Thumb Code    62  gfx_mk.o(i.mf_round_to_prev_tab)
+    i.mf_round_to_tab                        0x080064ec   Section        0  gfx_mk.o(i.mf_round_to_tab)
+    mf_round_to_tab                          0x080064ed   Thumb Code    62  gfx_mk.o(i.mf_round_to_tab)
+    i.osDelay                                0x0800652c   Section        0  rt_cmsis.o(i.osDelay)
+    i.osKernelInitialize                     0x08006544   Section        0  rt_cmsis.o(i.osKernelInitialize)
+    i.osKernelRunning                        0x08006568   Section        0  rt_cmsis.o(i.osKernelRunning)
+    i.osKernelStart                          0x0800658c   Section        0  rt_cmsis.o(i.osKernelStart)
+    i.osMessageGet                           0x080065f8   Section        0  rt_cmsis.o(i.osMessageGet)
+    i.osMutexCreate                          0x08006610   Section        0  rt_cmsis.o(i.osMutexCreate)
+    i.osMutexRelease                         0x08006640   Section        0  rt_cmsis.o(i.osMutexRelease)
+    i.osMutexWait                            0x08006658   Section        0  rt_cmsis.o(i.osMutexWait)
+    i.osSemaphoreCreate                      0x08006670   Section        0  rt_cmsis.o(i.osSemaphoreCreate)
+    i.osSemaphoreRelease                     0x080066a0   Section        0  rt_cmsis.o(i.osSemaphoreRelease)
+    i.osSemaphoreWait                        0x080066b8   Section        0  rt_cmsis.o(i.osSemaphoreWait)
+    i.osThreadCreate                         0x080066d0   Section        0  rt_cmsis.o(i.osThreadCreate)
+    i.osThreadExit                           0x08006700   Section        0  rt_cmsis.o(i.osThreadExit)
+    i.osThreadYield                          0x08006718   Section        0  rt_cmsis.o(i.osThreadYield)
+    i.osTimerCall                            0x08006730   Section        0  rt_cmsis.o(i.osTimerCall)
+    i.osTimerThread                          0x0800673c   Section        0  rt_cmsis.o(i.osTimerThread)
+    i.os_error                               0x08006768   Section        0  rtx_conf_cm.o(i.os_error)
+    i.os_idle_demon                          0x0800678a   Section        0  rtx_conf_cm.o(i.os_idle_demon)
+    i.os_tick_init                           0x08006790   Section        0  rt_system.o(i.os_tick_init)
+    i.os_tick_irqack                         0x080067b8   Section        0  rt_system.o(i.os_tick_irqack)
+    i.printNextBrickWindow                   0x080067bc   Section        0  output.o(i.printNextBrickWindow)
+    i.printScoreWindow                       0x080068c4   Section        0  output.o(i.printScoreWindow)
+    i.printTetrisBucket                      0x0800695c   Section        0  output.o(i.printTetrisBucket)
+    i.render_char                            0x08006b7c   Section        0  gfx_mk.o(i.render_char)
+    render_char                              0x08006b7d   Thumb Code   312  gfx_mk.o(i.render_char)
+    i.render_left                            0x08006cb4   Section        0  gfx_mk.o(i.render_left)
+    render_left                              0x08006cb5   Thumb Code   100  gfx_mk.o(i.render_left)
+    i.render_right                           0x08006d18   Section        0  gfx_mk.o(i.render_right)
+    render_right                             0x08006d19   Thumb Code   138  gfx_mk.o(i.render_right)
+    i.rotateBlock                            0x08006da4   Section        0  block.o(i.rotateBlock)
+    i.rt_alloc_box                           0x08006e54   Section        0  rt_membox.o(i.rt_alloc_box)
+    i.rt_alloc_mem                           0x08006e6e   Section        0  rt_memory.o(i.rt_alloc_mem)
+    i.rt_block                               0x08006eac   Section        0  rt_task.o(i.rt_block)
+    i.rt_chk_robin                           0x08006ee4   Section        0  rt_robin.o(i.rt_chk_robin)
+    i.rt_dec_dly                             0x08006f2c   Section        0  rt_list.o(i.rt_dec_dly)
+    i.rt_dispatch                            0x08006f9c   Section        0  rt_task.o(i.rt_dispatch)
+    i.rt_dly_wait                            0x08006fe0   Section        0  rt_time.o(i.rt_dly_wait)
+    i.rt_evt_psh                             0x08006fe8   Section        0  rt_event.o(i.rt_evt_psh)
+    i.rt_free_box                            0x08007038   Section        0  rt_membox.o(i.rt_free_box)
+    i.rt_free_mem                            0x08007064   Section        0  rt_memory.o(i.rt_free_mem)
+    i.rt_get_first                           0x0800708c   Section        0  rt_list.o(i.rt_get_first)
+    i.rt_get_same_rdy_prio                   0x080070b4   Section        0  rt_list.o(i.rt_get_same_rdy_prio)
+    i.rt_id2obj                              0x080070d8   Section        0  rt_cmsis.o(i.rt_id2obj)
+    rt_id2obj                                0x080070d9   Thumb Code     8  rt_cmsis.o(i.rt_id2obj)
+    i.rt_init_context                        0x080070e0   Section        0  rt_task.o(i.rt_init_context)
+    rt_init_context                          0x080070e1   Thumb Code    66  rt_task.o(i.rt_init_context)
+    i.rt_init_mem                            0x08007128   Section        0  rt_memory.o(i.rt_init_mem)
+    i.rt_init_robin                          0x08007144   Section        0  rt_robin.o(i.rt_init_robin)
+    i.rt_init_stack                          0x0800715c   Section        0  hal_cm.o(i.rt_init_stack)
+    i.rt_mbx_check                           0x080071dc   Section        0  rt_mailbox.o(i.rt_mbx_check)
+    i.rt_mbx_init                            0x080071e4   Section        0  rt_mailbox.o(i.rt_mbx_init)
+    i.rt_mbx_psh                             0x08007200   Section        0  rt_mailbox.o(i.rt_mbx_psh)
+    i.rt_mbx_wait                            0x080072f0   Section        0  rt_mailbox.o(i.rt_mbx_wait)
+    i.rt_ms2tick                             0x080073a4   Section        0  rt_cmsis.o(i.rt_ms2tick)
+    rt_ms2tick                               0x080073a5   Thumb Code    58  rt_cmsis.o(i.rt_ms2tick)
+    i.rt_mut_init                            0x080073e8   Section        0  rt_mutex.o(i.rt_mut_init)
+    i.rt_mut_release                         0x080073f8   Section        0  rt_mutex.o(i.rt_mut_release)
+    i.rt_mut_wait                            0x080074d0   Section        0  rt_mutex.o(i.rt_mut_wait)
+    i.rt_pop_req                             0x08007538   Section        0  rt_system.o(i.rt_pop_req)
+    i.rt_psh_req                             0x080075b4   Section        0  rt_system.o(i.rt_psh_req)
+    i.rt_psq_enq                             0x080075d4   Section        0  rt_list.o(i.rt_psq_enq)
+    i.rt_put_dly                             0x08007630   Section        0  rt_list.o(i.rt_put_dly)
+    i.rt_put_prio                            0x08007678   Section        0  rt_list.o(i.rt_put_prio)
+    i.rt_put_rdy_first                       0x080076b0   Section        0  rt_list.o(i.rt_put_rdy_first)
+    i.rt_resort_prio                         0x080076c4   Section        0  rt_list.o(i.rt_resort_prio)
+    i.rt_ret_regs                            0x080076f8   Section        0  hal_cm.o(i.rt_ret_regs)
+    rt_ret_regs                              0x080076f9   Thumb Code    16  hal_cm.o(i.rt_ret_regs)
+    i.rt_ret_val                             0x08007708   Section        0  hal_cm.o(i.rt_ret_val)
+    i.rt_ret_val2                            0x08007714   Section        0  hal_cm.o(i.rt_ret_val2)
+    i.rt_rmv_dly                             0x08007724   Section        0  rt_list.o(i.rt_rmv_dly)
+    i.rt_rmv_list                            0x0800774c   Section        0  rt_list.o(i.rt_rmv_list)
+    i.rt_sem_init                            0x0800777c   Section        0  rt_semaphore.o(i.rt_sem_init)
+    i.rt_sem_psh                             0x08007788   Section        0  rt_semaphore.o(i.rt_sem_psh)
+    i.rt_sem_send                            0x080077bc   Section        0  rt_semaphore.o(i.rt_sem_send)
+    i.rt_sem_wait                            0x080077e8   Section        0  rt_semaphore.o(i.rt_sem_wait)
+    i.rt_stk_check                           0x08007828   Section        0  rt_system.o(i.rt_stk_check)
+    i.rt_switch_req                          0x0800784c   Section        0  rt_task.o(i.rt_switch_req)
+    i.rt_sys_init                            0x08007874   Section        0  rt_task.o(i.rt_sys_init)
+    i.rt_sys_start                           0x08007940   Section        0  rt_task.o(i.rt_sys_start)
+    i.rt_systick                             0x080079b8   Section        0  rt_system.o(i.rt_systick)
+    i.rt_tid2ptcb                            0x080079f8   Section        0  rt_cmsis.o(i.rt_tid2ptcb)
+    rt_tid2ptcb                              0x080079f9   Thumb Code    18  rt_cmsis.o(i.rt_tid2ptcb)
+    i.rt_timer_insert                        0x08007a0c   Section        0  rt_cmsis.o(i.rt_timer_insert)
+    rt_timer_insert                          0x08007a0d   Thumb Code    48  rt_cmsis.o(i.rt_timer_insert)
+    i.rt_tsk_create                          0x08007a40   Section        0  rt_task.o(i.rt_tsk_create)
+    i.rt_tsk_delete                          0x08007ac8   Section        0  rt_task.o(i.rt_tsk_delete)
+    i.rt_tsk_pass                            0x08007c44   Section        0  rt_task.o(i.rt_tsk_pass)
+    i.rt_tsk_prio                            0x08007c74   Section        0  rt_task.o(i.rt_tsk_prio)
+    i.rt_tsk_self                            0x08007cf0   Section        0  rt_task.o(i.rt_tsk_self)
+    i.setBlockGraphic                        0x08007d00   Section        0  setup.o(i.setBlockGraphic)
+    i.setRandomBlockGraphic                  0x08007d3c   Section        0  setup.o(i.setRandomBlockGraphic)
+    i.skip_pixels                            0x08007e44   Section        0  gfx_mk.o(i.skip_pixels)
+    skip_pixels                              0x08007e45   Thumb Code    46  gfx_mk.o(i.skip_pixels)
+    i.strip_spaces                           0x08007e72   Section        0  gfx_mk.o(i.strip_spaces)
+    strip_spaces                             0x08007e73   Thumb Code    92  gfx_mk.o(i.strip_spaces)
+    i.svcDelay                               0x08007ece   Section        0  rt_cmsis.o(i.svcDelay)
+    i.svcKernelInitialize                    0x08007ee0   Section        0  rt_cmsis.o(i.svcKernelInitialize)
+    i.svcKernelRunning                       0x08007f50   Section        0  rt_cmsis.o(i.svcKernelRunning)
+    i.svcKernelStart                         0x08007f5c   Section        0  rt_cmsis.o(i.svcKernelStart)
+    i.svcMessageCreate                       0x08007fa4   Section        0  rt_cmsis.o(i.svcMessageCreate)
+    i.svcMessageGet                          0x08007fc8   Section        0  rt_cmsis.o(i.svcMessageGet)
+    i.svcMutexCreate                         0x08008002   Section        0  rt_cmsis.o(i.svcMutexCreate)
+    i.svcMutexRelease                        0x0800801e   Section        0  rt_cmsis.o(i.svcMutexRelease)
+    i.svcMutexWait                           0x08008040   Section        0  rt_cmsis.o(i.svcMutexWait)
+    i.svcSemaphoreCreate                     0x08008076   Section        0  rt_cmsis.o(i.svcSemaphoreCreate)
+    i.svcSemaphoreRelease                    0x0800809a   Section        0  rt_cmsis.o(i.svcSemaphoreRelease)
+    i.svcSemaphoreWait                       0x080080c2   Section        0  rt_cmsis.o(i.svcSemaphoreWait)
+    i.svcThreadCreate                        0x080080f4   Section        0  rt_cmsis.o(i.svcThreadCreate)
+    i.svcThreadGetId                         0x08008164   Section        0  rt_cmsis.o(i.svcThreadGetId)
+    i.svcThreadTerminate                     0x08008180   Section        0  rt_cmsis.o(i.svcThreadTerminate)
+    i.svcThreadYield                         0x080081b8   Section        0  rt_cmsis.o(i.svcThreadYield)
+    i.svcTimerCall                           0x080081c2   Section        0  rt_cmsis.o(i.svcTimerCall)
+    i.sysTimerTick                           0x080081dc   Section        0  rt_cmsis.o(i.sysTimerTick)
+    i.taskGLCD                               0x08008238   Section        0  main.o(i.taskGLCD)
     i.taskGameLogic                          0x08008284   Section        0  main.o(i.taskGameLogic)
     i.taskInput                              0x08008298   Section        0  main.o(i.taskInput)
     i.write_bin_codeword                     0x08008368   Section        0  gfx_mk.o(i.write_bin_codeword)
@@ -3276,172 +3276,172 @@ Image Symbol Table
     _mutex_initialize                        0x080044c9   Thumb Code    34  rtx_conf_cm.o(i._mutex_initialize)
     _mutex_release                           0x080044f5   Thumb Code    18  rtx_conf_cm.o(i._mutex_release)
     addscore                                 0x08004511   Thumb Code    12  gameloop.o(i.addscore)
-    attemptMove                              0x08004521   Thumb Code   216  block.o(i.attemptMove)
-    checkForCollision                        0x08004605   Thumb Code   100  block.o(i.checkForCollision)
-    checkForFullRows                         0x0800466d   Thumb Code   114  gameloop.o(i.checkForFullRows)
-    clearNextPieceArea                       0x080046e5   Thumb Code    90  output.o(i.clearNextPieceArea)
-    dbg_init                                 0x08004d99   Thumb Code    34  hal_cm.o(i.dbg_init)
-    dbg_task_notify                          0x08004dc9   Thumb Code    32  hal_cm.o(i.dbg_task_notify)
-    dbg_task_switch                          0x08004de9   Thumb Code    16  hal_cm.o(i.dbg_task_switch)
-    eraseBlock                               0x08004ec9   Thumb Code   116  output.o(i.eraseBlock)
-    ft5336_Init                              0x08005029   Thumb Code    16  ft5336.o(i.ft5336_Init)
-    ft5336_ReadID                            0x08005039   Thumb Code    58  ft5336.o(i.ft5336_ReadID)
-    ft5336_Reset                             0x08005073   Thumb Code     2  ft5336.o(i.ft5336_Reset)
-    ft5336_TS_ClearIT                        0x08005075   Thumb Code     2  ft5336.o(i.ft5336_TS_ClearIT)
-    ft5336_TS_DetectTouch                    0x0800507d   Thumb Code    58  ft5336.o(i.ft5336_TS_DetectTouch)
-    ft5336_TS_DisableIT                      0x080050bd   Thumb Code    20  ft5336.o(i.ft5336_TS_DisableIT)
-    ft5336_TS_EnableIT                       0x080050d1   Thumb Code    20  ft5336.o(i.ft5336_TS_EnableIT)
-    ft5336_TS_GetGestureID                   0x080050e5   Thumb Code    28  ft5336.o(i.ft5336_TS_GetGestureID)
-    ft5336_TS_GetTouchInfo                   0x08005101   Thumb Code   258  ft5336.o(i.ft5336_TS_GetTouchInfo)
-    ft5336_TS_GetXY                          0x08005209   Thumb Code   346  ft5336.o(i.ft5336_TS_GetXY)
-    ft5336_TS_ITStatus                       0x0800536d   Thumb Code     6  ft5336.o(i.ft5336_TS_ITStatus)
-    ft5336_TS_Start                          0x08005373   Thumb Code    22  ft5336.o(i.ft5336_TS_Start)
-    gdispCloseFont                           0x08005389   Thumb Code    28  gfx_mk.o(i.gdispCloseFont)
-    gdispGClear                              0x080053a5   Thumb Code    30  gfx_mk.o(i.gdispGClear)
-    gdispGDrawString                         0x080053c5   Thumb Code    92  gfx_mk.o(i.gdispGDrawString)
-    gdispGFillArea                           0x08005425   Thumb Code   172  gfx_mk.o(i.gdispGFillArea)
-    gdispGGetHeight                          0x080054d1   Thumb Code     8  gfx_mk.o(i.gdispGGetHeight)
-    gdispGGetWidth                           0x080054d9   Thumb Code     8  gfx_mk.o(i.gdispGGetWidth)
-    gdispGSetClip                            0x080054e1   Thumb Code   108  gfx_mk.o(i.gdispGSetClip)
-    gdispOpenFont                            0x0800554d   Thumb Code    72  gfx_mk.o(i.gdispOpenFont)
-    gdisp_lld_blit_area                      0x08005595   Thumb Code   114  gdisp_lld_stm32ltdc.o(i.gdisp_lld_blit_area)
-    gdisp_lld_draw_pixel                     0x08005611   Thumb Code    72  gdisp_lld_stm32ltdc.o(i.gdisp_lld_draw_pixel)
-    gdisp_lld_fill_area                      0x08005661   Thumb Code   112  gdisp_lld_stm32ltdc.o(i.gdisp_lld_fill_area)
-    gdisp_lld_get_pixel_color                0x080056dd   Thumb Code    68  gdisp_lld_stm32ltdc.o(i.gdisp_lld_get_pixel_color)
-    gdisp_lld_init                           0x08005729   Thumb Code   172  gdisp_lld_stm32ltdc.o(i.gdisp_lld_init)
-    gdriverGetInstance                       0x080057e9   Thumb Code    42  gfx_mk.o(i.gdriverGetInstance)
-    gdriverRegister                          0x08005819   Thumb Code   138  gfx_mk.o(i.gdriverRegister)
-    gfxAddHeapBlock                          0x080058c5   Thumb Code    58  gfx_mk.o(i.gfxAddHeapBlock)
-    gfxAlloc                                 0x0800590d   Thumb Code   112  gfx_mk.o(i.gfxAlloc)
-    gfxFree                                  0x08005985   Thumb Code   100  gfx_mk.o(i.gfxFree)
-    gfxInit                                  0x080059f1   Thumb Code    44  gfx_mk.o(i.gfxInit)
-    gfxMutexInit                             0x08005a21   Thumb Code    16  gfx_mk.o(i.gfxMutexInit)
-    gfxQueueASyncInit                        0x08005a31   Thumb Code     8  gfx_mk.o(i.gfxQueueASyncInit)
-    gfxQueueASyncPut                         0x08005a39   Thumb Code    24  gfx_mk.o(i.gfxQueueASyncPut)
-    gfxQueueASyncPutI                        0x08005a51   Thumb Code    28  gfx_mk.o(i.gfxQueueASyncPutI)
-    gfxQueueASyncRemove                      0x08005a6d   Thumb Code    24  gfx_mk.o(i.gfxQueueASyncRemove)
-    gfxQueueASyncRemoveI                     0x08005a85   Thumb Code    66  gfx_mk.o(i.gfxQueueASyncRemoveI)
-    gfxSemInit                               0x08005ac7   Thumb Code    32  gfx_mk.o(i.gfxSemInit)
-    gfxSemSignal                             0x08005ae7   Thumb Code    12  gfx_mk.o(i.gfxSemSignal)
-    gfxSemSignalI                            0x08005af3   Thumb Code    22  gfx_mk.o(i.gfxSemSignalI)
-    gfxSemWait                               0x08005b09   Thumb Code    32  gfx_mk.o(i.gfxSemWait)
-    gtimerInit                               0x08005b29   Thumb Code     6  gfx_mk.o(i.gtimerInit)
-    gwinGetDefaultBgColor                    0x08005b31   Thumb Code     6  gfx_mk.o(i.gwinGetDefaultBgColor)
-    gwinGetNextWindow                        0x08005b3d   Thumb Code    14  gfx_mk.o(i.gwinGetNextWindow)
-    gwinSetVisible                           0x08005b51   Thumb Code    88  gfx_mk.o(i.gwinSetVisible)
-    initialiseNewGame                        0x08005c45   Thumb Code    60  setup.o(i.initialiseNewGame)
-    isrMessageGet                            0x08005c91   Thumb Code    42  rt_cmsis.o(i.isrMessageGet)
-    isrMessagePut                            0x08005cbb   Thumb Code    44  rt_cmsis.o(i.isrMessagePut)
-    isrSemaphoreRelease                      0x08005ce7   Thumb Code    40  rt_cmsis.o(i.isrSemaphoreRelease)
-    isr_mbx_receive                          0x08005d11   Thumb Code    82  rt_mailbox.o(i.isr_mbx_receive)
-    isr_mbx_send                             0x08005d63   Thumb Code    14  rt_mailbox.o(i.isr_mbx_send)
-    isr_sem_send                             0x08005d71   Thumb Code    16  rt_semaphore.o(i.isr_sem_send)
-    main                                     0x08005d81   Thumb Code   900  main.o(i.main)
-    makeBlock                                0x0800614d   Thumb Code    52  setup.o(i.makeBlock)
-    makeBucket                               0x08006185   Thumb Code   128  setup.o(i.makeBucket)
-    mf_bwfont_character_width                0x08006253   Thumb Code    38  gfx_mk.o(i.mf_bwfont_character_width)
-    mf_bwfont_render_character               0x08006279   Thumb Code    58  gfx_mk.o(i.mf_bwfont_render_character)
-    mf_character_width                       0x080062b3   Thumb Code    32  gfx_mk.o(i.mf_character_width)
-    mf_get_font_list                         0x080062d5   Thumb Code     4  gfx_mk.o(i.mf_get_font_list)
-    mf_get_string_width                      0x080062dd   Thumb Code   104  gfx_mk.o(i.mf_get_string_width)
-    mf_getchar                               0x08006345   Thumb Code    22  gfx_mk.o(i.mf_getchar)
-    mf_render_aligned                        0x0800635b   Thumb Code   126  gfx_mk.o(i.mf_render_aligned)
-    mf_render_character                      0x080063d9   Thumb Code    64  gfx_mk.o(i.mf_render_character)
-    mf_rewind                                0x08006419   Thumb Code     8  gfx_mk.o(i.mf_rewind)
-    mf_rlefont_character_width               0x08006421   Thumb Code    26  gfx_mk.o(i.mf_rlefont_character_width)
-    mf_rlefont_render_character              0x0800643b   Thumb Code   112  gfx_mk.o(i.mf_rlefont_render_character)
-    osDelay                                  0x08006529   Thumb Code    18  rt_cmsis.o(i.osDelay)
-    osKernelInitialize                       0x08006541   Thumb Code    30  rt_cmsis.o(i.osKernelInitialize)
-    osKernelRunning                          0x08006565   Thumb Code    28  rt_cmsis.o(i.osKernelRunning)
-    osKernelStart                            0x08006589   Thumb Code    98  rt_cmsis.o(i.osKernelStart)
-    osMessageGet                             0x080065f5   Thumb Code    18  rt_cmsis.o(i.osMessageGet)
-    osMutexCreate                            0x0800660d   Thumb Code    38  rt_cmsis.o(i.osMutexCreate)
-    osMutexRelease                           0x0800663d   Thumb Code    18  rt_cmsis.o(i.osMutexRelease)
-    osMutexWait                              0x08006655   Thumb Code    18  rt_cmsis.o(i.osMutexWait)
-    osSemaphoreCreate                        0x0800666d   Thumb Code    38  rt_cmsis.o(i.osSemaphoreCreate)
-    osSemaphoreRelease                       0x0800669d   Thumb Code    18  rt_cmsis.o(i.osSemaphoreRelease)
-    osSemaphoreWait                          0x080066b5   Thumb Code    20  rt_cmsis.o(i.osSemaphoreWait)
-    osThreadCreate                           0x080066cd   Thumb Code    38  rt_cmsis.o(i.osThreadCreate)
-    osThreadExit                             0x080066fd   Thumb Code    14  rt_cmsis.o(i.osThreadExit)
-    osThreadYield                            0x08006715   Thumb Code    18  rt_cmsis.o(i.osThreadYield)
-    osTimerCall                              0x0800672d   Thumb Code     8  rt_cmsis.o(i.osTimerCall)
-    osTimerThread                            0x08006739   Thumb Code    38  rt_cmsis.o(i.osTimerThread)
-    os_error                                 0x08006765   Thumb Code    34  rtx_conf_cm.o(i.os_error)
-    os_idle_demon                            0x08006787   Thumb Code     4  rtx_conf_cm.o(i.os_idle_demon)
-    os_tick_init                             0x0800678d   Thumb Code    32  rt_system.o(i.os_tick_init)
-    os_tick_irqack                           0x080067b5   Thumb Code     2  rt_system.o(i.os_tick_irqack)
-    printNextBrickWindow                     0x080067b9   Thumb Code   220  output.o(i.printNextBrickWindow)
-    printScoreWindow                         0x080068c1   Thumb Code   112  output.o(i.printScoreWindow)
-    printTetrisBucket                        0x08006959   Thumb Code   516  output.o(i.printTetrisBucket)
-    rotateBlock                              0x08006da1   Thumb Code   170  block.o(i.rotateBlock)
-    rt_alloc_box                             0x08006e51   Thumb Code    26  rt_membox.o(i.rt_alloc_box)
-    rt_alloc_mem                             0x08006e6b   Thumb Code    62  rt_memory.o(i.rt_alloc_mem)
-    rt_block                                 0x08006ea9   Thumb Code    48  rt_task.o(i.rt_block)
-    rt_chk_robin                             0x08006ee1   Thumb Code    60  rt_robin.o(i.rt_chk_robin)
-    rt_dec_dly                               0x08006f29   Thumb Code   102  rt_list.o(i.rt_dec_dly)
-    rt_dispatch                              0x08006f99   Thumb Code    60  rt_task.o(i.rt_dispatch)
-    rt_dly_wait                              0x08006fdd   Thumb Code     6  rt_time.o(i.rt_dly_wait)
-    rt_evt_psh                               0x08006fe5   Thumb Code    76  rt_event.o(i.rt_evt_psh)
-    rt_free_box                              0x08007035   Thumb Code    44  rt_membox.o(i.rt_free_box)
-    rt_free_mem                              0x08007061   Thumb Code    40  rt_memory.o(i.rt_free_mem)
-    rt_get_first                             0x08007089   Thumb Code    40  rt_list.o(i.rt_get_first)
-    rt_get_same_rdy_prio                     0x080070b1   Thumb Code    26  rt_list.o(i.rt_get_same_rdy_prio)
-    rt_init_mem                              0x08007125   Thumb Code    26  rt_memory.o(i.rt_init_mem)
-    rt_init_robin                            0x08007141   Thumb Code    14  rt_robin.o(i.rt_init_robin)
-    rt_init_stack                            0x08007159   Thumb Code   118  hal_cm.o(i.rt_init_stack)
-    rt_mbx_check                             0x080071d9   Thumb Code     8  rt_mailbox.o(i.rt_mbx_check)
-    rt_mbx_init                              0x080071e1   Thumb Code    26  rt_mailbox.o(i.rt_mbx_init)
-    rt_mbx_psh                               0x080071fd   Thumb Code   236  rt_mailbox.o(i.rt_mbx_psh)
-    rt_mbx_wait                              0x080072ed   Thumb Code   174  rt_mailbox.o(i.rt_mbx_wait)
-    rt_mut_init                              0x080073e5   Thumb Code    16  rt_mutex.o(i.rt_mut_init)
-    rt_mut_release                           0x080073f5   Thumb Code   208  rt_mutex.o(i.rt_mut_release)
-    rt_mut_wait                              0x080074cd   Thumb Code   100  rt_mutex.o(i.rt_mut_wait)
-    rt_pop_req                               0x08007535   Thumb Code   112  rt_system.o(i.rt_pop_req)
-    rt_psh_req                               0x080075b1   Thumb Code    22  rt_system.o(i.rt_psh_req)
-    rt_psq_enq                               0x080075d1   Thumb Code    88  rt_list.o(i.rt_psq_enq)
-    rt_put_dly                               0x0800762d   Thumb Code    68  rt_list.o(i.rt_put_dly)
-    rt_put_prio                              0x08007675   Thumb Code    54  rt_list.o(i.rt_put_prio)
-    rt_put_rdy_first                         0x080076ad   Thumb Code    14  rt_list.o(i.rt_put_rdy_first)
-    rt_resort_prio                           0x080076c1   Thumb Code    46  rt_list.o(i.rt_resort_prio)
-    rt_ret_val                               0x08007705   Thumb Code    12  hal_cm.o(i.rt_ret_val)
-    rt_ret_val2                              0x08007711   Thumb Code    16  hal_cm.o(i.rt_ret_val2)
-    rt_rmv_dly                               0x08007721   Thumb Code    40  rt_list.o(i.rt_rmv_dly)
-    rt_rmv_list                              0x08007749   Thumb Code    44  rt_list.o(i.rt_rmv_list)
-    rt_sem_init                              0x08007779   Thumb Code    12  rt_semaphore.o(i.rt_sem_init)
-    rt_sem_psh                               0x08007785   Thumb Code    48  rt_semaphore.o(i.rt_sem_psh)
-    rt_sem_send                              0x080077b9   Thumb Code    42  rt_semaphore.o(i.rt_sem_send)
-    rt_sem_wait                              0x080077e5   Thumb Code    58  rt_semaphore.o(i.rt_sem_wait)
-    rt_stk_check                             0x08007825   Thumb Code    28  rt_system.o(i.rt_stk_check)
-    rt_switch_req                            0x08007849   Thumb Code    30  rt_task.o(i.rt_switch_req)
-    rt_sys_init                              0x08007871   Thumb Code   138  rt_task.o(i.rt_sys_init)
-    rt_sys_start                             0x0800793d   Thumb Code   110  rt_task.o(i.rt_sys_start)
-    rt_systick                               0x080079b5   Thumb Code    50  rt_system.o(i.rt_systick)
-    rt_tsk_create                            0x08007a3d   Thumb Code   118  rt_task.o(i.rt_tsk_create)
-    rt_tsk_delete                            0x08007ac5   Thumb Code   352  rt_task.o(i.rt_tsk_delete)
-    rt_tsk_pass                              0x08007c41   Thumb Code    38  rt_task.o(i.rt_tsk_pass)
-    rt_tsk_prio                              0x08007c71   Thumb Code   108  rt_task.o(i.rt_tsk_prio)
-    rt_tsk_self                              0x08007ced   Thumb Code    12  rt_task.o(i.rt_tsk_self)
-    setBlockGraphic                          0x08007cfd   Thumb Code    60  setup.o(i.setBlockGraphic)
-    setRandomBlockGraphic                    0x08007d39   Thumb Code   264  setup.o(i.setRandomBlockGraphic)
-    svcDelay                                 0x08007ecb   Thumb Code    18  rt_cmsis.o(i.svcDelay)
-    svcKernelInitialize                      0x08007edd   Thumb Code    80  rt_cmsis.o(i.svcKernelInitialize)
-    svcKernelRunning                         0x08007f4d   Thumb Code     6  rt_cmsis.o(i.svcKernelRunning)
-    svcKernelStart                           0x08007f59   Thumb Code    62  rt_cmsis.o(i.svcKernelStart)
-    svcMessageCreate                         0x08007fa1   Thumb Code    36  rt_cmsis.o(i.svcMessageCreate)
-    svcMessageGet                            0x08007fc5   Thumb Code    58  rt_cmsis.o(i.svcMessageGet)
-    svcMutexCreate                           0x08007fff   Thumb Code    28  rt_cmsis.o(i.svcMutexCreate)
-    svcMutexRelease                          0x0800801b   Thumb Code    34  rt_cmsis.o(i.svcMutexRelease)
-    svcMutexWait                             0x0800803d   Thumb Code    54  rt_cmsis.o(i.svcMutexWait)
-    svcSemaphoreCreate                       0x08008073   Thumb Code    36  rt_cmsis.o(i.svcSemaphoreCreate)
-    svcSemaphoreRelease                      0x08008097   Thumb Code    40  rt_cmsis.o(i.svcSemaphoreRelease)
-    svcSemaphoreWait                         0x080080bf   Thumb Code    50  rt_cmsis.o(i.svcSemaphoreWait)
-    svcThreadCreate                          0x080080f1   Thumb Code   100  rt_cmsis.o(i.svcThreadCreate)
-    svcThreadGetId                           0x08008161   Thumb Code    22  rt_cmsis.o(i.svcThreadGetId)
-    svcThreadTerminate                       0x0800817d   Thumb Code    50  rt_cmsis.o(i.svcThreadTerminate)
-    svcThreadYield                           0x080081b5   Thumb Code    10  rt_cmsis.o(i.svcThreadYield)
-    svcTimerCall                             0x080081bf   Thumb Code    24  rt_cmsis.o(i.svcTimerCall)
-    sysTimerTick                             0x080081d9   Thumb Code    84  rt_cmsis.o(i.sysTimerTick)
-    taskGLCD                                 0x08008235   Thumb Code    72  main.o(i.taskGLCD)
+    attemptMove                              0x08004521   Thumb Code   220  block.o(i.attemptMove)
+    checkForCollision                        0x08004609   Thumb Code   100  block.o(i.checkForCollision)
+    checkForFullRows                         0x08004671   Thumb Code   114  gameloop.o(i.checkForFullRows)
+    clearNextPieceArea                       0x080046e9   Thumb Code    90  output.o(i.clearNextPieceArea)
+    dbg_init                                 0x08004d9d   Thumb Code    34  hal_cm.o(i.dbg_init)
+    dbg_task_notify                          0x08004dcd   Thumb Code    32  hal_cm.o(i.dbg_task_notify)
+    dbg_task_switch                          0x08004ded   Thumb Code    16  hal_cm.o(i.dbg_task_switch)
+    eraseBlock                               0x08004ecd   Thumb Code   116  output.o(i.eraseBlock)
+    ft5336_Init                              0x0800502d   Thumb Code    16  ft5336.o(i.ft5336_Init)
+    ft5336_ReadID                            0x0800503d   Thumb Code    58  ft5336.o(i.ft5336_ReadID)
+    ft5336_Reset                             0x08005077   Thumb Code     2  ft5336.o(i.ft5336_Reset)
+    ft5336_TS_ClearIT                        0x08005079   Thumb Code     2  ft5336.o(i.ft5336_TS_ClearIT)
+    ft5336_TS_DetectTouch                    0x08005081   Thumb Code    58  ft5336.o(i.ft5336_TS_DetectTouch)
+    ft5336_TS_DisableIT                      0x080050c1   Thumb Code    20  ft5336.o(i.ft5336_TS_DisableIT)
+    ft5336_TS_EnableIT                       0x080050d5   Thumb Code    20  ft5336.o(i.ft5336_TS_EnableIT)
+    ft5336_TS_GetGestureID                   0x080050e9   Thumb Code    28  ft5336.o(i.ft5336_TS_GetGestureID)
+    ft5336_TS_GetTouchInfo                   0x08005105   Thumb Code   258  ft5336.o(i.ft5336_TS_GetTouchInfo)
+    ft5336_TS_GetXY                          0x0800520d   Thumb Code   346  ft5336.o(i.ft5336_TS_GetXY)
+    ft5336_TS_ITStatus                       0x08005371   Thumb Code     6  ft5336.o(i.ft5336_TS_ITStatus)
+    ft5336_TS_Start                          0x08005377   Thumb Code    22  ft5336.o(i.ft5336_TS_Start)
+    gdispCloseFont                           0x0800538d   Thumb Code    28  gfx_mk.o(i.gdispCloseFont)
+    gdispGClear                              0x080053a9   Thumb Code    30  gfx_mk.o(i.gdispGClear)
+    gdispGDrawString                         0x080053c9   Thumb Code    92  gfx_mk.o(i.gdispGDrawString)
+    gdispGFillArea                           0x08005429   Thumb Code   172  gfx_mk.o(i.gdispGFillArea)
+    gdispGGetHeight                          0x080054d5   Thumb Code     8  gfx_mk.o(i.gdispGGetHeight)
+    gdispGGetWidth                           0x080054dd   Thumb Code     8  gfx_mk.o(i.gdispGGetWidth)
+    gdispGSetClip                            0x080054e5   Thumb Code   108  gfx_mk.o(i.gdispGSetClip)
+    gdispOpenFont                            0x08005551   Thumb Code    72  gfx_mk.o(i.gdispOpenFont)
+    gdisp_lld_blit_area                      0x08005599   Thumb Code   114  gdisp_lld_stm32ltdc.o(i.gdisp_lld_blit_area)
+    gdisp_lld_draw_pixel                     0x08005615   Thumb Code    72  gdisp_lld_stm32ltdc.o(i.gdisp_lld_draw_pixel)
+    gdisp_lld_fill_area                      0x08005665   Thumb Code   112  gdisp_lld_stm32ltdc.o(i.gdisp_lld_fill_area)
+    gdisp_lld_get_pixel_color                0x080056e1   Thumb Code    68  gdisp_lld_stm32ltdc.o(i.gdisp_lld_get_pixel_color)
+    gdisp_lld_init                           0x0800572d   Thumb Code   172  gdisp_lld_stm32ltdc.o(i.gdisp_lld_init)
+    gdriverGetInstance                       0x080057ed   Thumb Code    42  gfx_mk.o(i.gdriverGetInstance)
+    gdriverRegister                          0x0800581d   Thumb Code   138  gfx_mk.o(i.gdriverRegister)
+    gfxAddHeapBlock                          0x080058c9   Thumb Code    58  gfx_mk.o(i.gfxAddHeapBlock)
+    gfxAlloc                                 0x08005911   Thumb Code   112  gfx_mk.o(i.gfxAlloc)
+    gfxFree                                  0x08005989   Thumb Code   100  gfx_mk.o(i.gfxFree)
+    gfxInit                                  0x080059f5   Thumb Code    44  gfx_mk.o(i.gfxInit)
+    gfxMutexInit                             0x08005a25   Thumb Code    16  gfx_mk.o(i.gfxMutexInit)
+    gfxQueueASyncInit                        0x08005a35   Thumb Code     8  gfx_mk.o(i.gfxQueueASyncInit)
+    gfxQueueASyncPut                         0x08005a3d   Thumb Code    24  gfx_mk.o(i.gfxQueueASyncPut)
+    gfxQueueASyncPutI                        0x08005a55   Thumb Code    28  gfx_mk.o(i.gfxQueueASyncPutI)
+    gfxQueueASyncRemove                      0x08005a71   Thumb Code    24  gfx_mk.o(i.gfxQueueASyncRemove)
+    gfxQueueASyncRemoveI                     0x08005a89   Thumb Code    66  gfx_mk.o(i.gfxQueueASyncRemoveI)
+    gfxSemInit                               0x08005acb   Thumb Code    32  gfx_mk.o(i.gfxSemInit)
+    gfxSemSignal                             0x08005aeb   Thumb Code    12  gfx_mk.o(i.gfxSemSignal)
+    gfxSemSignalI                            0x08005af7   Thumb Code    22  gfx_mk.o(i.gfxSemSignalI)
+    gfxSemWait                               0x08005b0d   Thumb Code    32  gfx_mk.o(i.gfxSemWait)
+    gtimerInit                               0x08005b2d   Thumb Code     6  gfx_mk.o(i.gtimerInit)
+    gwinGetDefaultBgColor                    0x08005b35   Thumb Code     6  gfx_mk.o(i.gwinGetDefaultBgColor)
+    gwinGetNextWindow                        0x08005b41   Thumb Code    14  gfx_mk.o(i.gwinGetNextWindow)
+    gwinSetVisible                           0x08005b55   Thumb Code    88  gfx_mk.o(i.gwinSetVisible)
+    initialiseNewGame                        0x08005c49   Thumb Code    60  setup.o(i.initialiseNewGame)
+    isrMessageGet                            0x08005c95   Thumb Code    42  rt_cmsis.o(i.isrMessageGet)
+    isrMessagePut                            0x08005cbf   Thumb Code    44  rt_cmsis.o(i.isrMessagePut)
+    isrSemaphoreRelease                      0x08005ceb   Thumb Code    40  rt_cmsis.o(i.isrSemaphoreRelease)
+    isr_mbx_receive                          0x08005d15   Thumb Code    82  rt_mailbox.o(i.isr_mbx_receive)
+    isr_mbx_send                             0x08005d67   Thumb Code    14  rt_mailbox.o(i.isr_mbx_send)
+    isr_sem_send                             0x08005d75   Thumb Code    16  rt_semaphore.o(i.isr_sem_send)
+    main                                     0x08005d85   Thumb Code   900  main.o(i.main)
+    makeBlock                                0x08006151   Thumb Code    52  setup.o(i.makeBlock)
+    makeBucket                               0x08006189   Thumb Code   128  setup.o(i.makeBucket)
+    mf_bwfont_character_width                0x08006257   Thumb Code    38  gfx_mk.o(i.mf_bwfont_character_width)
+    mf_bwfont_render_character               0x0800627d   Thumb Code    58  gfx_mk.o(i.mf_bwfont_render_character)
+    mf_character_width                       0x080062b7   Thumb Code    32  gfx_mk.o(i.mf_character_width)
+    mf_get_font_list                         0x080062d9   Thumb Code     4  gfx_mk.o(i.mf_get_font_list)
+    mf_get_string_width                      0x080062e1   Thumb Code   104  gfx_mk.o(i.mf_get_string_width)
+    mf_getchar                               0x08006349   Thumb Code    22  gfx_mk.o(i.mf_getchar)
+    mf_render_aligned                        0x0800635f   Thumb Code   126  gfx_mk.o(i.mf_render_aligned)
+    mf_render_character                      0x080063dd   Thumb Code    64  gfx_mk.o(i.mf_render_character)
+    mf_rewind                                0x0800641d   Thumb Code     8  gfx_mk.o(i.mf_rewind)
+    mf_rlefont_character_width               0x08006425   Thumb Code    26  gfx_mk.o(i.mf_rlefont_character_width)
+    mf_rlefont_render_character              0x0800643f   Thumb Code   112  gfx_mk.o(i.mf_rlefont_render_character)
+    osDelay                                  0x0800652d   Thumb Code    18  rt_cmsis.o(i.osDelay)
+    osKernelInitialize                       0x08006545   Thumb Code    30  rt_cmsis.o(i.osKernelInitialize)
+    osKernelRunning                          0x08006569   Thumb Code    28  rt_cmsis.o(i.osKernelRunning)
+    osKernelStart                            0x0800658d   Thumb Code    98  rt_cmsis.o(i.osKernelStart)
+    osMessageGet                             0x080065f9   Thumb Code    18  rt_cmsis.o(i.osMessageGet)
+    osMutexCreate                            0x08006611   Thumb Code    38  rt_cmsis.o(i.osMutexCreate)
+    osMutexRelease                           0x08006641   Thumb Code    18  rt_cmsis.o(i.osMutexRelease)
+    osMutexWait                              0x08006659   Thumb Code    18  rt_cmsis.o(i.osMutexWait)
+    osSemaphoreCreate                        0x08006671   Thumb Code    38  rt_cmsis.o(i.osSemaphoreCreate)
+    osSemaphoreRelease                       0x080066a1   Thumb Code    18  rt_cmsis.o(i.osSemaphoreRelease)
+    osSemaphoreWait                          0x080066b9   Thumb Code    20  rt_cmsis.o(i.osSemaphoreWait)
+    osThreadCreate                           0x080066d1   Thumb Code    38  rt_cmsis.o(i.osThreadCreate)
+    osThreadExit                             0x08006701   Thumb Code    14  rt_cmsis.o(i.osThreadExit)
+    osThreadYield                            0x08006719   Thumb Code    18  rt_cmsis.o(i.osThreadYield)
+    osTimerCall                              0x08006731   Thumb Code     8  rt_cmsis.o(i.osTimerCall)
+    osTimerThread                            0x0800673d   Thumb Code    38  rt_cmsis.o(i.osTimerThread)
+    os_error                                 0x08006769   Thumb Code    34  rtx_conf_cm.o(i.os_error)
+    os_idle_demon                            0x0800678b   Thumb Code     4  rtx_conf_cm.o(i.os_idle_demon)
+    os_tick_init                             0x08006791   Thumb Code    32  rt_system.o(i.os_tick_init)
+    os_tick_irqack                           0x080067b9   Thumb Code     2  rt_system.o(i.os_tick_irqack)
+    printNextBrickWindow                     0x080067bd   Thumb Code   220  output.o(i.printNextBrickWindow)
+    printScoreWindow                         0x080068c5   Thumb Code   112  output.o(i.printScoreWindow)
+    printTetrisBucket                        0x0800695d   Thumb Code   516  output.o(i.printTetrisBucket)
+    rotateBlock                              0x08006da5   Thumb Code   170  block.o(i.rotateBlock)
+    rt_alloc_box                             0x08006e55   Thumb Code    26  rt_membox.o(i.rt_alloc_box)
+    rt_alloc_mem                             0x08006e6f   Thumb Code    62  rt_memory.o(i.rt_alloc_mem)
+    rt_block                                 0x08006ead   Thumb Code    48  rt_task.o(i.rt_block)
+    rt_chk_robin                             0x08006ee5   Thumb Code    60  rt_robin.o(i.rt_chk_robin)
+    rt_dec_dly                               0x08006f2d   Thumb Code   102  rt_list.o(i.rt_dec_dly)
+    rt_dispatch                              0x08006f9d   Thumb Code    60  rt_task.o(i.rt_dispatch)
+    rt_dly_wait                              0x08006fe1   Thumb Code     6  rt_time.o(i.rt_dly_wait)
+    rt_evt_psh                               0x08006fe9   Thumb Code    76  rt_event.o(i.rt_evt_psh)
+    rt_free_box                              0x08007039   Thumb Code    44  rt_membox.o(i.rt_free_box)
+    rt_free_mem                              0x08007065   Thumb Code    40  rt_memory.o(i.rt_free_mem)
+    rt_get_first                             0x0800708d   Thumb Code    40  rt_list.o(i.rt_get_first)
+    rt_get_same_rdy_prio                     0x080070b5   Thumb Code    26  rt_list.o(i.rt_get_same_rdy_prio)
+    rt_init_mem                              0x08007129   Thumb Code    26  rt_memory.o(i.rt_init_mem)
+    rt_init_robin                            0x08007145   Thumb Code    14  rt_robin.o(i.rt_init_robin)
+    rt_init_stack                            0x0800715d   Thumb Code   118  hal_cm.o(i.rt_init_stack)
+    rt_mbx_check                             0x080071dd   Thumb Code     8  rt_mailbox.o(i.rt_mbx_check)
+    rt_mbx_init                              0x080071e5   Thumb Code    26  rt_mailbox.o(i.rt_mbx_init)
+    rt_mbx_psh                               0x08007201   Thumb Code   236  rt_mailbox.o(i.rt_mbx_psh)
+    rt_mbx_wait                              0x080072f1   Thumb Code   174  rt_mailbox.o(i.rt_mbx_wait)
+    rt_mut_init                              0x080073e9   Thumb Code    16  rt_mutex.o(i.rt_mut_init)
+    rt_mut_release                           0x080073f9   Thumb Code   208  rt_mutex.o(i.rt_mut_release)
+    rt_mut_wait                              0x080074d1   Thumb Code   100  rt_mutex.o(i.rt_mut_wait)
+    rt_pop_req                               0x08007539   Thumb Code   112  rt_system.o(i.rt_pop_req)
+    rt_psh_req                               0x080075b5   Thumb Code    22  rt_system.o(i.rt_psh_req)
+    rt_psq_enq                               0x080075d5   Thumb Code    88  rt_list.o(i.rt_psq_enq)
+    rt_put_dly                               0x08007631   Thumb Code    68  rt_list.o(i.rt_put_dly)
+    rt_put_prio                              0x08007679   Thumb Code    54  rt_list.o(i.rt_put_prio)
+    rt_put_rdy_first                         0x080076b1   Thumb Code    14  rt_list.o(i.rt_put_rdy_first)
+    rt_resort_prio                           0x080076c5   Thumb Code    46  rt_list.o(i.rt_resort_prio)
+    rt_ret_val                               0x08007709   Thumb Code    12  hal_cm.o(i.rt_ret_val)
+    rt_ret_val2                              0x08007715   Thumb Code    16  hal_cm.o(i.rt_ret_val2)
+    rt_rmv_dly                               0x08007725   Thumb Code    40  rt_list.o(i.rt_rmv_dly)
+    rt_rmv_list                              0x0800774d   Thumb Code    44  rt_list.o(i.rt_rmv_list)
+    rt_sem_init                              0x0800777d   Thumb Code    12  rt_semaphore.o(i.rt_sem_init)
+    rt_sem_psh                               0x08007789   Thumb Code    48  rt_semaphore.o(i.rt_sem_psh)
+    rt_sem_send                              0x080077bd   Thumb Code    42  rt_semaphore.o(i.rt_sem_send)
+    rt_sem_wait                              0x080077e9   Thumb Code    58  rt_semaphore.o(i.rt_sem_wait)
+    rt_stk_check                             0x08007829   Thumb Code    28  rt_system.o(i.rt_stk_check)
+    rt_switch_req                            0x0800784d   Thumb Code    30  rt_task.o(i.rt_switch_req)
+    rt_sys_init                              0x08007875   Thumb Code   138  rt_task.o(i.rt_sys_init)
+    rt_sys_start                             0x08007941   Thumb Code   110  rt_task.o(i.rt_sys_start)
+    rt_systick                               0x080079b9   Thumb Code    50  rt_system.o(i.rt_systick)
+    rt_tsk_create                            0x08007a41   Thumb Code   118  rt_task.o(i.rt_tsk_create)
+    rt_tsk_delete                            0x08007ac9   Thumb Code   352  rt_task.o(i.rt_tsk_delete)
+    rt_tsk_pass                              0x08007c45   Thumb Code    38  rt_task.o(i.rt_tsk_pass)
+    rt_tsk_prio                              0x08007c75   Thumb Code   108  rt_task.o(i.rt_tsk_prio)
+    rt_tsk_self                              0x08007cf1   Thumb Code    12  rt_task.o(i.rt_tsk_self)
+    setBlockGraphic                          0x08007d01   Thumb Code    60  setup.o(i.setBlockGraphic)
+    setRandomBlockGraphic                    0x08007d3d   Thumb Code   264  setup.o(i.setRandomBlockGraphic)
+    svcDelay                                 0x08007ecf   Thumb Code    18  rt_cmsis.o(i.svcDelay)
+    svcKernelInitialize                      0x08007ee1   Thumb Code    80  rt_cmsis.o(i.svcKernelInitialize)
+    svcKernelRunning                         0x08007f51   Thumb Code     6  rt_cmsis.o(i.svcKernelRunning)
+    svcKernelStart                           0x08007f5d   Thumb Code    62  rt_cmsis.o(i.svcKernelStart)
+    svcMessageCreate                         0x08007fa5   Thumb Code    36  rt_cmsis.o(i.svcMessageCreate)
+    svcMessageGet                            0x08007fc9   Thumb Code    58  rt_cmsis.o(i.svcMessageGet)
+    svcMutexCreate                           0x08008003   Thumb Code    28  rt_cmsis.o(i.svcMutexCreate)
+    svcMutexRelease                          0x0800801f   Thumb Code    34  rt_cmsis.o(i.svcMutexRelease)
+    svcMutexWait                             0x08008041   Thumb Code    54  rt_cmsis.o(i.svcMutexWait)
+    svcSemaphoreCreate                       0x08008077   Thumb Code    36  rt_cmsis.o(i.svcSemaphoreCreate)
+    svcSemaphoreRelease                      0x0800809b   Thumb Code    40  rt_cmsis.o(i.svcSemaphoreRelease)
+    svcSemaphoreWait                         0x080080c3   Thumb Code    50  rt_cmsis.o(i.svcSemaphoreWait)
+    svcThreadCreate                          0x080080f5   Thumb Code   100  rt_cmsis.o(i.svcThreadCreate)
+    svcThreadGetId                           0x08008165   Thumb Code    22  rt_cmsis.o(i.svcThreadGetId)
+    svcThreadTerminate                       0x08008181   Thumb Code    50  rt_cmsis.o(i.svcThreadTerminate)
+    svcThreadYield                           0x080081b9   Thumb Code    10  rt_cmsis.o(i.svcThreadYield)
+    svcTimerCall                             0x080081c3   Thumb Code    24  rt_cmsis.o(i.svcTimerCall)
+    sysTimerTick                             0x080081dd   Thumb Code    84  rt_cmsis.o(i.sysTimerTick)
+    taskGLCD                                 0x08008239   Thumb Code    68  main.o(i.taskGLCD)
     taskGameLogic                            0x08008285   Thumb Code    18  main.o(i.taskGameLogic)
     taskInput                                0x08008299   Thumb Code   190  main.o(i.taskInput)
     _fp_init                                 0x08008599   Thumb Code    10  fpinit.o(x$fpl$fpinit)
@@ -3741,217 +3741,217 @@ Memory Map of the image
     0x080044c8   0x0000002c   Code   RO         2933    i._mutex_initialize  rtx_conf_cm.o
     0x080044f4   0x0000001c   Code   RO         2934    i._mutex_release    rtx_conf_cm.o
     0x08004510   0x00000010   Code   RO          403    i.addscore          gameloop.o
-    0x08004520   0x000000e4   Code   RO          360    i.attemptMove       block.o
-    0x08004604   0x00000068   Code   RO          361    i.checkForCollision  block.o
-    0x0800466c   0x00000078   Code   RO          404    i.checkForFullRows  gameloop.o
-    0x080046e4   0x00000068   Code   RO          482    i.clearNextPieceArea  output.o
-    0x0800474c   0x0000064c   Code   RO         2159    i.configureLcdPins  gdisp_lld_stm32ltdc.o
-    0x08004d98   0x00000030   Code   RO         6100    i.dbg_init          RTX_CM4.lib(hal_cm.o)
-    0x08004dc8   0x00000020   Code   RO         6101    i.dbg_task_notify   RTX_CM4.lib(hal_cm.o)
-    0x08004de8   0x00000010   Code   RO         6102    i.dbg_task_switch   RTX_CM4.lib(hal_cm.o)
-    0x08004df8   0x00000020   Code   RO         2160    i.dma2d_init        gdisp_lld_stm32ltdc.o
-    0x08004e18   0x00000028   Code   RO          579    i.drawcharglyph     gfx_mk.o
-    0x08004e40   0x0000007c   Code   RO          580    i.drawcharline      gfx_mk.o
-    0x08004ebc   0x0000000c   Code   RO          581    i.drawpixel         gfx_mk.o
-    0x08004ec8   0x0000008c   Code   RO          483    i.eraseBlock        output.o
-    0x08004f54   0x0000000c   Code   RO          583    i.fillarea          gfx_mk.o
-    0x08004f60   0x0000002e   Code   RO          585    i.fillentry_bitcount  gfx_mk.o
-    0x08004f8e   0x00000038   Code   RO          586    i.find_char_range   gfx_mk.o
-    0x08004fc6   0x0000003e   Code   RO          587    i.find_glyph        gfx_mk.o
-    0x08005004   0x0000000c   Code   RO         2265    i.ft5336_Get_I2C_InitializedStatus  ft5336.o
-    0x08005010   0x00000018   Code   RO         2266    i.ft5336_I2C_InitializeIfRequired  ft5336.o
-    0x08005028   0x00000010   Code   RO         2267    i.ft5336_Init       ft5336.o
-    0x08005038   0x0000003a   Code   RO         2268    i.ft5336_ReadID     ft5336.o
-    0x08005072   0x00000002   Code   RO         2269    i.ft5336_Reset      ft5336.o
-    0x08005074   0x00000002   Code   RO         2270    i.ft5336_TS_ClearIT  ft5336.o
-    0x08005076   0x00000006   Code   RO         2271    i.ft5336_TS_Configure  ft5336.o
-    0x0800507c   0x00000040   Code   RO         2272    i.ft5336_TS_DetectTouch  ft5336.o
-    0x080050bc   0x00000014   Code   RO         2273    i.ft5336_TS_DisableIT  ft5336.o
-    0x080050d0   0x00000014   Code   RO         2274    i.ft5336_TS_EnableIT  ft5336.o
-    0x080050e4   0x0000001c   Code   RO         2275    i.ft5336_TS_GetGestureID  ft5336.o
-    0x08005100   0x00000108   Code   RO         2276    i.ft5336_TS_GetTouchInfo  ft5336.o
-    0x08005208   0x00000164   Code   RO         2277    i.ft5336_TS_GetXY   ft5336.o
-    0x0800536c   0x00000006   Code   RO         2278    i.ft5336_TS_ITStatus  ft5336.o
-    0x08005372   0x00000016   Code   RO         2279    i.ft5336_TS_Start   ft5336.o
-    0x08005388   0x0000001c   Code   RO          589    i.gdispCloseFont    gfx_mk.o
-    0x080053a4   0x0000001e   Code   RO          592    i.gdispGClear       gfx_mk.o
-    0x080053c2   0x00000002   PAD
-    0x080053c4   0x00000060   Code   RO          597    i.gdispGDrawString  gfx_mk.o
-    0x08005424   0x000000ac   Code   RO          599    i.gdispGFillArea    gfx_mk.o
-    0x080054d0   0x00000008   Code   RO          606    i.gdispGGetHeight   gfx_mk.o
-    0x080054d8   0x00000008   Code   RO          609    i.gdispGGetWidth    gfx_mk.o
-    0x080054e0   0x0000006c   Code   RO          610    i.gdispGSetClip     gfx_mk.o
-    0x0800554c   0x00000048   Code   RO          618    i.gdispOpenFont     gfx_mk.o
-    0x08005594   0x0000007c   Code   RO         2161    i.gdisp_lld_blit_area  gdisp_lld_stm32ltdc.o
-    0x08005610   0x00000050   Code   RO         2162    i.gdisp_lld_draw_pixel  gdisp_lld_stm32ltdc.o
-    0x08005660   0x0000007c   Code   RO         2163    i.gdisp_lld_fill_area  gdisp_lld_stm32ltdc.o
-    0x080056dc   0x0000004c   Code   RO         2164    i.gdisp_lld_get_pixel_color  gdisp_lld_stm32ltdc.o
-    0x08005728   0x000000c0   Code   RO         2165    i.gdisp_lld_init    gdisp_lld_stm32ltdc.o
-    0x080057e8   0x00000030   Code   RO          622    i.gdriverGetInstance  gfx_mk.o
-    0x08005818   0x00000094   Code   RO          625    i.gdriverRegister   gfx_mk.o
-    0x080058ac   0x00000016   Code   RO          627    i.get_width         gfx_mk.o
-    0x080058c2   0x00000002   PAD
-    0x080058c4   0x00000048   Code   RO          628    i.gfxAddHeapBlock   gfx_mk.o
-    0x0800590c   0x00000078   Code   RO          629    i.gfxAlloc          gfx_mk.o
-    0x08005984   0x0000006c   Code   RO          631    i.gfxFree           gfx_mk.o
-    0x080059f0   0x00000030   Code   RO          632    i.gfxInit           gfx_mk.o
-    0x08005a20   0x00000010   Code   RO          633    i.gfxMutexInit      gfx_mk.o
-    0x08005a30   0x00000008   Code   RO          636    i.gfxQueueASyncInit  gfx_mk.o
-    0x08005a38   0x00000018   Code   RO          643    i.gfxQueueASyncPut  gfx_mk.o
-    0x08005a50   0x0000001c   Code   RO          644    i.gfxQueueASyncPutI  gfx_mk.o
-    0x08005a6c   0x00000018   Code   RO          645    i.gfxQueueASyncRemove  gfx_mk.o
-    0x08005a84   0x00000042   Code   RO          646    i.gfxQueueASyncRemoveI  gfx_mk.o
-    0x08005ac6   0x00000020   Code   RO          649    i.gfxSemInit        gfx_mk.o
-    0x08005ae6   0x0000000c   Code   RO          650    i.gfxSemSignal      gfx_mk.o
-    0x08005af2   0x00000016   Code   RO          651    i.gfxSemSignalI     gfx_mk.o
-    0x08005b08   0x00000020   Code   RO          652    i.gfxSemWait        gfx_mk.o
-    0x08005b28   0x00000006   Code   RO          657    i.gtimerInit        gfx_mk.o
-    0x08005b2e   0x00000002   PAD
-    0x08005b30   0x0000000c   Code   RO          679    i.gwinGetDefaultBgColor  gfx_mk.o
-    0x08005b3c   0x00000014   Code   RO          684    i.gwinGetNextWindow  gfx_mk.o
-    0x08005b50   0x0000005c   Code   RO          698    i.gwinSetVisible    gfx_mk.o
-    0x08005bac   0x00000096   Code   RO          700    i.hline_clip        gfx_mk.o
-    0x08005c42   0x00000002   PAD
-    0x08005c44   0x0000004c   Code   RO          427    i.initialiseNewGame  setup.o
-    0x08005c90   0x0000002a   Code   RO         4950    i.isrMessageGet     RTX_CM4.lib(rt_cmsis.o)
-    0x08005cba   0x0000002c   Code   RO         4951    i.isrMessagePut     RTX_CM4.lib(rt_cmsis.o)
-    0x08005ce6   0x00000028   Code   RO         4952    i.isrSemaphoreRelease  RTX_CM4.lib(rt_cmsis.o)
-    0x08005d0e   0x00000002   PAD
-    0x08005d10   0x00000052   Code   RO         5935    i.isr_mbx_receive   RTX_CM4.lib(rt_mailbox.o)
-    0x08005d62   0x0000000e   Code   RO         5936    i.isr_mbx_send      RTX_CM4.lib(rt_mailbox.o)
-    0x08005d70   0x00000010   Code   RO         5983    i.isr_sem_send      RTX_CM4.lib(rt_semaphore.o)
-    0x08005d80   0x000003cc   Code   RO            8    i.main              main.o
-    0x0800614c   0x00000038   Code   RO          428    i.makeBlock         setup.o
-    0x08006184   0x00000080   Code   RO          429    i.makeBucket        setup.o
-    0x08006204   0x0000004e   Code   RO          703    i.matchfont         gfx_mk.o
-    0x08006252   0x00000026   Code   RO          704    i.mf_bwfont_character_width  gfx_mk.o
-    0x08006278   0x0000003a   Code   RO          705    i.mf_bwfont_render_character  gfx_mk.o
-    0x080062b2   0x00000020   Code   RO          706    i.mf_character_width  gfx_mk.o
-    0x080062d2   0x00000002   PAD
-    0x080062d4   0x00000008   Code   RO          708    i.mf_get_font_list  gfx_mk.o
-    0x080062dc   0x00000068   Code   RO          709    i.mf_get_string_width  gfx_mk.o
-    0x08006344   0x00000016   Code   RO          710    i.mf_getchar        gfx_mk.o
-    0x0800635a   0x0000007e   Code   RO          711    i.mf_render_aligned  gfx_mk.o
-    0x080063d8   0x00000040   Code   RO          712    i.mf_render_character  gfx_mk.o
-    0x08006418   0x00000008   Code   RO          714    i.mf_rewind         gfx_mk.o
-    0x08006420   0x0000001a   Code   RO          715    i.mf_rlefont_character_width  gfx_mk.o
-    0x0800643a   0x00000070   Code   RO          716    i.mf_rlefont_render_character  gfx_mk.o
-    0x080064aa   0x0000003e   Code   RO          717    i.mf_round_to_prev_tab  gfx_mk.o
-    0x080064e8   0x0000003e   Code   RO          718    i.mf_round_to_tab   gfx_mk.o
-    0x08006526   0x00000002   PAD
-    0x08006528   0x00000018   Code   RO         4954    i.osDelay           RTX_CM4.lib(rt_cmsis.o)
-    0x08006540   0x00000024   Code   RO         4955    i.osKernelInitialize  RTX_CM4.lib(rt_cmsis.o)
-    0x08006564   0x00000024   Code   RO         4956    i.osKernelRunning   RTX_CM4.lib(rt_cmsis.o)
-    0x08006588   0x0000006c   Code   RO         4957    i.osKernelStart     RTX_CM4.lib(rt_cmsis.o)
-    0x080065f4   0x00000018   Code   RO         4966    i.osMessageGet      RTX_CM4.lib(rt_cmsis.o)
-    0x0800660c   0x00000030   Code   RO         4968    i.osMutexCreate     RTX_CM4.lib(rt_cmsis.o)
-    0x0800663c   0x00000018   Code   RO         4970    i.osMutexRelease    RTX_CM4.lib(rt_cmsis.o)
-    0x08006654   0x00000018   Code   RO         4971    i.osMutexWait       RTX_CM4.lib(rt_cmsis.o)
-    0x0800666c   0x00000030   Code   RO         4976    i.osSemaphoreCreate  RTX_CM4.lib(rt_cmsis.o)
-    0x0800669c   0x00000018   Code   RO         4978    i.osSemaphoreRelease  RTX_CM4.lib(rt_cmsis.o)
-    0x080066b4   0x00000018   Code   RO         4979    i.osSemaphoreWait   RTX_CM4.lib(rt_cmsis.o)
-    0x080066cc   0x00000030   Code   RO         4983    i.osThreadCreate    RTX_CM4.lib(rt_cmsis.o)
-    0x080066fc   0x00000018   Code   RO         4984    i.osThreadExit      RTX_CM4.lib(rt_cmsis.o)
-    0x08006714   0x00000018   Code   RO         4989    i.osThreadYield     RTX_CM4.lib(rt_cmsis.o)
-    0x0800672c   0x0000000c   Code   RO         4990    i.osTimerCall       RTX_CM4.lib(rt_cmsis.o)
-    0x08006738   0x0000002c   Code   RO         4995    i.osTimerThread     RTX_CM4.lib(rt_cmsis.o)
-    0x08006764   0x00000022   Code   RO         2935    i.os_error          rtx_conf_cm.o
-    0x08006786   0x00000004   Code   RO         2936    i.os_idle_demon     rtx_conf_cm.o
-    0x0800678a   0x00000002   PAD
-    0x0800678c   0x00000028   Code   RO         5727    i.os_tick_init      RTX_CM4.lib(rt_system.o)
-    0x080067b4   0x00000002   Code   RO         5728    i.os_tick_irqack    RTX_CM4.lib(rt_system.o)
-    0x080067b6   0x00000002   PAD
-    0x080067b8   0x00000108   Code   RO          485    i.printNextBrickWindow  output.o
-    0x080068c0   0x00000098   Code   RO          486    i.printScoreWindow  output.o
-    0x08006958   0x00000220   Code   RO          487    i.printTetrisBucket  output.o
-    0x08006b78   0x00000138   Code   RO          723    i.render_char       gfx_mk.o
-    0x08006cb0   0x00000064   Code   RO          724    i.render_left       gfx_mk.o
-    0x08006d14   0x0000008a   Code   RO          725    i.render_right      gfx_mk.o
-    0x08006d9e   0x00000002   PAD
-    0x08006da0   0x000000b0   Code   RO          362    i.rotateBlock       block.o
-    0x08006e50   0x0000001a   Code   RO         6048    i.rt_alloc_box      RTX_CM4.lib(rt_membox.o)
-    0x08006e6a   0x0000003e   Code   RO         6076    i.rt_alloc_mem      RTX_CM4.lib(rt_memory.o)
-    0x08006ea8   0x00000038   Code   RO         5575    i.rt_block          RTX_CM4.lib(rt_task.o)
-    0x08006ee0   0x00000048   Code   RO         6025    i.rt_chk_robin      RTX_CM4.lib(rt_robin.o)
-    0x08006f28   0x00000070   Code   RO         5859    i.rt_dec_dly        RTX_CM4.lib(rt_list.o)
-    0x08006f98   0x00000044   Code   RO         5576    i.rt_dispatch       RTX_CM4.lib(rt_task.o)
-    0x08006fdc   0x00000006   Code   RO         5659    i.rt_dly_wait       RTX_CM4.lib(rt_time.o)
-    0x08006fe2   0x00000002   PAD
-    0x08006fe4   0x00000050   Code   RO         5820    i.rt_evt_psh        RTX_CM4.lib(rt_event.o)
-    0x08007034   0x0000002c   Code   RO         6049    i.rt_free_box       RTX_CM4.lib(rt_membox.o)
-    0x08007060   0x00000028   Code   RO         6077    i.rt_free_mem       RTX_CM4.lib(rt_memory.o)
-    0x08007088   0x00000028   Code   RO         5860    i.rt_get_first      RTX_CM4.lib(rt_list.o)
-    0x080070b0   0x00000024   Code   RO         5861    i.rt_get_same_rdy_prio  RTX_CM4.lib(rt_list.o)
-    0x080070d4   0x00000008   Code   RO         5000    i.rt_id2obj         RTX_CM4.lib(rt_cmsis.o)
-    0x080070dc   0x00000048   Code   RO         5577    i.rt_init_context   RTX_CM4.lib(rt_task.o)
-    0x08007124   0x0000001a   Code   RO         6078    i.rt_init_mem       RTX_CM4.lib(rt_memory.o)
-    0x0800713e   0x00000002   PAD
-    0x08007140   0x00000018   Code   RO         6026    i.rt_init_robin     RTX_CM4.lib(rt_robin.o)
-    0x08007158   0x00000080   Code   RO         6103    i.rt_init_stack     RTX_CM4.lib(hal_cm.o)
-    0x080071d8   0x00000008   Code   RO         5937    i.rt_mbx_check      RTX_CM4.lib(rt_mailbox.o)
-    0x080071e0   0x0000001a   Code   RO         5938    i.rt_mbx_init       RTX_CM4.lib(rt_mailbox.o)
-    0x080071fa   0x00000002   PAD
-    0x080071fc   0x000000f0   Code   RO         5939    i.rt_mbx_psh        RTX_CM4.lib(rt_mailbox.o)
-    0x080072ec   0x000000b4   Code   RO         5941    i.rt_mbx_wait       RTX_CM4.lib(rt_mailbox.o)
-    0x080073a0   0x00000044   Code   RO         5001    i.rt_ms2tick        RTX_CM4.lib(rt_cmsis.o)
-    0x080073e4   0x00000010   Code   RO         5693    i.rt_mut_init       RTX_CM4.lib(rt_mutex.o)
-    0x080073f4   0x000000d8   Code   RO         5694    i.rt_mut_release    RTX_CM4.lib(rt_mutex.o)
-    0x080074cc   0x00000068   Code   RO         5695    i.rt_mut_wait       RTX_CM4.lib(rt_mutex.o)
-    0x08007534   0x0000007c   Code   RO         5731    i.rt_pop_req        RTX_CM4.lib(rt_system.o)
-    0x080075b0   0x00000020   Code   RO         5732    i.rt_psh_req        RTX_CM4.lib(rt_system.o)
-    0x080075d0   0x0000005c   Code   RO         5862    i.rt_psq_enq        RTX_CM4.lib(rt_list.o)
-    0x0800762c   0x00000048   Code   RO         5863    i.rt_put_dly        RTX_CM4.lib(rt_list.o)
-    0x08007674   0x00000036   Code   RO         5864    i.rt_put_prio       RTX_CM4.lib(rt_list.o)
-    0x080076aa   0x00000002   PAD
-    0x080076ac   0x00000014   Code   RO         5865    i.rt_put_rdy_first  RTX_CM4.lib(rt_list.o)
-    0x080076c0   0x00000034   Code   RO         5866    i.rt_resort_prio    RTX_CM4.lib(rt_list.o)
-    0x080076f4   0x00000010   Code   RO         6104    i.rt_ret_regs       RTX_CM4.lib(hal_cm.o)
-    0x08007704   0x0000000c   Code   RO         6105    i.rt_ret_val        RTX_CM4.lib(hal_cm.o)
-    0x08007710   0x00000010   Code   RO         6106    i.rt_ret_val2       RTX_CM4.lib(hal_cm.o)
-    0x08007720   0x00000028   Code   RO         5867    i.rt_rmv_dly        RTX_CM4.lib(rt_list.o)
-    0x08007748   0x00000030   Code   RO         5868    i.rt_rmv_list       RTX_CM4.lib(rt_list.o)
-    0x08007778   0x0000000c   Code   RO         5985    i.rt_sem_init       RTX_CM4.lib(rt_semaphore.o)
-    0x08007784   0x00000034   Code   RO         5986    i.rt_sem_psh        RTX_CM4.lib(rt_semaphore.o)
-    0x080077b8   0x0000002a   Code   RO         5987    i.rt_sem_send       RTX_CM4.lib(rt_semaphore.o)
-    0x080077e2   0x00000002   PAD
-    0x080077e4   0x00000040   Code   RO         5988    i.rt_sem_wait       RTX_CM4.lib(rt_semaphore.o)
-    0x08007824   0x00000024   Code   RO         5734    i.rt_stk_check      RTX_CM4.lib(rt_system.o)
-    0x08007848   0x00000028   Code   RO         5578    i.rt_switch_req     RTX_CM4.lib(rt_task.o)
-    0x08007870   0x000000cc   Code   RO         5579    i.rt_sys_init       RTX_CM4.lib(rt_task.o)
-    0x0800793c   0x00000078   Code   RO         5580    i.rt_sys_start      RTX_CM4.lib(rt_task.o)
-    0x080079b4   0x00000040   Code   RO         5736    i.rt_systick        RTX_CM4.lib(rt_system.o)
-    0x080079f4   0x00000012   Code   RO         5002    i.rt_tid2ptcb       RTX_CM4.lib(rt_cmsis.o)
-    0x08007a06   0x00000002   PAD
-    0x08007a08   0x00000034   Code   RO         5003    i.rt_timer_insert   RTX_CM4.lib(rt_cmsis.o)
-    0x08007a3c   0x00000088   Code   RO         5581    i.rt_tsk_create     RTX_CM4.lib(rt_task.o)
-    0x08007ac4   0x0000017c   Code   RO         5582    i.rt_tsk_delete     RTX_CM4.lib(rt_task.o)
-    0x08007c40   0x00000030   Code   RO         5583    i.rt_tsk_pass       RTX_CM4.lib(rt_task.o)
-    0x08007c70   0x0000007c   Code   RO         5584    i.rt_tsk_prio       RTX_CM4.lib(rt_task.o)
-    0x08007cec   0x00000010   Code   RO         5585    i.rt_tsk_self       RTX_CM4.lib(rt_task.o)
-    0x08007cfc   0x0000003c   Code   RO          430    i.setBlockGraphic   setup.o
-    0x08007d38   0x00000108   Code   RO          431    i.setRandomBlockGraphic  setup.o
-    0x08007e40   0x0000002e   Code   RO          727    i.skip_pixels       gfx_mk.o
-    0x08007e6e   0x0000005c   Code   RO          729    i.strip_spaces      gfx_mk.o
-    0x08007eca   0x00000012   Code   RO         5005    i.svcDelay          RTX_CM4.lib(rt_cmsis.o)
-    0x08007edc   0x00000070   Code   RO         5006    i.svcKernelInitialize  RTX_CM4.lib(rt_cmsis.o)
-    0x08007f4c   0x0000000c   Code   RO         5007    i.svcKernelRunning  RTX_CM4.lib(rt_cmsis.o)
-    0x08007f58   0x00000048   Code   RO         5008    i.svcKernelStart    RTX_CM4.lib(rt_cmsis.o)
-    0x08007fa0   0x00000024   Code   RO         5011    i.svcMessageCreate  RTX_CM4.lib(rt_cmsis.o)
-    0x08007fc4   0x0000003a   Code   RO         5012    i.svcMessageGet     RTX_CM4.lib(rt_cmsis.o)
-    0x08007ffe   0x0000001c   Code   RO         5014    i.svcMutexCreate    RTX_CM4.lib(rt_cmsis.o)
-    0x0800801a   0x00000022   Code   RO         5016    i.svcMutexRelease   RTX_CM4.lib(rt_cmsis.o)
-    0x0800803c   0x00000036   Code   RO         5017    i.svcMutexWait      RTX_CM4.lib(rt_cmsis.o)
-    0x08008072   0x00000024   Code   RO         5019    i.svcSemaphoreCreate  RTX_CM4.lib(rt_cmsis.o)
-    0x08008096   0x00000028   Code   RO         5021    i.svcSemaphoreRelease  RTX_CM4.lib(rt_cmsis.o)
-    0x080080be   0x00000032   Code   RO         5022    i.svcSemaphoreWait  RTX_CM4.lib(rt_cmsis.o)
-    0x080080f0   0x00000070   Code   RO         5026    i.svcThreadCreate   RTX_CM4.lib(rt_cmsis.o)
-    0x08008160   0x0000001c   Code   RO         5027    i.svcThreadGetId    RTX_CM4.lib(rt_cmsis.o)
-    0x0800817c   0x00000038   Code   RO         5030    i.svcThreadTerminate  RTX_CM4.lib(rt_cmsis.o)
-    0x080081b4   0x0000000a   Code   RO         5031    i.svcThreadYield    RTX_CM4.lib(rt_cmsis.o)
-    0x080081be   0x00000018   Code   RO         5032    i.svcTimerCall      RTX_CM4.lib(rt_cmsis.o)
-    0x080081d6   0x00000002   PAD
-    0x080081d8   0x0000005c   Code   RO         5041    i.sysTimerTick      RTX_CM4.lib(rt_cmsis.o)
-    0x08008234   0x00000050   Code   RO            9    i.taskGLCD          main.o
+    0x08004520   0x000000e8   Code   RO          360    i.attemptMove       block.o
+    0x08004608   0x00000068   Code   RO          361    i.checkForCollision  block.o
+    0x08004670   0x00000078   Code   RO          404    i.checkForFullRows  gameloop.o
+    0x080046e8   0x00000068   Code   RO          482    i.clearNextPieceArea  output.o
+    0x08004750   0x0000064c   Code   RO         2159    i.configureLcdPins  gdisp_lld_stm32ltdc.o
+    0x08004d9c   0x00000030   Code   RO         6100    i.dbg_init          RTX_CM4.lib(hal_cm.o)
+    0x08004dcc   0x00000020   Code   RO         6101    i.dbg_task_notify   RTX_CM4.lib(hal_cm.o)
+    0x08004dec   0x00000010   Code   RO         6102    i.dbg_task_switch   RTX_CM4.lib(hal_cm.o)
+    0x08004dfc   0x00000020   Code   RO         2160    i.dma2d_init        gdisp_lld_stm32ltdc.o
+    0x08004e1c   0x00000028   Code   RO          579    i.drawcharglyph     gfx_mk.o
+    0x08004e44   0x0000007c   Code   RO          580    i.drawcharline      gfx_mk.o
+    0x08004ec0   0x0000000c   Code   RO          581    i.drawpixel         gfx_mk.o
+    0x08004ecc   0x0000008c   Code   RO          483    i.eraseBlock        output.o
+    0x08004f58   0x0000000c   Code   RO          583    i.fillarea          gfx_mk.o
+    0x08004f64   0x0000002e   Code   RO          585    i.fillentry_bitcount  gfx_mk.o
+    0x08004f92   0x00000038   Code   RO          586    i.find_char_range   gfx_mk.o
+    0x08004fca   0x0000003e   Code   RO          587    i.find_glyph        gfx_mk.o
+    0x08005008   0x0000000c   Code   RO         2265    i.ft5336_Get_I2C_InitializedStatus  ft5336.o
+    0x08005014   0x00000018   Code   RO         2266    i.ft5336_I2C_InitializeIfRequired  ft5336.o
+    0x0800502c   0x00000010   Code   RO         2267    i.ft5336_Init       ft5336.o
+    0x0800503c   0x0000003a   Code   RO         2268    i.ft5336_ReadID     ft5336.o
+    0x08005076   0x00000002   Code   RO         2269    i.ft5336_Reset      ft5336.o
+    0x08005078   0x00000002   Code   RO         2270    i.ft5336_TS_ClearIT  ft5336.o
+    0x0800507a   0x00000006   Code   RO         2271    i.ft5336_TS_Configure  ft5336.o
+    0x08005080   0x00000040   Code   RO         2272    i.ft5336_TS_DetectTouch  ft5336.o
+    0x080050c0   0x00000014   Code   RO         2273    i.ft5336_TS_DisableIT  ft5336.o
+    0x080050d4   0x00000014   Code   RO         2274    i.ft5336_TS_EnableIT  ft5336.o
+    0x080050e8   0x0000001c   Code   RO         2275    i.ft5336_TS_GetGestureID  ft5336.o
+    0x08005104   0x00000108   Code   RO         2276    i.ft5336_TS_GetTouchInfo  ft5336.o
+    0x0800520c   0x00000164   Code   RO         2277    i.ft5336_TS_GetXY   ft5336.o
+    0x08005370   0x00000006   Code   RO         2278    i.ft5336_TS_ITStatus  ft5336.o
+    0x08005376   0x00000016   Code   RO         2279    i.ft5336_TS_Start   ft5336.o
+    0x0800538c   0x0000001c   Code   RO          589    i.gdispCloseFont    gfx_mk.o
+    0x080053a8   0x0000001e   Code   RO          592    i.gdispGClear       gfx_mk.o
+    0x080053c6   0x00000002   PAD
+    0x080053c8   0x00000060   Code   RO          597    i.gdispGDrawString  gfx_mk.o
+    0x08005428   0x000000ac   Code   RO          599    i.gdispGFillArea    gfx_mk.o
+    0x080054d4   0x00000008   Code   RO          606    i.gdispGGetHeight   gfx_mk.o
+    0x080054dc   0x00000008   Code   RO          609    i.gdispGGetWidth    gfx_mk.o
+    0x080054e4   0x0000006c   Code   RO          610    i.gdispGSetClip     gfx_mk.o
+    0x08005550   0x00000048   Code   RO          618    i.gdispOpenFont     gfx_mk.o
+    0x08005598   0x0000007c   Code   RO         2161    i.gdisp_lld_blit_area  gdisp_lld_stm32ltdc.o
+    0x08005614   0x00000050   Code   RO         2162    i.gdisp_lld_draw_pixel  gdisp_lld_stm32ltdc.o
+    0x08005664   0x0000007c   Code   RO         2163    i.gdisp_lld_fill_area  gdisp_lld_stm32ltdc.o
+    0x080056e0   0x0000004c   Code   RO         2164    i.gdisp_lld_get_pixel_color  gdisp_lld_stm32ltdc.o
+    0x0800572c   0x000000c0   Code   RO         2165    i.gdisp_lld_init    gdisp_lld_stm32ltdc.o
+    0x080057ec   0x00000030   Code   RO          622    i.gdriverGetInstance  gfx_mk.o
+    0x0800581c   0x00000094   Code   RO          625    i.gdriverRegister   gfx_mk.o
+    0x080058b0   0x00000016   Code   RO          627    i.get_width         gfx_mk.o
+    0x080058c6   0x00000002   PAD
+    0x080058c8   0x00000048   Code   RO          628    i.gfxAddHeapBlock   gfx_mk.o
+    0x08005910   0x00000078   Code   RO          629    i.gfxAlloc          gfx_mk.o
+    0x08005988   0x0000006c   Code   RO          631    i.gfxFree           gfx_mk.o
+    0x080059f4   0x00000030   Code   RO          632    i.gfxInit           gfx_mk.o
+    0x08005a24   0x00000010   Code   RO          633    i.gfxMutexInit      gfx_mk.o
+    0x08005a34   0x00000008   Code   RO          636    i.gfxQueueASyncInit  gfx_mk.o
+    0x08005a3c   0x00000018   Code   RO          643    i.gfxQueueASyncPut  gfx_mk.o
+    0x08005a54   0x0000001c   Code   RO          644    i.gfxQueueASyncPutI  gfx_mk.o
+    0x08005a70   0x00000018   Code   RO          645    i.gfxQueueASyncRemove  gfx_mk.o
+    0x08005a88   0x00000042   Code   RO          646    i.gfxQueueASyncRemoveI  gfx_mk.o
+    0x08005aca   0x00000020   Code   RO          649    i.gfxSemInit        gfx_mk.o
+    0x08005aea   0x0000000c   Code   RO          650    i.gfxSemSignal      gfx_mk.o
+    0x08005af6   0x00000016   Code   RO          651    i.gfxSemSignalI     gfx_mk.o
+    0x08005b0c   0x00000020   Code   RO          652    i.gfxSemWait        gfx_mk.o
+    0x08005b2c   0x00000006   Code   RO          657    i.gtimerInit        gfx_mk.o
+    0x08005b32   0x00000002   PAD
+    0x08005b34   0x0000000c   Code   RO          679    i.gwinGetDefaultBgColor  gfx_mk.o
+    0x08005b40   0x00000014   Code   RO          684    i.gwinGetNextWindow  gfx_mk.o
+    0x08005b54   0x0000005c   Code   RO          698    i.gwinSetVisible    gfx_mk.o
+    0x08005bb0   0x00000096   Code   RO          700    i.hline_clip        gfx_mk.o
+    0x08005c46   0x00000002   PAD
+    0x08005c48   0x0000004c   Code   RO          427    i.initialiseNewGame  setup.o
+    0x08005c94   0x0000002a   Code   RO         4950    i.isrMessageGet     RTX_CM4.lib(rt_cmsis.o)
+    0x08005cbe   0x0000002c   Code   RO         4951    i.isrMessagePut     RTX_CM4.lib(rt_cmsis.o)
+    0x08005cea   0x00000028   Code   RO         4952    i.isrSemaphoreRelease  RTX_CM4.lib(rt_cmsis.o)
+    0x08005d12   0x00000002   PAD
+    0x08005d14   0x00000052   Code   RO         5935    i.isr_mbx_receive   RTX_CM4.lib(rt_mailbox.o)
+    0x08005d66   0x0000000e   Code   RO         5936    i.isr_mbx_send      RTX_CM4.lib(rt_mailbox.o)
+    0x08005d74   0x00000010   Code   RO         5983    i.isr_sem_send      RTX_CM4.lib(rt_semaphore.o)
+    0x08005d84   0x000003cc   Code   RO            8    i.main              main.o
+    0x08006150   0x00000038   Code   RO          428    i.makeBlock         setup.o
+    0x08006188   0x00000080   Code   RO          429    i.makeBucket        setup.o
+    0x08006208   0x0000004e   Code   RO          703    i.matchfont         gfx_mk.o
+    0x08006256   0x00000026   Code   RO          704    i.mf_bwfont_character_width  gfx_mk.o
+    0x0800627c   0x0000003a   Code   RO          705    i.mf_bwfont_render_character  gfx_mk.o
+    0x080062b6   0x00000020   Code   RO          706    i.mf_character_width  gfx_mk.o
+    0x080062d6   0x00000002   PAD
+    0x080062d8   0x00000008   Code   RO          708    i.mf_get_font_list  gfx_mk.o
+    0x080062e0   0x00000068   Code   RO          709    i.mf_get_string_width  gfx_mk.o
+    0x08006348   0x00000016   Code   RO          710    i.mf_getchar        gfx_mk.o
+    0x0800635e   0x0000007e   Code   RO          711    i.mf_render_aligned  gfx_mk.o
+    0x080063dc   0x00000040   Code   RO          712    i.mf_render_character  gfx_mk.o
+    0x0800641c   0x00000008   Code   RO          714    i.mf_rewind         gfx_mk.o
+    0x08006424   0x0000001a   Code   RO          715    i.mf_rlefont_character_width  gfx_mk.o
+    0x0800643e   0x00000070   Code   RO          716    i.mf_rlefont_render_character  gfx_mk.o
+    0x080064ae   0x0000003e   Code   RO          717    i.mf_round_to_prev_tab  gfx_mk.o
+    0x080064ec   0x0000003e   Code   RO          718    i.mf_round_to_tab   gfx_mk.o
+    0x0800652a   0x00000002   PAD
+    0x0800652c   0x00000018   Code   RO         4954    i.osDelay           RTX_CM4.lib(rt_cmsis.o)
+    0x08006544   0x00000024   Code   RO         4955    i.osKernelInitialize  RTX_CM4.lib(rt_cmsis.o)
+    0x08006568   0x00000024   Code   RO         4956    i.osKernelRunning   RTX_CM4.lib(rt_cmsis.o)
+    0x0800658c   0x0000006c   Code   RO         4957    i.osKernelStart     RTX_CM4.lib(rt_cmsis.o)
+    0x080065f8   0x00000018   Code   RO         4966    i.osMessageGet      RTX_CM4.lib(rt_cmsis.o)
+    0x08006610   0x00000030   Code   RO         4968    i.osMutexCreate     RTX_CM4.lib(rt_cmsis.o)
+    0x08006640   0x00000018   Code   RO         4970    i.osMutexRelease    RTX_CM4.lib(rt_cmsis.o)
+    0x08006658   0x00000018   Code   RO         4971    i.osMutexWait       RTX_CM4.lib(rt_cmsis.o)
+    0x08006670   0x00000030   Code   RO         4976    i.osSemaphoreCreate  RTX_CM4.lib(rt_cmsis.o)
+    0x080066a0   0x00000018   Code   RO         4978    i.osSemaphoreRelease  RTX_CM4.lib(rt_cmsis.o)
+    0x080066b8   0x00000018   Code   RO         4979    i.osSemaphoreWait   RTX_CM4.lib(rt_cmsis.o)
+    0x080066d0   0x00000030   Code   RO         4983    i.osThreadCreate    RTX_CM4.lib(rt_cmsis.o)
+    0x08006700   0x00000018   Code   RO         4984    i.osThreadExit      RTX_CM4.lib(rt_cmsis.o)
+    0x08006718   0x00000018   Code   RO         4989    i.osThreadYield     RTX_CM4.lib(rt_cmsis.o)
+    0x08006730   0x0000000c   Code   RO         4990    i.osTimerCall       RTX_CM4.lib(rt_cmsis.o)
+    0x0800673c   0x0000002c   Code   RO         4995    i.osTimerThread     RTX_CM4.lib(rt_cmsis.o)
+    0x08006768   0x00000022   Code   RO         2935    i.os_error          rtx_conf_cm.o
+    0x0800678a   0x00000004   Code   RO         2936    i.os_idle_demon     rtx_conf_cm.o
+    0x0800678e   0x00000002   PAD
+    0x08006790   0x00000028   Code   RO         5727    i.os_tick_init      RTX_CM4.lib(rt_system.o)
+    0x080067b8   0x00000002   Code   RO         5728    i.os_tick_irqack    RTX_CM4.lib(rt_system.o)
+    0x080067ba   0x00000002   PAD
+    0x080067bc   0x00000108   Code   RO          485    i.printNextBrickWindow  output.o
+    0x080068c4   0x00000098   Code   RO          486    i.printScoreWindow  output.o
+    0x0800695c   0x00000220   Code   RO          487    i.printTetrisBucket  output.o
+    0x08006b7c   0x00000138   Code   RO          723    i.render_char       gfx_mk.o
+    0x08006cb4   0x00000064   Code   RO          724    i.render_left       gfx_mk.o
+    0x08006d18   0x0000008a   Code   RO          725    i.render_right      gfx_mk.o
+    0x08006da2   0x00000002   PAD
+    0x08006da4   0x000000b0   Code   RO          362    i.rotateBlock       block.o
+    0x08006e54   0x0000001a   Code   RO         6048    i.rt_alloc_box      RTX_CM4.lib(rt_membox.o)
+    0x08006e6e   0x0000003e   Code   RO         6076    i.rt_alloc_mem      RTX_CM4.lib(rt_memory.o)
+    0x08006eac   0x00000038   Code   RO         5575    i.rt_block          RTX_CM4.lib(rt_task.o)
+    0x08006ee4   0x00000048   Code   RO         6025    i.rt_chk_robin      RTX_CM4.lib(rt_robin.o)
+    0x08006f2c   0x00000070   Code   RO         5859    i.rt_dec_dly        RTX_CM4.lib(rt_list.o)
+    0x08006f9c   0x00000044   Code   RO         5576    i.rt_dispatch       RTX_CM4.lib(rt_task.o)
+    0x08006fe0   0x00000006   Code   RO         5659    i.rt_dly_wait       RTX_CM4.lib(rt_time.o)
+    0x08006fe6   0x00000002   PAD
+    0x08006fe8   0x00000050   Code   RO         5820    i.rt_evt_psh        RTX_CM4.lib(rt_event.o)
+    0x08007038   0x0000002c   Code   RO         6049    i.rt_free_box       RTX_CM4.lib(rt_membox.o)
+    0x08007064   0x00000028   Code   RO         6077    i.rt_free_mem       RTX_CM4.lib(rt_memory.o)
+    0x0800708c   0x00000028   Code   RO         5860    i.rt_get_first      RTX_CM4.lib(rt_list.o)
+    0x080070b4   0x00000024   Code   RO         5861    i.rt_get_same_rdy_prio  RTX_CM4.lib(rt_list.o)
+    0x080070d8   0x00000008   Code   RO         5000    i.rt_id2obj         RTX_CM4.lib(rt_cmsis.o)
+    0x080070e0   0x00000048   Code   RO         5577    i.rt_init_context   RTX_CM4.lib(rt_task.o)
+    0x08007128   0x0000001a   Code   RO         6078    i.rt_init_mem       RTX_CM4.lib(rt_memory.o)
+    0x08007142   0x00000002   PAD
+    0x08007144   0x00000018   Code   RO         6026    i.rt_init_robin     RTX_CM4.lib(rt_robin.o)
+    0x0800715c   0x00000080   Code   RO         6103    i.rt_init_stack     RTX_CM4.lib(hal_cm.o)
+    0x080071dc   0x00000008   Code   RO         5937    i.rt_mbx_check      RTX_CM4.lib(rt_mailbox.o)
+    0x080071e4   0x0000001a   Code   RO         5938    i.rt_mbx_init       RTX_CM4.lib(rt_mailbox.o)
+    0x080071fe   0x00000002   PAD
+    0x08007200   0x000000f0   Code   RO         5939    i.rt_mbx_psh        RTX_CM4.lib(rt_mailbox.o)
+    0x080072f0   0x000000b4   Code   RO         5941    i.rt_mbx_wait       RTX_CM4.lib(rt_mailbox.o)
+    0x080073a4   0x00000044   Code   RO         5001    i.rt_ms2tick        RTX_CM4.lib(rt_cmsis.o)
+    0x080073e8   0x00000010   Code   RO         5693    i.rt_mut_init       RTX_CM4.lib(rt_mutex.o)
+    0x080073f8   0x000000d8   Code   RO         5694    i.rt_mut_release    RTX_CM4.lib(rt_mutex.o)
+    0x080074d0   0x00000068   Code   RO         5695    i.rt_mut_wait       RTX_CM4.lib(rt_mutex.o)
+    0x08007538   0x0000007c   Code   RO         5731    i.rt_pop_req        RTX_CM4.lib(rt_system.o)
+    0x080075b4   0x00000020   Code   RO         5732    i.rt_psh_req        RTX_CM4.lib(rt_system.o)
+    0x080075d4   0x0000005c   Code   RO         5862    i.rt_psq_enq        RTX_CM4.lib(rt_list.o)
+    0x08007630   0x00000048   Code   RO         5863    i.rt_put_dly        RTX_CM4.lib(rt_list.o)
+    0x08007678   0x00000036   Code   RO         5864    i.rt_put_prio       RTX_CM4.lib(rt_list.o)
+    0x080076ae   0x00000002   PAD
+    0x080076b0   0x00000014   Code   RO         5865    i.rt_put_rdy_first  RTX_CM4.lib(rt_list.o)
+    0x080076c4   0x00000034   Code   RO         5866    i.rt_resort_prio    RTX_CM4.lib(rt_list.o)
+    0x080076f8   0x00000010   Code   RO         6104    i.rt_ret_regs       RTX_CM4.lib(hal_cm.o)
+    0x08007708   0x0000000c   Code   RO         6105    i.rt_ret_val        RTX_CM4.lib(hal_cm.o)
+    0x08007714   0x00000010   Code   RO         6106    i.rt_ret_val2       RTX_CM4.lib(hal_cm.o)
+    0x08007724   0x00000028   Code   RO         5867    i.rt_rmv_dly        RTX_CM4.lib(rt_list.o)
+    0x0800774c   0x00000030   Code   RO         5868    i.rt_rmv_list       RTX_CM4.lib(rt_list.o)
+    0x0800777c   0x0000000c   Code   RO         5985    i.rt_sem_init       RTX_CM4.lib(rt_semaphore.o)
+    0x08007788   0x00000034   Code   RO         5986    i.rt_sem_psh        RTX_CM4.lib(rt_semaphore.o)
+    0x080077bc   0x0000002a   Code   RO         5987    i.rt_sem_send       RTX_CM4.lib(rt_semaphore.o)
+    0x080077e6   0x00000002   PAD
+    0x080077e8   0x00000040   Code   RO         5988    i.rt_sem_wait       RTX_CM4.lib(rt_semaphore.o)
+    0x08007828   0x00000024   Code   RO         5734    i.rt_stk_check      RTX_CM4.lib(rt_system.o)
+    0x0800784c   0x00000028   Code   RO         5578    i.rt_switch_req     RTX_CM4.lib(rt_task.o)
+    0x08007874   0x000000cc   Code   RO         5579    i.rt_sys_init       RTX_CM4.lib(rt_task.o)
+    0x08007940   0x00000078   Code   RO         5580    i.rt_sys_start      RTX_CM4.lib(rt_task.o)
+    0x080079b8   0x00000040   Code   RO         5736    i.rt_systick        RTX_CM4.lib(rt_system.o)
+    0x080079f8   0x00000012   Code   RO         5002    i.rt_tid2ptcb       RTX_CM4.lib(rt_cmsis.o)
+    0x08007a0a   0x00000002   PAD
+    0x08007a0c   0x00000034   Code   RO         5003    i.rt_timer_insert   RTX_CM4.lib(rt_cmsis.o)
+    0x08007a40   0x00000088   Code   RO         5581    i.rt_tsk_create     RTX_CM4.lib(rt_task.o)
+    0x08007ac8   0x0000017c   Code   RO         5582    i.rt_tsk_delete     RTX_CM4.lib(rt_task.o)
+    0x08007c44   0x00000030   Code   RO         5583    i.rt_tsk_pass       RTX_CM4.lib(rt_task.o)
+    0x08007c74   0x0000007c   Code   RO         5584    i.rt_tsk_prio       RTX_CM4.lib(rt_task.o)
+    0x08007cf0   0x00000010   Code   RO         5585    i.rt_tsk_self       RTX_CM4.lib(rt_task.o)
+    0x08007d00   0x0000003c   Code   RO          430    i.setBlockGraphic   setup.o
+    0x08007d3c   0x00000108   Code   RO          431    i.setRandomBlockGraphic  setup.o
+    0x08007e44   0x0000002e   Code   RO          727    i.skip_pixels       gfx_mk.o
+    0x08007e72   0x0000005c   Code   RO          729    i.strip_spaces      gfx_mk.o
+    0x08007ece   0x00000012   Code   RO         5005    i.svcDelay          RTX_CM4.lib(rt_cmsis.o)
+    0x08007ee0   0x00000070   Code   RO         5006    i.svcKernelInitialize  RTX_CM4.lib(rt_cmsis.o)
+    0x08007f50   0x0000000c   Code   RO         5007    i.svcKernelRunning  RTX_CM4.lib(rt_cmsis.o)
+    0x08007f5c   0x00000048   Code   RO         5008    i.svcKernelStart    RTX_CM4.lib(rt_cmsis.o)
+    0x08007fa4   0x00000024   Code   RO         5011    i.svcMessageCreate  RTX_CM4.lib(rt_cmsis.o)
+    0x08007fc8   0x0000003a   Code   RO         5012    i.svcMessageGet     RTX_CM4.lib(rt_cmsis.o)
+    0x08008002   0x0000001c   Code   RO         5014    i.svcMutexCreate    RTX_CM4.lib(rt_cmsis.o)
+    0x0800801e   0x00000022   Code   RO         5016    i.svcMutexRelease   RTX_CM4.lib(rt_cmsis.o)
+    0x08008040   0x00000036   Code   RO         5017    i.svcMutexWait      RTX_CM4.lib(rt_cmsis.o)
+    0x08008076   0x00000024   Code   RO         5019    i.svcSemaphoreCreate  RTX_CM4.lib(rt_cmsis.o)
+    0x0800809a   0x00000028   Code   RO         5021    i.svcSemaphoreRelease  RTX_CM4.lib(rt_cmsis.o)
+    0x080080c2   0x00000032   Code   RO         5022    i.svcSemaphoreWait  RTX_CM4.lib(rt_cmsis.o)
+    0x080080f4   0x00000070   Code   RO         5026    i.svcThreadCreate   RTX_CM4.lib(rt_cmsis.o)
+    0x08008164   0x0000001c   Code   RO         5027    i.svcThreadGetId    RTX_CM4.lib(rt_cmsis.o)
+    0x08008180   0x00000038   Code   RO         5030    i.svcThreadTerminate  RTX_CM4.lib(rt_cmsis.o)
+    0x080081b8   0x0000000a   Code   RO         5031    i.svcThreadYield    RTX_CM4.lib(rt_cmsis.o)
+    0x080081c2   0x00000018   Code   RO         5032    i.svcTimerCall      RTX_CM4.lib(rt_cmsis.o)
+    0x080081da   0x00000002   PAD
+    0x080081dc   0x0000005c   Code   RO         5041    i.sysTimerTick      RTX_CM4.lib(rt_cmsis.o)
+    0x08008238   0x0000004c   Code   RO            9    i.taskGLCD          main.o
     0x08008284   0x00000012   Code   RO           10    i.taskGameLogic     main.o
     0x08008296   0x00000002   PAD
     0x08008298   0x000000d0   Code   RO           11    i.taskInput         main.o
@@ -4031,13 +4031,13 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Object Name
 
-       508         22          0          0          0       2921   block.o
+       512         22          0          0          0       2925   block.o
        900         52          0         46          0      17839   ft5336.o
        136         10          0          0          0       1114   gameloop.o
       2836        146        208          0          0      19543   gdisp_lld_stm32ltdc.o
       5556        184       3713         73      41040      87524   gfx_mk.o
        560         34          0          0     261288       2818   glcd_746g_discovery.o
-      1636        120         56         35         36     510251   main.o
+      1632        120         56         35         36     510247   main.o
       1204        150         32         12          0       3925   output.o
        170         36         86         36       8784       9943   rtx_conf_cm.o
        584         28          0          0          0       4135   setup.o

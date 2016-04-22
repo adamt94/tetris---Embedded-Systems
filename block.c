@@ -1,6 +1,7 @@
 #include "block.h"
 #include "setup.h"
 #include "stdlib.h"
+#include "output.h"
 void rotateBlock() {
     int i, j;
     Block *rotatedBlock = malloc(sizeof (Block));
@@ -101,6 +102,8 @@ int attemptMove(char move) {
 				currentPiece->x = 3;
 				currentPiece->y = 0;
 				
+				//Erase the next piece's position
+				clearNextPieceArea();
 				nextPiece = makeBlock();
     }
     return 1;

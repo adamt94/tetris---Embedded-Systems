@@ -3,7 +3,7 @@
 <title>Static Call Graph - [.\Objects\Tetris uGFX.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\Objects\Tetris uGFX.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060061: Last Updated: Fri Apr 22 22:58:46 2016
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060061: Last Updated: Fri Apr 22 23:05:20 2016
 <BR><P>
 <H3>Maximum Stack Usage =        376 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -806,7 +806,7 @@ Global Symbols
 <BR>[Calls]<UL><LI><a href="#[d9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_malloc_internal
 <LI><a href="#[dc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_heap_descriptor
 </UL>
-<BR>[Called By]<UL><LI><a href="#[15e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;makeBlock
+<BR>[Called By]<UL><LI><a href="#[15f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;makeBlock
 <LI><a href="#[1a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rotateBlock
 <LI><a href="#[d6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;calloc
 </UL>
@@ -880,7 +880,7 @@ Global Symbols
 </UL>
 <BR>[Called By]<UL><LI><a href="#[c7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_platform_post_lib_init
 <LI><a href="#[181]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;makeBucket
-<LI><a href="#[15e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;makeBlock
+<LI><a href="#[15f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;makeBlock
 <LI><a href="#[c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_entry_main
 </UL>
 
@@ -1605,15 +1605,16 @@ Global Symbols
 <LI><a href="#[d9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_malloc_internal
 </UL>
 
-<P><STRONG><a name="[160]"></a>addscore</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, gameloop.o(i.addscore))
-<BR><BR>[Called By]<UL><LI><a href="#[15f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;checkForFullRows
+<P><STRONG><a name="[161]"></a>addscore</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, gameloop.o(i.addscore))
+<BR><BR>[Called By]<UL><LI><a href="#[160]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;checkForFullRows
 </UL>
 
-<P><STRONG><a name="[15c]"></a>attemptMove</STRONG> (Thumb, 216 bytes, Stack size 48 bytes, block.o(i.attemptMove))
+<P><STRONG><a name="[15c]"></a>attemptMove</STRONG> (Thumb, 220 bytes, Stack size 48 bytes, block.o(i.attemptMove))
 <BR><BR>[Stack]<UL><LI>Max Depth = 132 + Unknown Stack Size
 <LI>Call Chain = attemptMove &rArr; makeBlock &rArr; setRandomBlockGraphic &rArr; setBlockGraphic
 </UL>
-<BR>[Calls]<UL><LI><a href="#[15e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;makeBlock
+<BR>[Calls]<UL><LI><a href="#[15f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;makeBlock
+<LI><a href="#[15e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;clearNextPieceArea
 <LI><a href="#[15d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;checkForCollision
 <LI><a href="#[de]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;free
 <LI><a href="#[11f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy4
@@ -1629,20 +1630,20 @@ Global Symbols
 <LI><a href="#[15c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;attemptMove
 </UL>
 
-<P><STRONG><a name="[15f]"></a>checkForFullRows</STRONG> (Thumb, 114 bytes, Stack size 20 bytes, gameloop.o(i.checkForFullRows))
+<P><STRONG><a name="[160]"></a>checkForFullRows</STRONG> (Thumb, 114 bytes, Stack size 20 bytes, gameloop.o(i.checkForFullRows))
 <BR><BR>[Stack]<UL><LI>Max Depth = 20<LI>Call Chain = checkForFullRows
 </UL>
-<BR>[Calls]<UL><LI><a href="#[160]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;addscore
+<BR>[Calls]<UL><LI><a href="#[161]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;addscore
 </UL>
 <BR>[Called By]<UL><LI><a href="#[8f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;taskGLCD
 </UL>
 
-<P><STRONG><a name="[161]"></a>clearNextPieceArea</STRONG> (Thumb, 90 bytes, Stack size 24 bytes, output.o(i.clearNextPieceArea))
+<P><STRONG><a name="[15e]"></a>clearNextPieceArea</STRONG> (Thumb, 90 bytes, Stack size 24 bytes, output.o(i.clearNextPieceArea))
 <BR><BR>[Stack]<UL><LI>Max Depth = 76<LI>Call Chain = clearNextPieceArea &rArr; gdispGFillArea &rArr; fillarea &rArr; gdisp_lld_fill_area
 </UL>
 <BR>[Calls]<UL><LI><a href="#[142]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gdispGFillArea
 </UL>
-<BR>[Called By]<UL><LI><a href="#[8f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;taskGLCD
+<BR>[Called By]<UL><LI><a href="#[15c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;attemptMove
 </UL>
 
 <P><STRONG><a name="[1bc]"></a>dbg_init</STRONG> (Thumb, 34 bytes, Stack size 0 bytes, hal_cm.o(i.dbg_init))
@@ -1759,7 +1760,7 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[a4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gdisp_lld_fill_area
 </UL>
-<BR>[Called By]<UL><LI><a href="#[15e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;makeBlock
+<BR>[Called By]<UL><LI><a href="#[15f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;makeBlock
 <LI><a href="#[8f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;taskGLCD
 <LI><a href="#[b2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 <LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_gdispPostInitDriver
@@ -1781,11 +1782,11 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[166]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;fillarea
 </UL>
-<BR>[Called By]<UL><LI><a href="#[19e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;printTetrisBucket
+<BR>[Called By]<UL><LI><a href="#[15e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;clearNextPieceArea
+<LI><a href="#[19e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;printTetrisBucket
 <LI><a href="#[19d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;printScoreWindow
 <LI><a href="#[19c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;printNextBrickWindow
 <LI><a href="#[165]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;eraseBlock
-<LI><a href="#[161]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;clearNextPieceArea
 <LI><a href="#[b2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 <LI><a href="#[9a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WM_Redraw
 </UL>
@@ -2002,7 +2003,7 @@ Global Symbols
 <LI>Call Chain = initialiseNewGame &rArr; makeBucket &rArr; calloc &rArr; malloc &rArr; _malloc_internal &rArr; __Heap_Full &rArr; __Heap_ProvideMemory &rArr; _free_internal
 </UL>
 <BR>[Calls]<UL><LI><a href="#[181]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;makeBucket
-<LI><a href="#[15e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;makeBlock
+<LI><a href="#[15f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;makeBlock
 <LI><a href="#[11f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy4
 <LI><a href="#[e4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;srand
 </UL>
@@ -2086,7 +2087,7 @@ Global Symbols
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> rtx_conf_cm.o(.data)
 </UL>
-<P><STRONG><a name="[15e]"></a>makeBlock</STRONG> (Thumb, 52 bytes, Stack size 8 bytes, setup.o(i.makeBlock))
+<P><STRONG><a name="[15f]"></a>makeBlock</STRONG> (Thumb, 52 bytes, Stack size 8 bytes, setup.o(i.makeBlock))
 <BR><BR>[Stack]<UL><LI>Max Depth = 84 + Unknown Stack Size
 <LI>Call Chain = makeBlock &rArr; setRandomBlockGraphic &rArr; setBlockGraphic
 </UL>
@@ -2802,7 +2803,7 @@ Global Symbols
 <BR>[Calls]<UL><LI><a href="#[1ca]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;setBlockGraphic
 <LI><a href="#[1c9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rand
 </UL>
-<BR>[Called By]<UL><LI><a href="#[15e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;makeBlock
+<BR>[Called By]<UL><LI><a href="#[15f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;makeBlock
 </UL>
 
 <P><STRONG><a name="[7d]"></a>svcDelay</STRONG> (Thumb, 18 bytes, Stack size 8 bytes, rt_cmsis.o(i.svcDelay))
@@ -2956,7 +2957,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[d3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rt_systick
 </UL>
 
-<P><STRONG><a name="[8f]"></a>taskGLCD</STRONG> (Thumb, 72 bytes, Stack size 0 bytes, main.o(i.taskGLCD))
+<P><STRONG><a name="[8f]"></a>taskGLCD</STRONG> (Thumb, 68 bytes, Stack size 0 bytes, main.o(i.taskGLCD))
 <BR><BR>[Stack]<UL><LI>Max Depth = 240 + Unknown Stack Size
 <LI>Call Chain = taskGLCD &rArr; printNextBrickWindow &rArr; gdispGDrawString &rArr; mf_render_aligned &rArr; render_right &rArr; mf_round_to_prev_tab &rArr; mf_character_width
 </UL>
@@ -2968,8 +2969,7 @@ Global Symbols
 <LI><a href="#[18c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osDelay
 <LI><a href="#[149]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gdispGClear
 <LI><a href="#[165]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;eraseBlock
-<LI><a href="#[161]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;clearNextPieceArea
-<LI><a href="#[15f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;checkForFullRows
+<LI><a href="#[160]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;checkForFullRows
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> main.o(.constdata)
 </UL>
