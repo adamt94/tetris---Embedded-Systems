@@ -44,5 +44,8 @@ extern Block *nextPiece;
 extern const int BLOCK_SIZE;
 //score
 extern int Score;
+//time for seed
+extern int totaltime;
+
 
 #endif	/* GLOBALS_H */

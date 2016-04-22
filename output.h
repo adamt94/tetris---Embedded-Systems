@@ -21,5 +21,6 @@ void printGameOver(void);
 // Displays a victory screen
 void printVictory(void);
 
+void menuScreen(void);
 #endif	/* OUTPUT_H */
 

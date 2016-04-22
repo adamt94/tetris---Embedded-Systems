@@ -1,7 +1,7 @@
 .\objects\glcd_746g_discovery.o: C:\Keil_v5\ARM\PACK\Keil\STM32F7xx_DFP\2.4.0\MDK\Boards\ST\STM32F746G_Discovery\Common\GLCD_746G_Discovery.c
 .\objects\glcd_746g_discovery.o: C:\Keil_v5\ARM\PACK\Keil\STM32F7xx_DFP\2.4.0\Drivers\STM32F7xx_HAL_Driver\Inc\stm32f7xx_hal.h
-.\objects\glcd_746g_discovery.o: C:\Users\Stuart\Documents\uVision Projects\tetris-ugfx\RTE\Device\STM32F746NGHx\stm32f7xx_hal_conf.h
-.\objects\glcd_746g_discovery.o: C:\Users\Stuart\Documents\uVision Projects\tetris-ugfx\RTE\RTE_Components.h
+.\objects\glcd_746g_discovery.o: C:\Users\adam\Documents\Embedded Systems\tetris-ugfx\RTE\Device\STM32F746NGHx\stm32f7xx_hal_conf.h
+.\objects\glcd_746g_discovery.o: C:\Users\adam\Documents\Embedded Systems\tetris-ugfx\RTE\RTE_Components.h
 .\objects\glcd_746g_discovery.o: C:\Keil_v5\ARM\PACK\Keil\STM32F7xx_DFP\2.4.0\Drivers\STM32F7xx_HAL_Driver\Inc\stm32f7xx_hal_rcc.h
 .\objects\glcd_746g_discovery.o: C:\Keil_v5\ARM\PACK\Keil\STM32F7xx_DFP\2.4.0\Drivers\STM32F7xx_HAL_Driver\Inc\stm32f7xx_hal_def.h
 .\objects\glcd_746g_discovery.o: C:\Keil_v5\ARM\PACK\Keil\STM32F7xx_DFP\2.4.0\Drivers\CMSIS\Device\ST\STM32F7xx\Include\stm32f7xx.h

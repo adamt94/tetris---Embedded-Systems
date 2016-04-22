@@ -5,7 +5,7 @@
 #include "gfx.h"
 
 void initialiseNewGame(int width, int height) {
-    srand(25);
+    srand(totaltime);
 		Score = 0;
     bucket = makeBucket(width, height);
     currentPiece = makeBlock();

@@ -135,3 +135,43 @@ void printGameOver() {
 
 void printVictory() {
 }
+
+void menuScreen(){
+		// Main menu Background
+	gdispFillArea(433, 247, 20, 20, Red);
+	gdispFillArea(112, 247, 20, 20, Lime);
+	gdispFillArea(455, 247, 20, 20, Red);
+	gdispFillArea(0, 204, 20, 20, Blue);
+	gdispFillArea(23, 225, 20, 20, Yellow);
+	gdispFillArea(455, 224, 20, 20, Red);
+	gdispFillArea(91, 247, 20, 20, Lime);
+	gdispFillArea(83, 80, 20, 20, Magenta);
+	gdispFillArea(432, 203, 20, 20, Orange);
+	gdispFillArea(178, 247, 20, 20, Cyan);
+	gdispFillArea(134, 247, 20, 20, Lime);
+	gdispFillArea(455, 201, 20, 20, Red);
+	gdispFillArea(22, 247, 20, 20, Blue);
+	gdispFillArea(46, 248, 20, 20, Yellow);
+	gdispFillArea(46, 225, 20, 20, Yellow);
+	gdispFillArea(82, 102, 21, 20, Magenta);
+	gdispFillArea(70, 247, 20, 20, Lime);
+	gdispFillArea(60, 102, 20, 20, Magenta);
+	gdispFillArea(410, 225, 20, 20, Orange);
+	gdispFillArea(156, 247, 20, 20, Cyan);
+	gdispFillArea(134, 225, 20, 20, Cyan);
+	gdispFillArea(410, 247, 20, 20, Orange);
+	gdispFillArea(0, 226, 20, 20, Blue);
+	gdispFillArea(47, 227, 20, 20, Yellow);
+	gdispFillArea(60, 80, 20, 20, Magenta);
+	gdispFillArea(69, 225, 20, 20, Yellow);
+	gdispFillArea(0, 247, 20, 20, Blue);
+	gdispFillArea(432, 225, 20, 20, Orange);
+	gdispFillArea(157, 185, 20, 20, Cyan);
+	//Button
+	gdispFillArea(200,60,80,30,Grey);
+	gdispFillArea(200+3,60+3,80-6,30-6,Silver);
+	//text
+	font16 =  gdispOpenFont("DejaVuSans16");
+	gdispDrawString(225, 66, "Play", font16, Black);
+	gdispCloseFont(font16);
+}
