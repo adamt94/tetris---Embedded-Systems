@@ -102,6 +102,12 @@ int attemptMove(char move) {
 				currentPiece->x = 3;
 				currentPiece->y = 0;
 				
+				//If collision straight after spawning, it is game over
+				if(checkForCollision(currentPiece) == 1){
+					printGameOver();
+				}
+				
+				
 				//Erase the next piece's position
 				clearNextPieceArea();
 				nextPiece = makeBlock();

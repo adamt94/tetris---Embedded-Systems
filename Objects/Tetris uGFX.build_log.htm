@@ -42,26 +42,22 @@ block.c(30): warning:  #177-D: variable "j" was declared but never referenced
       int i, j;
 block.c(42): warning:  #940-D: missing return statement at end of non-void function "validMove"
   }
-block.c(110): warning:  #1-D: last line of file ends without a newline
+block.c(116): warning:  #1-D: last line of file ends without a newline
   }
 block.c: 8 warnings, 0 errors
-compiling main.c...
+compiling output.c...
 globals.h(48): warning:  #1-D: last line of file ends without a newline
   #endif	/* GLOBALS_H */
-setup.h(7): warning:  #1295-D: Deprecated declaration randomBlock - give arg types
-  Block* randomBlock();
-setup.h(8): warning:  #1295-D: Deprecated declaration makeBlock - give arg types
-  Block* makeBlock();
-block.h(12): warning:  #1295-D: Deprecated declaration rotateBlock - give arg types
-  void rotateBlock();
-main.c(143): warning:  #550-D: variable "initXpos" was set but never used
-  	int initXpos;			/* initial screen touch x pos*/
-main.c(146): warning:  #177-D: variable "canmove" was declared but never referenced
-  	bool canmove = true;
-main.c: 6 warnings, 0 errors
+output.c(97): warning:  #223-D: function "sprintf" declared implicitly
+    sprintf(str,"%d",Score);
+output.c(104): warning:  #177-D: variable "str" was declared but never referenced
+  	char* str;
+output.c(137): warning:  #1-D: last line of file ends without a newline
+  }
+output.c: 4 warnings, 0 errors
 linking...
-Program Size: Code=33756 RO-data=4612 RW-data=264 ZI-data=313544  
-".\Objects\Tetris uGFX.axf" - 0 Error(s), 14 Warning(s).
+Program Size: Code=33792 RO-data=4612 RW-data=264 ZI-data=313544  
+".\Objects\Tetris uGFX.axf" - 0 Error(s), 12 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -215,7 +211,7 @@ Package Vendor: Keil
       Include file:  MDK\Boards\ST\STM32F746G_Discovery\Common\GLCD_Config.h
       Source file:   MDK\Boards\ST\STM32F746G_Discovery\Common\GLCD_Fonts.c
       Source file:   MDK\Boards\ST\STM32F746G_Discovery\Common\GLCD_746G_Discovery.c
-Build Time Elapsed:  00:00:02
+Build Time Elapsed:  00:00:01
 </pre>
 </body>
 </html>

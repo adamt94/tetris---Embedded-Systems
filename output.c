@@ -129,6 +129,7 @@ void printNextBrickWindow() {
 // Displays a game over screen
 
 void printGameOver() {
+	gdispClear(Red);
 }
 // Displays a victory screen
 
