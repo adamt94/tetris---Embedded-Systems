@@ -24,9 +24,21 @@ void printTetrisBucket() {
         for (j = 0; j < bucket.width; j++) {
           //  mvprintw(bucket.y + i, bucket.x + j, "%c", bucket.bucket[i][j].value);
 						if((bucket.bucket[i][j] != ' ')){
+							//draws the bucket
 							if(bucket.bucket[i][j] == '#'){
-								gdispFillArea((bucket.x + (j*BLOCK_SIZE)), (bucket.y + (i*BLOCK_SIZE)), BLOCK_SIZE, BLOCK_SIZE, Black);
-							} else {
+								if( bucket.height-1 ==i){
+									gdispFillArea((bucket.x + (j*BLOCK_SIZE)), (bucket.y + (i*BLOCK_SIZE)), 15, 5, Black);
+								}
+								else if(j ==0){
+									gdispFillArea((bucket.x+10 + (j*BLOCK_SIZE)), (bucket.y + (i*BLOCK_SIZE)), 5, 15, Black);
+								}
+								else{
+									gdispFillArea((bucket.x + (j*BLOCK_SIZE)), (bucket.y + (i*BLOCK_SIZE)), 5, 15, Black);
+								}
+								
+							} 
+							///draws shapes that collided with the bottom
+							else {
 								//padding
 								gdispFillArea((bucket.x + (j*BLOCK_SIZE)), (bucket.y + (i*BLOCK_SIZE)), BLOCK_SIZE, BLOCK_SIZE, White);
 								//shape
