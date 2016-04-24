@@ -33,7 +33,7 @@ Bucket bucket;
 //Tetris pieces
 Block *currentPiece;
 Block *nextPiece;
-
+color_t tetrisShapeColors[9] = {White, Yellow, Red, Blue, Magenta, SkyBlue, Orange,Lime,Black}; 
 //Size of the blocks used
 const int BLOCK_SIZE = 15;
 int Score = 0;
@@ -115,7 +115,7 @@ void taskGLCD (void const *argument) {
 		printNextBrickWindow();
 		//Clear bucket if there is a full row
 		if(checkForFullRows() == 1){
-					gdispClear(White);
+					gdispClear(tetrisShapeColors[0]);
 			}
 		osMutexRelease(mut_GLCD);	//Release control of GLCD
 		//Wait
@@ -230,6 +230,33 @@ void taskInput (void const *argument) {
 		}
 }
 
+// A utility function to swap to integers
+void swap (int *a, int *b)
+{
+    int temp = *a;
+    *a = *b;
+    *b = temp;
+}
+ // A function to generate a random permutation of arr[]
+void randomize ( int arr[], int n )
+{
+	int i =0;
+    // Use a different seed value so that we don't get same
+    // result each time we run this program
+    srand ( HAL_GetTick() );
+ 
+    // Start from the last element and swap one by one. We don't
+    // need to run for the first element that's why i > 0
+    for (i = n-1; i > 0; i--)
+    {
+        // Pick a random index from 0 to i
+        int j = rand() % (i+1);
+ 
+        // Swap arr[i] with the element at random index
+        swap(&arr[i], &arr[j]);
+    }
+}
+
 /*********************************************************************
 *
 *       Main
@@ -237,8 +264,9 @@ void taskInput (void const *argument) {
 int main (void) {
 	GameState state = GameInit;
   font_t          font16 = gdispOpenFont("DejaVuSans16");
-	
-	
+	color_t colorrange[9] = {White, Yellow, Red, Blue, Magenta, SkyBlue, Orange,Lime,Black}; 
+	int rand[9] = {0,1,2,3,4,5,6,7,8};
+	int i =0;
   CPU_CACHE_Enable();                       /* Enable the CPU Cache          */
   HAL_Init();                               				 /* Initialize the HAL Library     		*/
   BSP_SDRAM_Init();                        	 /* Initialize BSP SDRAM           	*/
@@ -254,7 +282,7 @@ int main (void) {
 	//gfxInit must be called after setting up hardware above
 	gfxInit();																	/* Initialise uGFX library */
  
-	 gdispClear(White);											/* Use given colour to clear screen (set background) */
+	 gdispClear(tetrisShapeColors[0] );											/* Use given colour to clear screen (set background) */
 	
 	//gdispFillArea(20, 20, 200, 200, Blue);		/* Draw a rectangle filled with specified colour */
 	 while (state == GameInit) {
@@ -265,20 +293,46 @@ int main (void) {
 		 //draw menu screen
 				menuScreen();
 	for(;;){
+		//menu touch buttons
 			Touch_GetState (&tsc_state);
-		if(tsc_state.pressed == true){
+		if(tsc_state.pressed == true && tsc_state.y <100){
 			 totaltime = HAL_GetTick();
 			  //Set up new game variables
         initialiseNewGame(11, 17);
 			 state = GameRunning;
-			gdispClear(White);
+			gdispClear(tetrisShapeColors[0]);
 			break;
+		}
+		if(tsc_state.pressed == true && tsc_state.y >100 && tsc_state.y<150){
+			
+			tetrisShapeColors[0] = Black;
+			tetrisShapeColors[8] = White;
+			
+			gdispClear(tetrisShapeColors[0]);
+			menuScreen();
+    }
+		
+		if(tsc_state.pressed == true && tsc_state.y >150){
+			//shuffle array then assign the colors
+       randomize (rand, 9);
+			
+			for( i =0; i<9; i++){
+				tetrisShapeColors[i] = colorrange[rand[i]];
+				
+			}
+			gdispClear(tetrisShapeColors[0]);
+			menuScreen();
+		}
+			
+			
+			
+			
 		}
 	}
 	
        
 
-    }
+    
 	 //Create thread instances
 		tid_taskGLCD = osThreadCreate(osThread(taskGLCD), NULL);
 		tid_taskInput = osThreadCreate(osThread(taskInput), NULL);

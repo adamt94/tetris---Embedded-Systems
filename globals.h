@@ -1,3 +1,4 @@
+#include "gfx.h"
 #ifndef GLOBALS_H
 #define	GLOBALS_H
 
@@ -47,5 +48,6 @@ extern int Score;
 //time for seed
 extern int totaltime;
 
-
+//color for each Tetris shape
+extern  color_t   tetrisShapeColors[9]; 
 #endif	/* GLOBALS_H */

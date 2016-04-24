@@ -43,11 +43,6 @@
 .\objects\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
 .\objects\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
 .\objects\main.o: globals.h
-.\objects\main.o: gameLoop.h
-.\objects\main.o: output.h
-.\objects\main.o: setup.h
-.\objects\main.o: block.h
-.\objects\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\time.h
 .\objects\main.o: ..\ugfx_2.5\gfx.h
 .\objects\main.o: .\gfxconf.h
 .\objects\main.o: ..\ugfx_2.5\src/gfx_compilers.h
@@ -95,3 +90,12 @@
 .\objects\main.o: ..\ugfx_2.5\src/ginput/ginput.h
 .\objects\main.o: ..\ugfx_2.5\src/gadc/gadc.h
 .\objects\main.o: ..\ugfx_2.5\src/gaudio/gaudio.h
+.\objects\main.o: gameLoop.h
+.\objects\main.o: globals.h
+.\objects\main.o: output.h
+.\objects\main.o: globals.h
+.\objects\main.o: setup.h
+.\objects\main.o: globals.h
+.\objects\main.o: block.h
+.\objects\main.o: globals.h
+.\objects\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\time.h

@@ -27,25 +27,19 @@ Project File Date:  04/21/2016
 <h2>Output:</h2>
 *** Using Compiler 'V5.06 update 1 (build 61)', folder: 'C:\Keil_v5\ARM\ARMCC\Bin'
 Build target 'Target 1'
-compiling main.c...
-globals.h(51): warning:  #1-D: last line of file ends without a newline
+compiling output.c...
+globals.h(53): warning:  #1-D: last line of file ends without a newline
   #endif	/* GLOBALS_H */
-setup.h(7): warning:  #1295-D: Deprecated declaration randomBlock - give arg types
-  Block* randomBlock();
-setup.h(8): warning:  #1295-D: Deprecated declaration makeBlock - give arg types
-  Block* makeBlock();
-block.h(12): warning:  #1295-D: Deprecated declaration rotateBlock - give arg types
-  void rotateBlock();
-main.c(145): warning:  #550-D: variable "initXpos" was set but never used
-  	int initXpos;			/* initial screen touch x pos*/
-main.c(146): warning:  #550-D: variable "initYpos" was set but never used
-  	int initYpos;			/* initial screen touch y pos*/
-main.c(151): warning:  #177-D: variable "canmove" was declared but never referenced
-  	bool canmove = true;
-main.c: 7 warnings, 0 errors
+output.c(108): warning:  #223-D: function "sprintf" declared implicitly
+    sprintf(str,"%d",Score);
+output.c(115): warning:  #177-D: variable "str" was declared but never referenced
+  	char* str;
+output.c(207): warning:  #1-D: last line of file ends without a newline
+  }
+output.c: 4 warnings, 0 errors
 linking...
-Program Size: Code=34144 RO-data=4612 RW-data=268 ZI-data=313540  
-".\Objects\Tetris uGFX.axf" - 0 Error(s), 7 Warning(s).
+Program Size: Code=34696 RO-data=4652 RW-data=304 ZI-data=313544  
+".\Objects\Tetris uGFX.axf" - 0 Error(s), 4 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -207,7 +201,7 @@ Package Vendor: Keil
    * Component: Keil.STM32F746G-Discovery::Board Support:Drivers:SDRAM:1.0.0
       Include file:  Drivers\BSP\STM32746G-Discovery\stm32746g_discovery_sdram.h
       Source file:   Drivers\BSP\STM32746G-Discovery\stm32746g_discovery_sdram.c
-Build Time Elapsed:  00:00:03
+Build Time Elapsed:  00:00:01
 </pre>
 </body>
 </html>

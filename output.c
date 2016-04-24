@@ -4,8 +4,7 @@
  */
 #include "gfx.h"
 #include "output.h"
-//color for each Tetris shape
-const color_t   tetrisShapeColors[8] = {Lime, Yellow, Red, Blue, Magenta, SkyBlue, Orange,Lime}; 
+
 font_t          font16;
 int lastDrawnX = 0;
 int lastDrawnY = 0;
@@ -27,20 +26,20 @@ void printTetrisBucket() {
 							//draws the bucket
 							if(bucket.bucket[i][j] == '#'){
 								if( bucket.height-1 ==i){
-									gdispFillArea((bucket.x + (j*BLOCK_SIZE)), (bucket.y + (i*BLOCK_SIZE)), 15, 5, Black);
+									gdispFillArea((bucket.x + (j*BLOCK_SIZE)), (bucket.y + (i*BLOCK_SIZE)), 15, 5, tetrisShapeColors[8]);
 								}
 								else if(j ==0){
-									gdispFillArea((bucket.x+10 + (j*BLOCK_SIZE)), (bucket.y + (i*BLOCK_SIZE)), 5, 15, Black);
+									gdispFillArea((bucket.x+10 + (j*BLOCK_SIZE)), (bucket.y + (i*BLOCK_SIZE)), 5, 15, tetrisShapeColors[8]);
 								}
 								else{
-									gdispFillArea((bucket.x + (j*BLOCK_SIZE)), (bucket.y + (i*BLOCK_SIZE)), 5, 15, Black);
+									gdispFillArea((bucket.x + (j*BLOCK_SIZE)), (bucket.y + (i*BLOCK_SIZE)), 5, 15, tetrisShapeColors[8]);
 								}
 								
 							} 
 							///draws shapes that collided with the bottom
 							else {
 								//padding
-								gdispFillArea((bucket.x + (j*BLOCK_SIZE)), (bucket.y + (i*BLOCK_SIZE)), BLOCK_SIZE, BLOCK_SIZE, White);
+								gdispFillArea((bucket.x + (j*BLOCK_SIZE)), (bucket.y + (i*BLOCK_SIZE)), BLOCK_SIZE, BLOCK_SIZE, tetrisShapeColors[0]);
 								//shape
 								gdispFillArea((bucket.x + (j*BLOCK_SIZE)+1), (bucket.y + (i*BLOCK_SIZE)+1), BLOCK_SIZE-2, BLOCK_SIZE-2, tetrisShapeColors[bucket.bucket[i][j]]);
 							}
@@ -58,7 +57,7 @@ void printTetrisBucket() {
             if (currentPiece->graphic[i][j] != ' ') {
                // mvprintw(currentPiece->y + i, currentPiece->x + j, "%c", currentPiece->graphic[i][j]);
 							//padding
-								gdispFillArea(((bucket.x + (currentPiece->x * BLOCK_SIZE))+(j*BLOCK_SIZE)),(((bucket.y) + (currentPiece->y* BLOCK_SIZE))+(i*BLOCK_SIZE)),BLOCK_SIZE, BLOCK_SIZE, White);
+								gdispFillArea(((bucket.x + (currentPiece->x * BLOCK_SIZE))+(j*BLOCK_SIZE)),(((bucket.y) + (currentPiece->y* BLOCK_SIZE))+(i*BLOCK_SIZE)),BLOCK_SIZE, BLOCK_SIZE, tetrisShapeColors[0]);
 							//shape
 								gdispFillArea(((bucket.x + (currentPiece->x * BLOCK_SIZE))+(j*BLOCK_SIZE)+1),(((bucket.y) + (currentPiece->y* BLOCK_SIZE))+(i*BLOCK_SIZE)+1),BLOCK_SIZE-2, BLOCK_SIZE-2, tetrisShapeColors[currentPiece->blockID]);
 							
@@ -80,7 +79,7 @@ void eraseBlock(){
     for (i = 0; i < currentPiece->size; i++) {
         for (j = 0; j < currentPiece->size; j++) {
             //If this isn't a blank char then print it
-								gdispFillArea(((bucket.x + (lastDrawnX * BLOCK_SIZE))+(j*BLOCK_SIZE)),(((bucket.y) + (lastDrawnY* BLOCK_SIZE))+(i*BLOCK_SIZE)),BLOCK_SIZE, BLOCK_SIZE, White);
+								gdispFillArea(((bucket.x + (lastDrawnX * BLOCK_SIZE))+(j*BLOCK_SIZE)),(((bucket.y) + (lastDrawnY* BLOCK_SIZE))+(i*BLOCK_SIZE)),BLOCK_SIZE, BLOCK_SIZE, tetrisShapeColors[0]);
 
         }
     }
@@ -91,7 +90,7 @@ void clearNextPieceArea(){
 	int i, j;
     for (i = 0; i < nextPiece->size; i++) {
         for (j = 0; j < nextPiece->size; j++) {
-								gdispFillArea(((360)+(j*BLOCK_SIZE)),(((130) )+(i*BLOCK_SIZE)),BLOCK_SIZE, BLOCK_SIZE, White);
+								gdispFillArea(((360)+(j*BLOCK_SIZE)),(((130) )+(i*BLOCK_SIZE)),BLOCK_SIZE, BLOCK_SIZE, tetrisShapeColors[0]);
 
         }
     }
@@ -101,7 +100,7 @@ void clearNextPieceArea(){
 void printScoreWindow() {
 	char* str;
 	font16 =  gdispOpenFont("DejaVuSans16");
-	gdispDrawString(360, 20, "Score", font16, Black);
+	gdispDrawString(360, 20, "Score", font16, tetrisShapeColors[8]);
  // gdispDrawLine(365, 40, 380, 20, Purple);
 	gdispFillArea(365, 35, 35, 1, Purple);
 	
@@ -116,7 +115,7 @@ void printNextBrickWindow() {
 	char* str;
 	int i,j;
 	font16 =  gdispOpenFont("DejaVuSans16");
-	gdispDrawString(360, 100, "Next", font16, Black);
+	gdispDrawString(360, 100, "Next", font16, tetrisShapeColors[8]);
 	gdispCloseFont(font16);
 	
 	//draw block
@@ -128,7 +127,7 @@ void printNextBrickWindow() {
             if (nextPiece->graphic[i][j] != ' ') {
                // mvprintw(currentPiece->y + i, currentPiece->x + j, "%c", currentPiece->graphic[i][j]);
 							//padding
-								gdispFillArea(360+(j*BLOCK_SIZE),130+(i*(BLOCK_SIZE)),BLOCK_SIZE-2, BLOCK_SIZE-2, White);
+								gdispFillArea(360+(j*BLOCK_SIZE),130+(i*(BLOCK_SIZE)),BLOCK_SIZE-2, BLOCK_SIZE-2, tetrisShapeColors[0]);
 							//shape
 								gdispFillArea(361+(j*BLOCK_SIZE),131+(i*(BLOCK_SIZE)),BLOCK_SIZE-2, BLOCK_SIZE-2, tetrisShapeColors[nextPiece->blockID]);
 							
@@ -149,41 +148,60 @@ void printVictory() {
 }
 
 void menuScreen(){
+	//color_t colorrange[9] = {White, Yellow, Red, Blue, Magenta, SkyBlue, Orange,Lime,Black}; 
+													//			0			1			2			3			4					5				6				7			8
 		// Main menu Background
-	gdispFillArea(433, 247, 20, 20, Red);
-	gdispFillArea(112, 247, 20, 20, Lime);
-	gdispFillArea(455, 247, 20, 20, Red);
-	gdispFillArea(0, 204, 20, 20, Blue);
-	gdispFillArea(23, 225, 20, 20, Yellow);
-	gdispFillArea(455, 224, 20, 20, Red);
-	gdispFillArea(91, 247, 20, 20, Lime);
-	gdispFillArea(83, 80, 20, 20, Magenta);
-	gdispFillArea(432, 203, 20, 20, Orange);
-	gdispFillArea(178, 247, 20, 20, Cyan);
-	gdispFillArea(134, 247, 20, 20, Lime);
-	gdispFillArea(455, 201, 20, 20, Red);
-	gdispFillArea(22, 247, 20, 20, Blue);
-	gdispFillArea(46, 248, 20, 20, Yellow);
-	gdispFillArea(46, 225, 20, 20, Yellow);
-	gdispFillArea(82, 102, 21, 20, Magenta);
-	gdispFillArea(70, 247, 20, 20, Lime);
-	gdispFillArea(60, 102, 20, 20, Magenta);
-	gdispFillArea(410, 225, 20, 20, Orange);
-	gdispFillArea(156, 247, 20, 20, Cyan);
-	gdispFillArea(134, 225, 20, 20, Cyan);
-	gdispFillArea(410, 247, 20, 20, Orange);
-	gdispFillArea(0, 226, 20, 20, Blue);
-	gdispFillArea(47, 227, 20, 20, Yellow);
-	gdispFillArea(60, 80, 20, 20, Magenta);
-	gdispFillArea(69, 225, 20, 20, Yellow);
-	gdispFillArea(0, 247, 20, 20, Blue);
-	gdispFillArea(432, 225, 20, 20, Orange);
-	gdispFillArea(157, 185, 20, 20, Cyan);
+	gdispFillArea(433, 247, 20, 20, tetrisShapeColors[2]);
+	gdispFillArea(112, 247, 20, 20, tetrisShapeColors[7]);
+	gdispFillArea(455, 247, 20, 20, tetrisShapeColors[2]);
+	gdispFillArea(0, 204, 20, 20, tetrisShapeColors[3]);
+	gdispFillArea(23, 225, 20, 20, tetrisShapeColors[1]);
+	gdispFillArea(455, 224, 20, 20, tetrisShapeColors[2]);
+	gdispFillArea(91, 247, 20, 20, tetrisShapeColors[7]);
+	gdispFillArea(83, 80, 20, 20, tetrisShapeColors[4]);
+	gdispFillArea(432, 203, 20, 20, tetrisShapeColors[6]);
+	gdispFillArea(178, 247, 20, 20, tetrisShapeColors[5]);
+	gdispFillArea(134, 247, 20, 20, tetrisShapeColors[7]);
+	gdispFillArea(455, 201, 20, 20, tetrisShapeColors[2]);
+	gdispFillArea(22, 247, 20, 20, tetrisShapeColors[3]);
+	gdispFillArea(46, 248, 20, 20, tetrisShapeColors[1]);
+	gdispFillArea(46, 225, 20, 20, tetrisShapeColors[1]);
+	gdispFillArea(82, 102, 21, 20, tetrisShapeColors[4]);
+	gdispFillArea(70, 247, 20, 20, tetrisShapeColors[7]);
+	gdispFillArea(60, 102, 20, 20, tetrisShapeColors[4]);
+	gdispFillArea(410, 225, 20, 20, tetrisShapeColors[6]);
+	gdispFillArea(156, 247, 20, 20, tetrisShapeColors[5]);
+	gdispFillArea(134, 225, 20, 20, tetrisShapeColors[5]);
+	gdispFillArea(410, 247, 20, 20, tetrisShapeColors[6]);
+	gdispFillArea(0, 226, 20, 20, tetrisShapeColors[3]);
+	gdispFillArea(47, 227, 20, 20, tetrisShapeColors[1]);
+	gdispFillArea(60, 80, 20, 20, tetrisShapeColors[4]);
+	gdispFillArea(69, 225, 20, 20, tetrisShapeColors[1]);
+	gdispFillArea(0, 247, 20, 20, tetrisShapeColors[3]);
+	gdispFillArea(432, 225, 20, 20, tetrisShapeColors[6]);
+	gdispFillArea(157, 225, 20, 20, tetrisShapeColors[5]);
 	//Button
 	gdispFillArea(200,60,80,30,Grey);
 	gdispFillArea(200+3,60+3,80-6,30-6,Silver);
 	//text
 	font16 =  gdispOpenFont("DejaVuSans16");
-	gdispDrawString(225, 66, "Play", font16, Black);
+	gdispDrawString(225, 66, "Play", font16, tetrisShapeColors[8]);
+	gdispCloseFont(font16);
+	
+		//Button
+	gdispFillArea(200,110,96,30,Grey);
+	gdispFillArea(200+3,110+3,96-6,30-6,Silver);
+	//text
+	font16 =  gdispOpenFont("DejaVuSans16");
+	gdispDrawString(205, 116, "Dark Mode", font16, tetrisShapeColors[8]);
+	gdispCloseFont(font16);
+	
+	
+		//Button
+	gdispFillArea(200,160,126,30,Grey);
+	gdispFillArea(200+3,160+3,126-6,30-6,Silver);
+	//text
+	font16 =  gdispOpenFont("DejaVuSans16");
+	gdispDrawString(205, 166, "Random Mode", font16, tetrisShapeColors[8]);
 	gdispCloseFont(font16);
 }
