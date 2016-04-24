@@ -6,6 +6,7 @@
 #include "GLCD_Config.h"
 #include "Board_GLCD.h"
 #include "Board_Touch.h"
+#include "Board_Buttons.h"
 #include "main.h"
 #include "stdlib.h"
 #include "globals.h"
@@ -142,7 +143,10 @@ void taskGameLogic (void const *argument) {
  *--------------------------------------------------*/
 void taskInput (void const *argument) {
 	int initXpos;			/* initial screen touch x pos*/
+	int initYpos;			/* initial screen touch y pos*/
 	int initTime = 0;																/* initial time on touch */
+	uint8_t but;
+	uint8_t buf;
 	int delaymove = 0;
 	bool canmove = true;
 	for(;;){
@@ -151,16 +155,29 @@ void taskInput (void const *argument) {
 		if(tsc_state.pressed == true && stillPressed == false){
 				stillPressed = true;
 				initXpos = tsc_state.x; // gets the  x pos when pressed
+			  initYpos = tsc_state.y; // gets the  y pos when pressed
 				initTime = HAL_GetTick(); //gets the  time when pressed
 			}
 				
 			//rotate if the press lasted for half sec
-			if(tsc_state.pressed ==false){
-				if((HAL_GetTick()-initTime)<8000&&initTime!=0){
-						rotateBlock();
-						initTime = 0;
+//			if(tsc_state.pressed ==false){
+//				if((HAL_GetTick()-initTime)<8000&&initTime!=0){
+//						rotateBlock();
+//						initTime = 0;
+//				}
+//			}
+			
+			//On board button rotate block
+		   but = (uint8_t)(Buttons_GetState ());
+			if (but ^ buf) {
+      buf = but;
+				if(delaymove>40){
+				rotateBlock('R');
+					delaymove = 0;
 				}
+		
 			}
+			
 			
 //			//move block right if swipped right
 //			if(stillPressed == true){
@@ -174,23 +191,31 @@ void taskInput (void const *argument) {
 //					initXpos = tsc_state.x;
 //				}
 			
-				
+		
 				
 				
 			//}
 			//counts to 20 to create delay when moving
 			delaymove +=1;
 			//check if not a touch and hold
-			if((HAL_GetTick()-initTime)>8000&&initTime!=0 && delaymove > 20){
-				delaymove = 0;
-				//check where on screen it was pressed and move block
-			if(((bucket.x + (currentPiece->x * BLOCK_SIZE)) > tsc_state.x) && tsc_state.pressed == true){
-				attemptMove('L');
+			if(initTime!=0 && delaymove > 20){
+				//check is press was in the tetris area 
+				if(tsc_state.x > bucket.x && tsc_state.x < bucket.x+120 & tsc_state.pressed == true){
+					attemptMove('D');
+					delaymove= 0;
+				}else{
+				
+				//check where on screen it was pressed and move block accordinly 
+				if(((bucket.x + (currentPiece->x * BLOCK_SIZE)) > tsc_state.x) && tsc_state.pressed == true ){
+					attemptMove('L');
+					delaymove = 0;
 				}
-		  if(((bucket.x + (currentPiece->x * BLOCK_SIZE)) <tsc_state.x) &&tsc_state.pressed == true){
+				if(((bucket.x + (currentPiece->x * BLOCK_SIZE)) <tsc_state.x) &&tsc_state.pressed == true ){
 					attemptMove('R');
+					delaymove = 0;
+					}
 				}
-			}
+		}
 			
 		
 			//moves block down
@@ -218,6 +243,7 @@ int main (void) {
   HAL_Init();                               				 /* Initialize the HAL Library     		*/
   BSP_SDRAM_Init();                        	 /* Initialize BSP SDRAM           	*/
   SystemClock_Config();                      /* Configure the System Clock  */
+	 Buttons_Initialize();                 /* Buttons Initialization             */
 
 	//Set up touchscreen hardware
   Touch_Initialize();
