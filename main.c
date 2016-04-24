@@ -128,13 +128,26 @@ void taskGLCD (void const *argument) {
  *      Thread 2 'taskGameLogic':   
  *--------------------------------------------------*/
 void taskGameLogic (void const *argument) {
-	
+	int delay =10000;
 	for(;;){
 		//Make the block fall one position
 		attemptMove('D');
+		//speed up game as score goes up
+		if(delay >5000){
+		delay = 10000 - (Score*50);
+		}
+		//THRESHOLD
+		if(delay <5000)
+		{
+			delay = 5000 - (Score *10);
+		}
+		if(delay<500)
+		{
+			delay = 500;
+		}
 		
 		//Wait for one second
-		osDelay(10000);
+		osDelay(delay);
 	}
 }
 
@@ -200,7 +213,7 @@ void taskInput (void const *argument) {
 			//check if not a touch and hold
 			if(initTime!=0 && delaymove > 20){
 				//check is press was in the tetris area 
-				if(tsc_state.x > bucket.x && tsc_state.x < bucket.x+120 & tsc_state.pressed == true){
+				if(tsc_state.x > bucket.x && tsc_state.x < bucket.x+200 & tsc_state.pressed == true){
 					attemptMove('D');
 					delaymove= 0;
 				}else{
@@ -264,8 +277,8 @@ void randomize ( int arr[], int n )
 int main (void) {
 	GameState state = GameInit;
   font_t          font16 = gdispOpenFont("DejaVuSans16");
-	color_t colorrange[9] = {White, Yellow, Red, Blue, Magenta, SkyBlue, Orange,Lime,Black}; 
-	int rand[9] = {0,1,2,3,4,5,6,7,8};
+	color_t colorrange[21] = {White, Yellow, Red, Blue, Magenta, SkyBlue, Orange,Lime,Black,Gray,Grey,Fuchsia,Green,Aqua,Maroon,Navy,Olive,Purple,Silver,Teal,Pink}; 
+	int rand[21] = {0,1,2,3,4,5,6,7,8,10,11,12,13,14,15,16,17,18,19,20,21};
 	int i =0;
   CPU_CACHE_Enable();                       /* Enable the CPU Cache          */
   HAL_Init();                               				 /* Initialize the HAL Library     		*/
@@ -314,7 +327,7 @@ int main (void) {
 		
 		if(tsc_state.pressed == true && tsc_state.y >150){
 			//shuffle array then assign the colors
-       randomize (rand, 9);
+       randomize (rand, 21);
 			
 			for( i =0; i<9; i++){
 				tetrisShapeColors[i] = colorrange[rand[i]];
