@@ -284,9 +284,9 @@
 ///////////////////////////////////////////////////////////////////////////
 // GINPUT                                                                //
 ///////////////////////////////////////////////////////////////////////////
-//#define GFX_USE_GINPUT                               TRUE
+//#define GFX_USE_GINPUT                               FALSE
 
-//#define GINPUT_NEED_MOUSE                            TRUE
+//#define GINPUT_NEED_MOUSE                            FALSE
 //    #define GINPUT_TOUCH_STARTRAW                    FALSE
 //    #define GINPUT_TOUCH_NOTOUCH                     FALSE
 //    #define GINPUT_TOUCH_NOCALIBRATE                 FALSE

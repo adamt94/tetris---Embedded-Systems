@@ -100,7 +100,7 @@ static void CPU_CACHE_Enable (void) {
 }
 
 /*--------------------------------------------------
- *      Thread 1 'taskGLCD':   
+ *      Thread 1 'taskGLCD':   for drawing the main gameplay screen
  *--------------------------------------------------*/
 void taskGLCD (void const *argument) {
 	for(;;){
@@ -171,14 +171,6 @@ void taskInput (void const *argument) {
 			  initYpos = tsc_state.y; // gets the  y pos when pressed
 				initTime = HAL_GetTick(); //gets the  time when pressed
 			}
-				
-			//rotate if the press lasted for half sec
-//			if(tsc_state.pressed ==false){
-//				if((HAL_GetTick()-initTime)<8000&&initTime!=0){
-//						rotateBlock();
-//						initTime = 0;
-//				}
-//			}
 			
 			//On board button rotate block
 		   but = (uint8_t)(Buttons_GetState ());
@@ -191,23 +183,6 @@ void taskInput (void const *argument) {
 		
 			}
 			
-			
-//			//move block right if swipped right
-//			if(stillPressed == true){
-//				if((tsc_state.x-initXpos)>50){
-//					attemptMove('R');
-//					initXpos = tsc_state.x;
-//				}
-//				//move block left if swipped left
-//				if((tsc_state.x-initXpos)<-50){
-//					attemptMove('L');
-//					initXpos = tsc_state.x;
-//				}
-			
-		
-				
-				
-			//}
 			//counts to 20 to create delay when moving
 			delaymove +=1;
 			//check if not a touch and hold
@@ -275,82 +250,101 @@ void randomize ( int arr[], int n )
 *       Main
 */
 int main (void) {
+	//Set the game state to 'Initialisation'
 	GameState state = GameInit;
+	//Set up variables
   font_t          font16 = gdispOpenFont("DejaVuSans16");
 	color_t colorrange[21] = {White, Yellow, Red, Blue, Magenta, SkyBlue, Orange,Lime,Black,Gray,Grey,Fuchsia,Green,Aqua,Maroon,Navy,Olive,Purple,Silver,Teal,Pink}; 
 	int rand[21] = {0,1,2,3,4,5,6,7,8,10,11,12,13,14,15,16,17,18,19,20,21};
 	int i =0;
+		
+	//Set up hardware
   CPU_CACHE_Enable();                       /* Enable the CPU Cache          */
   HAL_Init();                               				 /* Initialize the HAL Library     		*/
   BSP_SDRAM_Init();                        	 /* Initialize BSP SDRAM           	*/
   SystemClock_Config();                      /* Configure the System Clock  */
-	 Buttons_Initialize();                 /* Buttons Initialization             */
+	Buttons_Initialize();                 				 /* Buttons Initialization             */
 
 	//Set up touchscreen hardware
   Touch_Initialize();
 	//Set up GLCD hardware
 	GLCD_Initialize ();
- // GLCD_ClearScreen ();
 
 	//gfxInit must be called after setting up hardware above
 	gfxInit();																	/* Initialise uGFX library */
  
-	 gdispClear(tetrisShapeColors[0] );											/* Use given colour to clear screen (set background) */
-	
-	//gdispFillArea(20, 20, 200, 200, Blue);		/* Draw a rectangle filled with specified colour */
-	 while (state == GameInit) {
+	gdispClear(tetrisShapeColors[0] );											/* Use given colour to clear screen (set background) */
 		
-       // printf("Initialisation\n");
-        //Will show start menu here
-
-		 //draw menu screen
+	//While game is initialising
+	while (state == GameInit) {
+		 //Draw menu screen
 				menuScreen();
-	for(;;){
-		//menu touch buttons
-			Touch_GetState (&tsc_state);
-		if(tsc_state.pressed == true && tsc_state.y <100){
-			 totaltime = HAL_GetTick();
-			  //Set up new game variables
-        initialiseNewGame(11, 17);
-			 state = GameRunning;
-			gdispClear(tetrisShapeColors[0]);
-			break;
-		}
-		if(tsc_state.pressed == true && tsc_state.y >100 && tsc_state.y<150){
-			
-			tetrisShapeColors[0] = Black;
-			tetrisShapeColors[8] = White;
-			
-			gdispClear(tetrisShapeColors[0]);
-			menuScreen();
-    }
 		
-		if(tsc_state.pressed == true && tsc_state.y >150){
-			//shuffle array then assign the colors
-       randomize (rand, 21);
+		//While the user is on the main menu
+		for(;;){
+				//Get the user's touch position
+				Touch_GetState (&tsc_state);
 			
-			for( i =0; i<9; i++){
-				tetrisShapeColors[i] = colorrange[rand[i]];
+				//
+				// If user pressed the top region of the screen (and therefore the 'Start Menu' button)
+				//
+				if(tsc_state.pressed == true && tsc_state.y <100){
+						//Time taken to press start game is used to initialise the random seed, giving truly random numbers
+						 totaltime = HAL_GetTick();
+						 //Set up new game variables
+							initialiseNewGame(11, 17);
+						//Set the game state to 'Running'
+						 state = GameRunning;
+						//Clear the screen (Uses the tetris colours array instead of explicit colour, as could be using a different colour scheme)
+						gdispClear(tetrisShapeColors[0]);
+					
+						//Break out of the for loop
+						break;
+					
+				} //End if
 				
-			}
-			gdispClear(tetrisShapeColors[0]);
-			menuScreen();
-		}
-			
-			
-			
-			
-		}
-	}
+				// 
+				// If user pressed the centre region of the screen (and therefore the 'Dark Mode' button)
+				//
+				if(tsc_state.pressed == true && tsc_state.y >100 && tsc_state.y<150){
+					
+					//Set the colour array to the dark colour scheme
+					tetrisShapeColors[0] = Black;
+					tetrisShapeColors[8] = White;
+					
+					//Clear the screen with the new colours
+					gdispClear(tetrisShapeColors[0]);
+					
+					//Redisplay the menu
+					menuScreen();
+				}
+		
+				// 
+				// If user pressed the bottom region of the screen (and therefore the 'Random Mode' button)
+				//
+				if(tsc_state.pressed == true && tsc_state.y >150){
+					
+					// Shuffle the colour array to give a random colour scheme
+					randomize (rand, 21);					
+					for( i =0; i<9; i++){
+						tetrisShapeColors[i] = colorrange[rand[i]];
+					}
+					
+					//Clear the screen to use the new colours
+					gdispClear(tetrisShapeColors[0]);
+					
+					//Redisplay the menu
+					menuScreen();
+				}
+		} //End for
+	} //End while
 	
-       
-
-    
-	 //Create thread instances
-		tid_taskGLCD = osThreadCreate(osThread(taskGLCD), NULL);
-		tid_taskInput = osThreadCreate(osThread(taskInput), NULL);
-		tid_taskGameLogic = osThreadCreate(osThread(taskGameLogic), NULL);
-    
-		osDelay(osWaitForever);
-		while(1);
+      
+ //Create thread instances
+	tid_taskGLCD = osThreadCreate(osThread(taskGLCD), NULL);
+	tid_taskInput = osThreadCreate(osThread(taskInput), NULL);
+	tid_taskGameLogic = osThreadCreate(osThread(taskGameLogic), NULL);
+	
+	osDelay(osWaitForever);
+	while(1);
 }
