@@ -670,6 +670,9 @@ Section Cross References
     stm32746g_discovery_ts.o(i.BSP_TS_ITGetStatus) refers to stm32746g_discovery_ts.o(.data) for tsDriver
     stm32746g_discovery_ts.o(i.BSP_TS_Init) refers to stm32746g_discovery_ts.o(.data) for tsXBoundary
     stm32746g_discovery_ts.o(i.BSP_TS_Init) refers to ft5336.o(.data) for ft5336_ts_drv
+    buttons_746g_discovery.o(i.Buttons_GetState) refers to stm32f7xx_hal_gpio.o(i.HAL_GPIO_ReadPin) for HAL_GPIO_ReadPin
+    buttons_746g_discovery.o(i.Buttons_Initialize) refers to stm32f7xx_hal_gpio.o(i.HAL_GPIO_Init) for HAL_GPIO_Init
+    buttons_746g_discovery.o(i.Buttons_Uninitialize) refers to stm32f7xx_hal_gpio.o(i.HAL_GPIO_DeInit) for HAL_GPIO_DeInit
     glcd_746g_discovery.o(i.GLCD_ClearScreen) refers to glcd_746g_discovery.o(.ARM.__AT_0xC0000000) for frame_buf
     glcd_746g_discovery.o(i.GLCD_ClearScreen) refers to glcd_746g_discovery.o(.data) for background_color
     glcd_746g_discovery.o(i.GLCD_DrawBargraph) refers to glcd_746g_discovery.o(.data) for background_color
@@ -707,9 +710,6 @@ Section Cross References
     touch_746g_discovery.o(i.Touch_GetState) refers to stm32746g_discovery_ts.o(i.BSP_TS_GetState) for BSP_TS_GetState
     touch_746g_discovery.o(i.Touch_Initialize) refers to stm32746g_discovery_ts.o(i.BSP_TS_Init) for BSP_TS_Init
     touch_746g_discovery.o(i.Touch_Uninitialize) refers to stm32746g_discovery_ts.o(i.BSP_TS_DeInit) for BSP_TS_DeInit
-    buttons_746g_discovery.o(i.Buttons_GetState) refers to stm32f7xx_hal_gpio.o(i.HAL_GPIO_ReadPin) for HAL_GPIO_ReadPin
-    buttons_746g_discovery.o(i.Buttons_Initialize) refers to stm32f7xx_hal_gpio.o(i.HAL_GPIO_Init) for HAL_GPIO_Init
-    buttons_746g_discovery.o(i.Buttons_Uninitialize) refers to stm32f7xx_hal_gpio.o(i.HAL_GPIO_DeInit) for HAL_GPIO_DeInit
     rtx_conf_cm.o(.emb_text) refers to rt_cmsis.o(i.osKernelInitialize) for osKernelInitialize
     rtx_conf_cm.o(.emb_text) refers to rt_cmsis.o(i.osThreadCreate) for osThreadCreate
     rtx_conf_cm.o(.emb_text) refers to rt_cmsis.o(i.osKernelStart) for osKernelStart
@@ -1820,6 +1820,11 @@ Removing Unused input sections from the image.
     Removing stm32746g_discovery_ts.o(i.BSP_TS_ITConfig), (80 bytes).
     Removing stm32746g_discovery_ts.o(i.BSP_TS_ITGetStatus), (24 bytes).
     Removing stm32746g_discovery_ts.o(i.BSP_TS_ResetTouchData), (54 bytes).
+    Removing buttons_746g_discovery.o(.rev16_text), (4 bytes).
+    Removing buttons_746g_discovery.o(.revsh_text), (4 bytes).
+    Removing buttons_746g_discovery.o(.rrx_text), (6 bytes).
+    Removing buttons_746g_discovery.o(i.Buttons_GetCount), (4 bytes).
+    Removing buttons_746g_discovery.o(i.Buttons_Uninitialize), (20 bytes).
     Removing glcd_746g_discovery.o(.rev16_text), (4 bytes).
     Removing glcd_746g_discovery.o(.revsh_text), (4 bytes).
     Removing glcd_746g_discovery.o(.rrx_text), (6 bytes).
@@ -1845,11 +1850,6 @@ Removing Unused input sections from the image.
     Removing touch_746g_discovery.o(.revsh_text), (4 bytes).
     Removing touch_746g_discovery.o(.rrx_text), (6 bytes).
     Removing touch_746g_discovery.o(i.Touch_Uninitialize), (20 bytes).
-    Removing buttons_746g_discovery.o(.rev16_text), (4 bytes).
-    Removing buttons_746g_discovery.o(.revsh_text), (4 bytes).
-    Removing buttons_746g_discovery.o(.rrx_text), (6 bytes).
-    Removing buttons_746g_discovery.o(i.Buttons_GetCount), (4 bytes).
-    Removing buttons_746g_discovery.o(i.Buttons_Uninitialize), (20 bytes).
     Removing rtx_conf_cm.o(i.__user_perthread_libspace), (44 bytes).
     Removing stm32f7xx_hal.o(.rev16_text), (4 bytes).
     Removing stm32f7xx_hal.o(.revsh_text), (4 bytes).
@@ -2486,8 +2486,8 @@ Image Symbol Table
     .text                                    0x08000a58   Section        0  defsig_rtmem_outer.o(.text)
     .text                                    0x08000a68   Section        0  sys_exit.o(.text)
     .text                                    0x08000a74   Section        2  use_no_semi.o(.text)
-    .text                                    0x08000a76   Section        0  indicate_semi.o(.text)
     .text                                    0x08000a76   Section       74  sys_stackheap_outer.o(.text)
+    .text                                    0x08000a76   Section        0  indicate_semi.o(.text)
     .text                                    0x08000ac0   Section        0  defsig_exit.o(.text)
     .text                                    0x08000acc   Section        0  defsig_rtmem_inner.o(.text)
     .text                                    0x08000b1c   Section        0  defsig_general.o(.text)
@@ -3675,15 +3675,15 @@ Memory Map of the image
     0x08000e6c   0x0000022c   Code   RO         2706    i.BSP_TS_GetState   stm32746g_discovery_ts.o
     0x08001098   0x00000070   Code   RO         2707    i.BSP_TS_Get_GestureId  stm32746g_discovery_ts.o
     0x08001108   0x00000064   Code   RO         2711    i.BSP_TS_Init       stm32746g_discovery_ts.o
-    0x0800116c   0x00000020   Code   RO         2958    i.Buttons_GetState  buttons_746g_discovery.o
-    0x0800118c   0x00000044   Code   RO         2959    i.Buttons_Initialize  buttons_746g_discovery.o
+    0x0800116c   0x00000020   Code   RO         2786    i.Buttons_GetState  buttons_746g_discovery.o
+    0x0800118c   0x00000044   Code   RO         2787    i.Buttons_Initialize  buttons_746g_discovery.o
     0x080011d0   0x00000068   Code   RO            4    i.CPU_CACHE_Enable  main.o
     0x08001238   0x00000034   Code   RO         3343    i.DMA_CalcBaseAndBitshift  stm32f7xx_hal_dma.o
     0x0800126c   0x00000074   Code   RO         4837    i.FMC_SDRAM_Init    stm32f7xx_ll_fmc.o
     0x080012e0   0x0000000e   Code   RO         4838    i.FMC_SDRAM_ProgramRefreshRate  stm32f7xx_ll_fmc.o
     0x080012ee   0x00000052   Code   RO         4839    i.FMC_SDRAM_SendCommand  stm32f7xx_ll_fmc.o
     0x08001340   0x00000098   Code   RO         4841    i.FMC_SDRAM_Timing_Init  stm32f7xx_ll_fmc.o
-    0x080013d8   0x00000230   Code   RO         2796    i.GLCD_Initialize   glcd_746g_discovery.o
+    0x080013d8   0x00000230   Code   RO         2838    i.GLCD_Initialize   glcd_746g_discovery.o
     0x08001608   0x00000064   Code   RO         3346    i.HAL_DMA_DeInit    stm32f7xx_hal_dma.o
     0x0800166c   0x00000084   Code   RO         3350    i.HAL_DMA_Init      stm32f7xx_hal_dma.o
     0x080016f0   0x0000001a   Code   RO         3064    i.HAL_Delay         stm32f7xx_hal.o
@@ -3747,8 +3747,8 @@ Memory Map of the image
     0x08003c10   0x00000010   Code   RO         2425    i.TS_IO_Init        stm32746g_discovery.o
     0x08003c20   0x00000028   Code   RO         2426    i.TS_IO_Read        stm32746g_discovery.o
     0x08003c48   0x00000024   Code   RO         2427    i.TS_IO_Write       stm32746g_discovery.o
-    0x08003c6c   0x0000003c   Code   RO         2921    i.Touch_GetState    touch_746g_discovery.o
-    0x08003ca8   0x0000001c   Code   RO         2922    i.Touch_Initialize  touch_746g_discovery.o
+    0x08003c6c   0x0000003c   Code   RO         2963    i.Touch_GetState    touch_746g_discovery.o
+    0x08003ca8   0x0000001c   Code   RO         2964    i.Touch_Initialize  touch_746g_discovery.o
     0x08003cc4   0x00000040   Code   RO          569    i.WM_Add            gfx_mk.o
     0x08003d04   0x00000002   Code   RO          570    i.WM_DeInit         gfx_mk.o
     0x08003d06   0x00000002   PAD
@@ -4047,7 +4047,7 @@ Memory Map of the image
     0x2001a1a4   0x00000078   Zero   RW         2428    .bss                stm32746g_discovery.o
     0x2001a21c   0x00000110   Zero   RW         2629    .bss                stm32746g_discovery_sdram.o
     0x2001a32c   0x00000028   Zero   RW         2713    .bss                stm32746g_discovery_ts.o
-    0x2001a354   0x000000a8   Zero   RW         2803    .bss                glcd_746g_discovery.o
+    0x2001a354   0x000000a8   Zero   RW         2845    .bss                glcd_746g_discovery.o
     0x2001a3fc   0x00000004   PAD
     0x2001a400   0x00002250   Zero   RW         3003    .bss                rtx_conf_cm.o
     0x2001c650   0x00000034   Zero   RW         5652    .bss                RTX_CM4.lib(rt_task.o)
@@ -4065,5 +4065,5 @@ Memory Map of the image
 
     Base Addr    Size         Type   Attr      Idx    E Section Name        Object
 
-    0xc0000000   0x0003fc00   Zero   RW         2802    .ARM.__AT_0xC0000000  glcd_746g_discovery.o
+    0xc0000000   0x0003fc00   Zero   RW         2844    .ARM.__AT_0xC0000000  glcd_746g_discovery.o
 

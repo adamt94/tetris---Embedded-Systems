@@ -26,7 +26,68 @@ Project File Date:  05/04/2016
 
 <h2>Output:</h2>
 *** Using Compiler 'V5.06 update 1 (build 61)', folder: 'C:\Keil_v5\ARM\ARMCC\Bin'
-Build target 'Target 1'
+Rebuild target 'Target 1'
+compiling gameLoop.c...
+globals.h(53): warning:  #1-D: last line of file ends without a newline
+  #endif	/* GLOBALS_H */
+gameLoop.c(14): warning:  #940-D: missing return statement at end of non-void function "checkUserInput"
+  }
+gameLoop.c: 2 warnings, 0 errors
+compiling block.c...
+globals.h(53): warning:  #1-D: last line of file ends without a newline
+  #endif	/* GLOBALS_H */
+block.h(12): warning:  #1295-D: Deprecated declaration rotateBlock - give arg types
+  void rotateBlock();
+globals.h(53): warning:  #1-D: last line of file ends without a newline
+  #endif	/* GLOBALS_H */
+setup.h(7): warning:  #1295-D: Deprecated declaration randomBlock - give arg types
+  Block* randomBlock();
+setup.h(8): warning:  #1295-D: Deprecated declaration makeBlock - give arg types
+  Block* makeBlock();
+globals.h(53): warning:  #1-D: last line of file ends without a newline
+  #endif	/* GLOBALS_H */
+block.c(30): warning:  #177-D: variable "i" was declared but never referenced
+      int i, j;
+block.c(30): warning:  #177-D: variable "j" was declared but never referenced
+      int i, j;
+block.c(42): warning:  #940-D: missing return statement at end of non-void function "validMove"
+  }
+block.c(116): warning:  #1-D: last line of file ends without a newline
+  }
+block.c: 10 warnings, 0 errors
+compiling setup.c...
+globals.h(53): warning:  #1-D: last line of file ends without a newline
+  #endif	/* GLOBALS_H */
+setup.h(7): warning:  #1295-D: Deprecated declaration randomBlock - give arg types
+  Block* randomBlock();
+setup.h(8): warning:  #1295-D: Deprecated declaration makeBlock - give arg types
+  Block* makeBlock();
+setup.c(51): warning:  #177-D: variable "choice" was declared but never referenced
+  	  int choice;
+setup.c(153): warning:  #1-D: last line of file ends without a newline
+  }
+setup.c: 5 warnings, 0 errors
+compiling output.c...
+globals.h(53): warning:  #1-D: last line of file ends without a newline
+  #endif	/* GLOBALS_H */
+output.c(108): warning:  #223-D: function "sprintf" declared implicitly
+    sprintf(str,"%d",Score);
+output.c(115): warning:  #177-D: variable "str" was declared but never referenced
+  	char* str;
+output.c(207): warning:  #1-D: last line of file ends without a newline
+  }
+output.c: 4 warnings, 0 errors
+compiling gfx_mk.c...
+..\ugfx_2.5\src\../src/gwin/gwin_rules.h(87): warning:  #1215-D: #warning directive: "GWIN: GFX_USE_GQUEUE and GQUEUE_NEED_ASYNC is required if GWIN_NEED_WINDOWMANAGER is TRUE. It has been turned on for you."
+  				#warning "GWIN: GFX_USE_GQUEUE and GQUEUE_NEED_ASYNC is required if GWIN_NEED_WINDOWMANAGER is TRUE. It has been turned on for you."
+..\ugfx_2.5\src\../src/gwin/gwin_rules.h(96): warning:  #1215-D: #warning directive: "GWIN: GFX_USE_GTIMER is required if GWIN_NEED_WINDOWMANAGER is TRUE. It has been turned on for you."
+  				#warning "GWIN: GFX_USE_GTIMER is required if GWIN_NEED_WINDOWMANAGER is TRUE. It has been turned on for you."
+..\ugfx_2.5\src\../src/gtimer/gtimer_rules.h(22): warning:  #1215-D: #warning directive: "GTIMER: GDISP_NEED_MULTITHREAD has not been specified."
+  			#warning "GTIMER: GDISP_NEED_MULTITHREAD has not been specified."
+..\ugfx_2.5\src\../src/gtimer/gtimer_rules.h(23): warning:  #1215-D: #warning directive: "GTIMER: Make sure you are not performing any GDISP/GWIN drawing operations in the timer callback!"
+  			#warning "GTIMER: Make sure you are not performing any GDISP/GWIN drawing operations in the timer callback!"
+..\ugfx_2.5\src\gfx_mk.c: 4 warnings, 0 errors
+compiling ft5336.c...
 compiling main.c...
 globals.h(53): warning:  #1-D: last line of file ends without a newline
   #endif	/* GLOBALS_H */
@@ -51,10 +112,41 @@ main.c(159): warning:  #550-D: variable "initYpos" was set but never used
 main.c(164): warning:  #177-D: variable "canmove" was declared but never referenced
   	bool canmove = true;
 main.c: 11 warnings, 0 errors
+compiling gdisp_lld_STM32LTDC.c...
+..\ugfx_2.5\drivers\gdisp\STM32LTDC\gdisp_lld_STM32LTDC.c(196): warning:  #61-D: integer operation result is out of range
+  	
+TDC->GCR = driverCfg.syncflags & (
+TDC_EF_MASK & ~LTDC_EF_ENABLE);
+..\ugfx_2.5\drivers\gdisp\STM32LTDC\gdisp_lld_STM32LTDC.c: 1 warning, 0 errors
+compiling stm32746g_discovery_ts.c...
+compiling stm32746g_discovery_sdram.c...
+compiling stm32746g_discovery.c...
+compiling GLCD_Fonts.c...
+compiling GLCD_746G_Discovery.c...
+compiling Buttons_746G_Discovery.c...
+compiling RTX_Conf_CM.c...
+compiling Touch_746G_Discovery.c...
+compiling stm32f7xx_hal.c...
+compiling stm32f7xx_hal_dma.c...
+compiling stm32f7xx_hal_cortex.c...
+compiling stm32f7xx_hal_gpio.c...
+compiling stm32f7xx_hal_dma_ex.c...
+compiling stm32f7xx_hal_i2c.c...
+compiling stm32f7xx_hal_i2c_ex.c...
+compiling stm32f7xx_hal_ltdc.c...
+compiling stm32f7xx_hal_pwr.c...
+compiling stm32f7xx_hal_rcc.c...
+compiling stm32f7xx_hal_rcc_ex.c...
+compiling stm32f7xx_hal_pwr_ex.c...
+compiling stm32f7xx_hal_sdram.c...
+compiling stm32f7xx_hal_uart.c...
+compiling stm32f7xx_ll_fmc.c...
+assembling startup_stm32f746xx.s...
+compiling system_stm32f7xx.c...
 linking...
 .\Objects\Tetris uGFX.axf: error: L6050U: The code size of this image (34764 bytes) exceeds the maximum allowed for this version of the linker.
 Finished: 0 information, 0 warning, 0 error and 1 fatal error messages.
-".\Objects\Tetris uGFX.axf" - 1 Error(s), 11 Warning(s).
+".\Objects\Tetris uGFX.axf" - 1 Error(s), 37 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -217,7 +309,7 @@ Package Vendor: Keil
       Source file:   MDK\Boards\ST\STM32F746G_Discovery\Common\GLCD_Fonts.c
       Source file:   MDK\Boards\ST\STM32F746G_Discovery\Common\GLCD_746G_Discovery.c
 Target not created.
-Build Time Elapsed:  00:00:01
+Build Time Elapsed:  00:00:15
 </pre>
 </body>
 </html>

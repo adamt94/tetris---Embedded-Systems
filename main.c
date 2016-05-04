@@ -205,17 +205,13 @@ void taskInput (void const *argument) {
 				}
 		}
 			
-		
-			//moves block down
-			//attemptMove('D');
-			
 			// Is the touch screen still being pressed from the previous loop? (prevent rotating multiple times from one touch)
 			if(tsc_state.pressed == false){
 				stillPressed = false;
 			}
 			
 			osDelay(100);
-		}
+	} // End for
 }
 
 // A utility function to swap to integers
